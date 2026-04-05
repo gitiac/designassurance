@@ -2480,6 +2480,7 @@ function showSection(id) {
     target.classList.add('active');
     target.style.display = 'block';
   }
+  window.location.hash = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.querySelectorAll('.fade-up').forEach(function(el) {
     el.style.animation = 'none';
