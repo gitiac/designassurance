@@ -2120,5 +2120,493 @@
               </div>
             </div>
           </div>
+        </div><!-- end blog-grid -->
 
-        
+      </div>
+
+      <!-- INLINE BLOG POSTS -->
+      <div class="blog-post-full" id="hld-review">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Design Assurance</span>
+        <h1 class="post-title">Five things wrong with every HLD I have ever reviewed</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+        <div class="post-body">
+          <p>After 21 years of reviewing High-Level Designs across financial services, pharmaceutical, healthcare and automotive programmes — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors. Here is what I find almost every time.</p>
+          <h2>1. The design is written to justify a decision already made</h2>
+          <p>The most common HLD failure is not technical — it is political. By the time a formal HLD is produced, the vendor has usually been selected, the commercial agreement is in place, and the architecture is effectively locked. The HLD is then written to document that decision, not to evaluate it.</p>
+          <p>A genuine HLD should explore options. It should compare approaches, document the rationale for choices made, and acknowledge trade-offs. When every section says "the proposed solution is X" without any consideration of why X was chosen over Y or Z, you are not reading a design document — you are reading a sales proposal with an HLD cover sheet.</p>
+          <h2>2. Scalability is assumed, not designed</h2>
+          <p>Almost every HLD I review states that the solution is "scalable." Very few of them define what scalable means in the context of that specific organisation, or demonstrate how scalability will be achieved.</p>
+          <blockquote><p>Scalability is not a feature of a vendor platform. It is a property of a specific design, in a specific environment, against specific growth assumptions.</p></blockquote>
+          <p>A credible HLD should define current state traffic volumes, projected growth over the programme lifecycle, and demonstrate through architectural choices — not vendor marketing claims — how the design accommodates that growth without fundamental re-architecture.</p>
+          <h2>3. Resilience is described at component level, not system level</h2>
+          <p>HLDs routinely describe component redundancy — dual uplinks, HA pairs, RAID arrays. What they rarely describe is system-level resilience: what happens when multiple components fail simultaneously, how failover behaves under real traffic conditions, and whether recovery time objectives are actually achievable with the proposed design.</p>
+          <p>Component redundancy and system resilience are different things. A design with fully redundant components can still produce a single point of failure at the system level if those components share a common dependency.</p>
+          <h2>4. Security is an afterthought bolted on at the end</h2>
+          <p>Security sections in HLDs are frequently one page long, written last, and describe controls at a generic level that could apply to any organisation. Firewall policy: "traffic will be controlled by firewall rules." Encryption: "data in transit will be encrypted." These statements are not design — they are intentions.</p>
+          <p>Security architecture should be woven through every section of the HLD, not confined to a single section at the end. Segmentation, access control, inspection points, logging and monitoring should all be visible in the network diagrams and architecture choices — not described generically in a separate section.</p>
+          <h2>5. There is no HLD-to-LLD validation plan</h2>
+          <p>The HLD is approved. The LLD is written. Nobody checks whether the LLD actually delivers what the HLD promised. In my experience, this is where programmes most commonly go wrong — the gap between what was agreed at HLD stage and what is actually specified in the LLD.</p>
+          <p>Every HLD should define how its requirements will be traced into the LLD, and who is responsible for validating that trace. Without this, the HLD becomes a contractual document that no one is responsible for delivering.</p>
+          <h2>What good looks like</h2>
+          <p>A well-written HLD makes reviewers' jobs boring. Every architectural choice is explained. Trade-offs are acknowledged. Scalability and resilience are demonstrated, not claimed. Security is integrated, not appended. And there is a clear path from HLD to LLD to implementation.</p>
+          <p>If your HLD makes for interesting reading — if reviewers are discovering things — it is not ready for approval.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What we consistently find in HLD review</div>
+            <ul class="findings-list">
+              <li><strong>The design has only been reviewed by the team that wrote it.</strong> Internal review is not independent review. The same assumptions, the same blind spots, the same vendor relationships.</li>
+              <li><strong>Scalability is based on current load, not projected growth.</strong> Most HLDs are designed for today. Few account for the traffic, user or data growth that will arrive within 18 months of go-live.</li>
+              <li><strong>Security is a layer, not a design principle.</strong> Firewall rules and access control added at the end of the design process rather than built into the architecture from the start.</li>
+              <li><strong>Vendor recommendations favour the integrator's margin.</strong> The design almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on.</li>
+              <li><strong>The LLD diverges significantly from the approved HLD.</strong> By the time implementation begins, the HLD is often a historical document — evolved without a formal record of what changed and why.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="post-cta">
+      <div>
+        <div class="post-cta-text">Want an independent review of your HLD?</div>
+        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+      </div>
+      <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
+    </div>
+  </div>
+
+  
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html
+      </div>
+
+      <div class="blog-post-full" id="programme-recovery">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Programme Recovery</span>
+        <h1 class="post-title">Programme recovery — what the first 48 hours actually looks like</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
+        <div class="post-body">
+          <p>When a programme is declared off-track, the instinct is to escalate, reorganise and replan. In my experience, the first 48 hours should be spent doing something different entirely.</p>
+          <h2>Before anything else — understand what you actually have</h2>
+          <p>Programmes get into trouble for many reasons, but they all share a common symptom: the picture being presented to stakeholders does not match reality. Before any recovery plan can be credible, you need to know the true state of the programme — not the RAG status in the last board report.</p>
+          <p>The first 48 hours should be spent reading everything: the original HLD, the current LLD, the change log, the open issues list, the minutes of the last ten technical meetings, and any correspondence between the delivery team and the vendor. Not summaries of these — the documents themselves.</p>
+          <h2>Talk to the engineers, not the programme managers</h2>
+          <p>Programme managers will tell you about milestones. Engineers will tell you about reality. In those first 48 hours, I spend as much time as possible with the people actually doing the implementation work — asking what is blocking them, what they know is wrong that has not been escalated, and what they would do differently if they were in charge.</p>
+          <blockquote><p>The gap between what is in the programme plan and what is happening on the ground is usually where the real recovery work lives.</p></blockquote>
+          <h2>Identify the critical path — then ignore everything else</h2>
+          <p>Recovering a programme does not mean fixing everything that is wrong. It means identifying the minimum set of actions required to get to a deliverable outcome, and focusing entirely on those. Everything else waits.</p>
+          <p>This requires difficult conversations. There will be work streams that stakeholders care about which are not on the critical path. Those conversations must happen early and clearly — telling stakeholders directly what is being deprioritised and why. You have them once, you close them, and you move on.</p>
+          <h2>Establish a single version of the truth</h2>
+          <p>Programmes in trouble are almost always suffering from information fragmentation — multiple conflicting views of status, progress and risk. One of the most valuable things you can do in the first 48 hours is establish a single place where the actual state of the programme is recorded and updated, and make that the only source of truth for all reporting.</p>
+          <p>Recovery starts with honesty about where you are. Everything else follows from that.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What we consistently find in programme recovery</div>
+            <ul class="findings-list">
+              <li><strong>The root cause is almost always in design, not delivery.</strong> Delivery teams get blamed for programme failures that were baked in at architecture stage. The implementation was fine — what it was implementing was not.</li>
+              <li><strong>The first 48 hours are wasted on escalation rather than assessment.</strong> Senior stakeholders want action plans before anyone has established the facts. Visible activity substitutes for diagnosis.</li>
+              <li><strong>Recovery plans are built around activity, not outcomes.</strong> Lists of workstreams and RAG statuses that tell you what people are doing — but not whether any of it moves the programme toward recovery.</li>
+              <li><strong>The programme team already knows what is wrong.</strong> In almost every recovery engagement, the people closest to the delivery have identified the core problems. They have not been asked — or have not felt safe to say.</li>
+              <li><strong>Scope has drifted without formal change control.</strong> What is being delivered bears little resemblance to what was signed off. The gap is rarely documented, rarely costed and rarely acknowledged.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="post-cta">
+      <div>
+        <div class="post-cta-text">Is your programme off-track?</div>
+        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+      </div>
+      <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Discuss Your Programme</a>
+    </div>
+  </div>
+
+  
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html
+      </div>
+
+      <div class="blog-post-full" id="cloud-architecture">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Cloud Architecture</span>
+        <h1 class="post-title">Why cloud network design is still network design</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+        <div class="post-body"><p>See the full article at <a href="cloud-architecture.html">designassurance.co.uk/cloud-architecture</a></p></div>
+        <div class="post-cta"><div><div class="post-cta-text">Want independent review of your cloud network architecture?</div><div class="post-cta-sub">All conversations are confidential.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Cloud Review</a></div>
+      </div>
+
+      <div class="blog-post-full" id="ccde-vs-ccie">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Design Practice</span>
+        <h1 class="post-title">What CCDE teaches you that CCIE never could</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+        <div class="post-body"><p>See the full article at <a href="ccde-vs-ccie.html">designassurance.co.uk/ccde-vs-ccie</a></p></div>
+        <div class="post-cta"><div><div class="post-cta-text">Want to understand what independent design thinking delivers?</div><div class="post-cta-sub">All conversations are confidential.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Start a Conversation</a></div>
+      </div>
+
+      <div class="blog-post-full" id="ten-design-failures">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Design Assurance</span>
+        <h1 class="post-title">Ten design failures that appear in almost every infrastructure programme</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
+        <div class="post-body"><p>See the full article at <a href="ten-design-failures.html">designassurance.co.uk/ten-design-failures</a></p></div>
+        <div class="post-cta"><div><div class="post-cta-text">Want to know if your programme has any of these?</div><div class="post-cta-sub">All conversations are confidential.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a></div>
+      </div>
+
+      <div class="blog-post-full" id="design-assurance-value">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Design Assurance</span>
+        <h1 class="post-title">Why independent design assurance saves more than it costs</h1>
+        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
+        <div class="post-body">
+          <p>There is a conversation I have regularly with programme sponsors and IT directors. It goes something like this: they are running a multi-million pound infrastructure transformation, they have a vendor and a delivery team in place, and they are wondering whether they really need to spend additional budget on independent design review.</p>
+          <p>My answer is always the same. The question is not whether you can afford independent design assurance. The question is whether you can afford not to have it.</p>
+          <h2>The cost of a design flaw discovered late</h2>
+          <p>Design errors do not cost the same at every stage of a programme. A flaw identified during HLD review costs almost nothing to fix — it is a document change, a conversation, a revised diagram. The same flaw discovered during implementation requires rework, possible hardware changes, extended timelines and the associated costs of delayed go-live.</p>
+          <p>The same flaw discovered after go-live can be catastrophic — unplanned downtime, emergency remediation, reputational damage and in regulated industries, potential compliance breaches.</p>
+          <blockquote><p>The cost of independent design review is fixed and known upfront. The cost of the problems it prevents is open-ended and frequently enormous.</p></blockquote>
+          <h2>What independent actually means</h2>
+          <p>Most programmes have design review built in. The delivery team reviews their own designs. The vendor reviews the designs they helped specify. The programme manager signs off the document.</p>
+          <p>None of these constitute independent review. Every party involved has a vested interest in the design being approved — the vendor wants the contract to proceed, the delivery team wants to move to implementation, the programme manager wants to hit milestones. Independent review means someone with no stake in the outcome looking at the design with fresh eyes and asking the questions nobody else is incentivised to ask.</p>
+          <p>Is this architecture actually fit for purpose? Will it scale to the projected demand? Is the failover design genuinely resilient or does it create a single point of failure at the system level? Does the LLD actually deliver what the HLD promised? Has security been designed in or bolted on?</p>
+          <h2>The specific scenarios where it pays for itself immediately</h2>
+          <p>After 21 years of reviewing designs across financial services, biopharmaceutical, healthcare, media and automotive programmes, there are specific scenarios where independent design assurance consistently delivers immediate, quantifiable value:</p>
+          <h3>Before committing to a vendor solution</h3>
+          <p>Vendor proposals are built to sell. They present architectures that favour the vendor's product portfolio, use case studies from different environments, and make assumptions about your infrastructure that may not hold. An independent review of a vendor proposal before contract signature has prevented organisations from committing to solutions that were fundamentally unsuitable for their environment.</p>
+          <h3>Before significant capital expenditure</h3>
+          <p>When a programme is about to commit to hardware procurement, data centre build or major cloud spend, independent design validation at that point ensures the expenditure is based on an architecture that will actually work. Discovering a fundamental design flaw after hardware is racked is not a recoverable situation without significant additional cost.</p>
+          <h3>When a programme has changed scope</h3>
+          <p>Infrastructure programmes rarely deliver exactly what was originally scoped. Requirements change, timelines shift, and the original design assumptions no longer hold. Independent review at scope change points identifies where the existing design needs to evolve — before those changes are built on a foundation that cannot support them.</p>
+          <h3>Before go-live</h3>
+          <p>Pre-deployment sign-off by an independent CCDE-certified architect provides stakeholders and boards with genuine assurance that what is about to go live has been scrutinised by someone with no interest in the outcome other than whether it works.</p>
+          <h2>The commercial case in simple terms</h2>
+          <p>A typical independent HLD review engagement costs a fraction of a single day of unplanned downtime in a financial services or healthcare environment. It costs less than one week of remediation work on a failed implementation. It costs less than the delay to a go-live that misses a regulatory deadline.</p>
+          <p>The ROI on independent design assurance is not difficult to calculate. What is difficult is making the case for it before a problem occurs — because the value is in what does not happen.</p>
+          <p>That is precisely why it requires an independent voice to make the case. And why, when programmes go wrong, the first question is always the same: was the design independently reviewed?</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What independent review finds that internal review misses</div>
+            <ul class="findings-list">
+              <li><strong>Designs approved with no record of who reviewed them or when.</strong> Sign-off exists on paper. Evidence of genuine scrutiny does not.</li>
+              <li><strong>Assumptions stated as facts.</strong> HLDs regularly present sizing, performance and resilience assumptions as design decisions, with no validation against actual requirements.</li>
+              <li><strong>Single points of failure inside resilient-looking architectures.</strong> Redundancy at the component level but not the system level. A design can have dual everything and still fail at the integration layer.</li>
+              <li><strong>Compliance requirements noted but not designed for.</strong> Regulatory obligations listed in a requirements section, then not reflected in the architecture. The design notes the requirement and proceeds to ignore it.</li>
+              <li><strong>A gap between what was promised and what was designed.</strong> Business stakeholders approved a set of outcomes. The technical design delivers something adjacent — and nobody has formally mapped one to the other.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="post-cta">
+      <div>
+        <div class="post-cta-text">Want independent design assurance on your programme?</div>
+        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+      </div>
+      <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
+    </div>
+  </div>
+
+  
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+});
+</script>
+</body>
+</html
+      </div>
+
+      <div class="blog-post-full" id="vendor-assessment">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Vendor Assessment</span>
+        <h1 class="post-title">How to evaluate a vendor proposal without being sold to</h1>
+        <div class="post-meta">Coming Soon &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE</div>
+        <div class="post-body"><p>This article is coming soon. Check back shortly.</p></div>
+        <div class="post-cta"><div><div class="post-cta-text">Need independent vendor assessment now?</div><div class="post-cta-sub">All conversations are confidential.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request an Assessment</a></div>
+      </div>
+
+    </div><!-- end blog-content-inner -->
+  </div><!-- end blog-content -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Design <span>Assurance</span></div>
+        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a onclick="showSection('home')">Home</a></li>
+          <li><a onclick="showSection('about')">About</a></li>
+          <li><a onclick="showSection('services')">Services</a></li>
+          <li><a onclick="showSection('engagement')">Engagement</a></li>
+          <li><a onclick="showSection('blog')">Insights</a></li>
+          <li><a onclick="showSection('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
+          <li><a>UK · US · EU · APAC · Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
+      <div class="footer-certs">
+        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
+        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
+        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
+      </div>
+    </div>
+  </footer>
+</section><!-- end blog -->
+<!-- CONTACT -->
+<section id="contact">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Contact</div>
+      <h1 class="page-title">Start a confidential conversation</h1>
+    </div>
+  </div>
+  <div class="contact-content">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <h2>Get in touch</h2>
+          <p>All initial conversations are strictly confidential. There is no obligation to proceed and no sales process. If what you are working on sounds like something I can help with, I will say so. If it is not, I will say that too.</p>
+          <div class="contact-detail">
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Email</div>
+                <a href="mailto:hello@designassurance.co.uk" class="contact-item-value">hello@designassurance.co.uk</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Direct</div>
+                <a href="mailto:hameed.nazim@designassurance.co.uk" class="contact-item-value">hameed.nazim@designassurance.co.uk</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">in</div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" class="contact-item-value">Design Authority</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">◎</div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Geography</div>
+                <span class="contact-item-value" style="color:var(--navy);">UK · US · EU · APAC · Middle East — Remote &amp; On-site</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-note">
+            <p>Design Assurance is a trading name of Network Fabric Limited. All engagements are conducted under NDA. Contracting arrangements are flexible — direct, via your preferred system integrator, or through an existing framework.</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-title">Send a message</div>
+          <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" name="name" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Organisation</label>
+              <input type="text" name="organisation" class="form-input" placeholder="Your organisation">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">What are you working on?</label>
+              <select name="service" class="form-select">
+                <option value="">Select a service area</option>
+                <option>HLD Review &amp; Validation</option>
+                <option>LLD Review &amp; Validation</option>
+                <option>HLD &amp; LLD Gap Analysis</option>
+                <option>Pre-Deployment Sign-Off</option>
+                <option>HLD Creation</option>
+                <option>LLD Creation</option>
+                <option>Programme Recovery</option>
+                <option>Design Assurance Retainer</option>
+                <option>As-Built Architecture Review</option>
+                <option>Technical Due Diligence</option>
+                <option>Vendor &amp; Solution Assessment</option>
+                <option>Architecture Advisory</option>
+                <option>SD-WAN Design Assurance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea name="message" class="form-textarea" placeholder="Brief description of what you need..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Design <span>Assurance</span></div>
+        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a onclick="showSection('home')">Home</a></li>
+          <li><a onclick="showSection('about')">About</a></li>
+          <li><a onclick="showSection('services')">Services</a></li>
+          <li><a onclick="showSection('engagement')">Engagement</a></li>
+          <li><a onclick="showSection('blog')">Insights</a></li>
+          <li><a onclick="showSection('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
+          <li><a>UK · US · EU · APAC · Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
+      <div class="footer-certs">
+        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
+        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
+        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
+      </div>
+    </div>
+  </footer>
+</section>
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+}
+
+function mobileNav(id) {
+  document.getElementById('mobileMenu').classList.remove('open');
+  showSection(id);
+}
+
+function showSection(id) {
+  document.querySelectorAll('section').forEach(function(s) {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  var target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    target.style.display = 'block';
+  }
+  window.location.hash = id;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    el.style.animationPlayState = 'running';
+  });
+}
+
+function showPost(postId) {
+  document.getElementById('blogList').classList.add('hidden');
+  document.getElementById('blogList').style.display = 'none';
+  document.querySelectorAll('.blog-post-full').forEach(function(p) {
+    p.classList.remove('visible');
+    p.style.display = 'none';
+  });
+  var post = document.getElementById(postId);
+  if (post) {
+    post.classList.add('visible');
+    post.style.display = 'block';
+  }
+  window.location.hash = postId;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showBlogList() {
+  document.querySelectorAll('.blog-post-full').forEach(function(p) {
+    p.classList.remove('visible');
+    p.style.display = 'none';
+  });
+  var list = document.getElementById('blogList');
+  if (list) {
+    list.classList.remove('hidden');
+    list.style.display = 'block';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('section').forEach(function(s) {
+    s.style.display = 'none';
+  });
+
+  var postIds = ['hld-review','programme-recovery','cloud-architecture','ccde-vs-ccie','vendor-assessment','ten-design-failures','design-assurance-value'];
+  var sectionIds = ['home','about','services','engagement','blog','contact'];
+  var hash = window.location.hash.replace('#','');
+
+  if (postIds.indexOf(hash) !== -1) {
+    showSection('blog');
+    showPost(hash);
+  } else if (hash === 'insights') {
+    showSection('blog');
+    showBlogList();
+  } else if (sectionIds.indexOf(hash) !== -1) {
+    showSection(hash);
+  } else {
+    var home = document.getElementById('home');
+    if (home) {
+      home.style.display = 'block';
+      home.classList.add('active');
+    }
+  }
+});
+</script>
+</body>
+</html>
