@@ -10,7 +10,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/ten-design-failures">
 <meta property="og:title" content="Ten design failures that appear in almost every infrastructure programme | Design Assurance">
-<meta property="og:description" content="After 21 years of independent design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
+<meta property="og:description" content="After 21 years of independent network and cloud design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
 <meta property="og:site_name" content="Design Assurance">
 <title>Ten design failures that appear in almost every infrastructure programme | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -1413,6 +1413,7 @@
 
   <div class="article-content">
     <div class="post-body">
+
           <p>After 21 years of reviewing network, security and cloud architectures across financial services, biopharmaceutical, healthcare, media and automotive programmes — the same failures appear with remarkable consistency. None of them are exotic. All of them are avoidable. All of them would have been caught by independent review before implementation began.</p>
 
           <h2>1. The design is reviewed only by the team that wrote it</h2>
@@ -1425,25 +1426,25 @@
           <p>Security as a layer bolted onto a completed design is not security architecture. Firewall rules, access controls and monitoring added at the end of the design process cannot compensate for an architecture that was not designed with security as a first principle. In regulated environments — financial services, healthcare, biopharmaceutical — this is not just a design problem. It is a compliance problem.</p>
 
           <h2>4. The LLD does not deliver what the HLD promised</h2>
-          <p>High-Level Designs get approved. Low-Level Designs get written months later, by different people, under different constraints. By the time implementation begins, the LLD has often diverged significantly from the approved HLD. This divergence is rarely documented, rarely formally approved, and almost never communicated to the business stakeholders who signed off the original design.</p>
+          <p>High-Level Designs get approved. Low-Level Designs get written months later, by different people, under different constraints. By the time implementation begins, the LLD has often diverged significantly from the approved HLD. This divergence is rarely documented. It is rarely formally approved. And it is almost never communicated to the business stakeholders who signed off the original design.</p>
 
           <h2>5. Single points of failure inside resilient-looking architectures</h2>
-          <p>A design can have dual power, dual uplinks, redundant firewalls and still have a single point of failure at the integration or dependency layer. Resilience designed at the component level but not at the system level creates architectures that look robust on a diagram but fail in ways the diagram does not predict. Finding these failures before go-live is precisely what independent review is for.</p>
+          <p>A design can have dual power, dual uplinks, redundant firewalls and still have a single point of failure at the integration or dependency layer. Resilience designed at the component level but not at the system level creates architectures that look robust on a diagram but fail in ways that the diagram does not predict. Finding these failures before go-live is precisely what independent review is for.</p>
 
           <h2>6. Vendor recommendations reflect the integrator's interests, not the client's</h2>
           <p>This is not always intentional. But the architecture almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on. Independent vendor-neutral review asks the question the delivery team cannot ask objectively: is this the right solution for this requirement, or the most convenient solution for this integrator?</p>
 
           <h2>7. Compliance requirements are noted but not designed for</h2>
-          <p>Regulatory obligations appear in the requirements section of the HLD. They are acknowledged, listed and referenced. Then the architecture proceeds to ignore them. In financial services, healthcare and biopharmaceutical environments, this approach leads directly to audit findings, remediation programmes and — in the worst cases — regulatory action.</p>
+          <p>Regulatory obligations appear in the requirements section of the HLD. They are acknowledged, listed and referenced. Then the architecture proceeds to ignore them. The design notes the requirement and moves on, assuming it will be addressed somewhere else. In financial services, healthcare and biopharmaceutical environments, this approach leads directly to audit findings, remediation programmes and — in the worst cases — regulatory action.</p>
 
           <h2>8. The design has no formal sign-off trail</h2>
           <p>Sign-off exists on paper. Evidence of genuine scrutiny does not. When something goes wrong after go-live and the question is asked — who reviewed this design, when, and what did they find — the honest answer is often that the review was cursory, the sign-off was procedural, and nobody was actually accountable for the technical quality of what was approved.</p>
 
           <h2>9. Assumptions are stated as facts</h2>
-          <p>HLDs regularly present sizing, performance and resilience assumptions as design decisions without validation against actual requirements or evidence. "The system will support 10,000 concurrent users" appears as a design statement rather than an assumption that requires testing. When the assumption turns out to be wrong — as assumptions frequently do — the entire design may need to be revisited.</p>
+          <p>HLDs regularly present sizing, performance and resilience assumptions as design decisions without validation against actual requirements or evidence. "The system will support 10,000 concurrent users" appears as a design statement rather than as an assumption that requires testing. When the assumption turns out to be wrong — as assumptions frequently do — the entire design may need to be revisited.</p>
 
           <h2>10. Nobody has mapped the design to the business outcomes</h2>
-          <p>Business stakeholders approved a set of outcomes. The technical design delivers something adjacent to those outcomes. The gap between what was promised and what was designed is real, documented in neither the HLD nor the LLD, and surfaces only when the business expects the system to do something the architecture cannot support.</p>
+          <p>Business stakeholders approved a set of outcomes. The technical design delivers something adjacent to those outcomes. The gap between what was promised and what was designed is real, documented neither in the HLD nor the LLD, and surfaces only when the business expects the system to do something the architecture cannot support.</p>
 
           <div class="findings-box">
             <div class="findings-title">The common thread across all ten failures</div>

@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="When a programme is off-track, the instinct is to escalate and replan. The first 48 hours should look very different. CCDE and CCIE certified programme recovery.">
+<meta name="description" content="When a programme is off-track, the instinct is to escalate and replan. In my experience, the first 48 hours should look very different. CCDE and CCIE certified programme recovery consultant.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.designassurance.co.uk/programme-recovery">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/programme-recovery">
 <meta property="og:title" content="Programme recovery — what the first 48 hours actually looks like | Design Assurance">
-<meta property="og:description" content="When a programme is off-track, the instinct is to escalate and replan. The first 48 hours should look very different. CCDE and CCIE certified programme recovery.">
+<meta property="og:description" content="When a programme is off-track, the instinct is to escalate and replan. In my experience, the first 48 hours should look very different.">
 <meta property="og:site_name" content="Design Assurance">
-<meta property="og:locale" content="en_GB">
 <title>Programme recovery — what the first 48 hours actually looks like | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -38,6 +38,8 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
     color: var(--text-body);
     background: var(--white);
     overflow-x: hidden;
@@ -119,13 +121,20 @@
   #home {
     background: var(--navy);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding-top: 72px;
+    max-width: 100vw;
   }
 
+  .hero-content-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
   .hero-grid {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background-image:
       linear-gradient(rgba(168,180,192,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(168,180,192,0.04) 1px, transparent 1px);
@@ -144,7 +153,7 @@
 
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 1100px;
     margin: 0 auto;
     padding: 5rem 5% 5vh;
@@ -721,7 +730,8 @@
   .contact-icon {
     width: 36px;
     height: 36px;
-    background: var(--navy);
+    background: rgba(168,180,192,0.15);
+    border: 1px solid rgba(168,180,192,0.4);
     border-radius: 2px;
     display: flex;
     align-items: center;
@@ -738,14 +748,14 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--silver);
     margin-bottom: 0.2rem;
   }
 
   .contact-item-value {
     font-size: 0.9rem;
     color: var(--navy);
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
   }
 
@@ -851,6 +861,8 @@
     background: var(--navy);
     padding: 3rem 5%;
     border-top: 1px solid rgba(168,180,192,0.1);
+    position: relative;
+    z-index: 10;
   }
 
   .footer-inner {
@@ -1113,6 +1125,17 @@
     border-radius: 2px;
     margin-bottom: 0.5rem;
   }
+  .sneak-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8960c;
+    border: 1px solid rgba(200,180,50,0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
   .blog-card.coming-soon .blog-card-header {
     background: #2a3a4a;
   }
@@ -1332,112 +1355,26 @@
     text-decoration: none;
     opacity: 0.75;
   }
-
-  .findings-box {
-    background: var(--off-white);
-    border-left: 3px solid var(--navy);
-    padding: 2rem 2.5rem;
-    margin: 3rem 0;
-    border-radius: 0 4px 4px 0;
-  }
-  .findings-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 1.25rem;
-  }
-  .findings-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .findings-list li {
-    font-size: 0.92rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    font-weight: 300;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-  .findings-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--navy);
-    font-weight: 500;
-  }
-  .findings-list li strong {
-    color: var(--navy);
-    font-weight: 500;
-  }
 </style>
 <style>
-  .article-page {
-    padding-top: 72px;
-    background: var(--white);
-    min-height: 100vh;
-  }
-  .article-hero {
-    background: var(--navy);
-    padding: 2.5rem 5% 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .article-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-  .article-hero-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
-  .article-hero .post-cat {
-    color: var(--silver) !important;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .article-hero .post-title {
-    color: var(--white) !important;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    margin-bottom: 0.75rem;
-  }
-  .article-hero .post-meta {
-    color: var(--silver-light) !important;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .article-content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 5%;
-  }
-  .article-hero .post-cat {
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-  .article-hero .post-title {
-    margin-bottom: 1rem;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  }
-  .article-hero .post-meta {
-    margin-bottom: 0;
-  }
-  .article-hero-inner a {
-    margin-bottom: 1rem !important;
-  }
+  .article-page { padding-top: 72px; background: var(--white); min-height: 100vh; }
+  .article-hero { background: var(--navy); padding: 2.5rem 5% 2rem; position: relative; overflow: hidden; }
+  .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .article-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+  .article-hero .post-cat { color: var(--silver) !important; display: block; margin-bottom: 0.5rem; }
+  .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
+  .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
+  .cert-badge-link { text-decoration: none; color: inherit; transition: opacity 0.2s; }
+  .cert-badge-link:hover { opacity: 0.75; }
+  a.cert-badge { text-decoration: none; color: var(--silver); }
+  a.cert-badge:hover { opacity: 0.75; }
+  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
+  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
+  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
+  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li strong { color: var(--navy); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -1449,22 +1386,20 @@
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#engagement">Engagement</a></li>
     <li><a href="index.html#blog">Insights</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Discuss Your Programme</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="index.html#about">About</a>
   <a href="index.html#services">Services</a>
   <a href="index.html#engagement">Engagement</a>
   <a href="index.html#blog">Insights</a>
-  <a href="index.html#contact">Discuss Your Programme</a>
+  <a href="index.html#contact">Get in Touch</a>
 </div>
-
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
@@ -1474,21 +1409,106 @@
       <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
     </div>
   </div>
-
   <div class="article-content">
     <div class="post-body">
           <p>When a programme is declared off-track, the instinct is to escalate, reorganise and replan. In my experience, the first 48 hours should be spent doing something different entirely.</p>
-          <h2>Before anything else — understand what you actually have</h2>
-          <p>Programmes get into trouble for many reasons, but they all share a common symptom: the picture being presented to stakeholders does not match reality. Before any recovery plan can be credible, you need to know the true state of the programme — not the RAG status in the last board report.</p>
-          <div style="margin:2.5rem 0 0 0;padding-top:2rem;border-top:1px solid var(--silver-pale);">
-            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#b8960c;border:1px solid rgba(200,180,50,0.4);padding:0.2rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.75rem;">Sneak Preview</div>
-            <p style="font-size:0.95rem;color:var(--text-body);line-height:1.8;font-weight:300;margin:0;">Full article coming soon. Follow <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" style="color:var(--navy);font-weight:500;">Hameed Nazim</a> or <a href="https://www.linkedin.com/company/design-assurance" target="_blank" style="color:var(--navy);font-weight:500;">Design Assurance</a> on LinkedIn to be notified.</p>
+
+          <p>Programmes get into trouble for many reasons, but they all share a common symptom: the picture becomes clearer the closer you are to the delivery. The people at the top see red RAG statuses and missed milestones. The engineers at the bottom know exactly what is wrong and why.</p>
+
+          <h2>What the first 48 hours should actually look like</h2>
+          <p>The first 48 hours should be spent reading everything: the original HLD, the current LLD, the change log (if one exists), the programme risk register, and any previous review or assurance reports. Not to form conclusions — to understand the gap between what was designed and what is being built.</p>
+
+          <p>Programme managers will tell you about milestones. Engineers will tell you about reality. In those first 48 hours, I spend as much time as possible with the engineers. Not in workshops. Not in status meetings. In direct, informal conversations about what is actually happening.</p>
+
+          <h2>The three questions that matter</h2>
+          <p>After 21 years of infrastructure programme delivery and recovery, I have learned that almost every programme failure can be traced to the same three questions not being answered honestly:</p>
+
+          <p>Is the design actually fit for purpose? Not whether it was approved — whether it will work in production, at scale, under the conditions the business actually operates in.</p>
+
+          <p>Does the delivery team have what they need? Not whether the project plan says they should — whether they actually have the skills, the access, the environments and the clarity of requirement to deliver what is expected of them.</p>
+
+          <p>Does anyone have an accurate picture of where things really are? Not the RAG status in the programme report — the actual technical state of the implementation and the real gap between current state and go-live readiness.</p>
+
+          <h2>What recovery actually requires</h2>
+          <p>Programme recovery is not primarily a project management exercise. It is a technical exercise. The root cause of most infrastructure programme failures is a design problem — either the original design was flawed, or the implementation has diverged from the design, or both.</p>
+
+          <p>Identifying and fixing that technical root cause is what makes recovery possible. Reorganising the governance structure, re-baselining the plan and running more frequent status meetings does not fix a design problem. It just makes the failure more visible and better documented.</p>
+
+          <p>What recovery actually requires is an honest assessment of the technical state, a clear understanding of the gap between current state and a viable go-live position, and a realistic plan for closing that gap. Not an optimistic plan. Not a plan that tells the board what they want to hear. A plan that reflects what is actually achievable.</p>
+
+          <h2>The role of independent assessment</h2>
+          <p>One of the reasons programme recovery is difficult is that the people closest to the delivery are often the least well-placed to assess it objectively. They are under pressure, they are invested in the decisions that have already been made, and they may have been telling the programme board that things are better than they are.</p>
+
+          <p>Independent assessment removes that constraint. I have no stake in the decisions that led to the current position. I have no relationship with the vendors whose products are causing problems. I have no interest in any particular outcome other than whether the programme can recover to a viable go-live position.</p>
+
+          <p>That independence is not just useful — it is often the only way to get an honest picture of where a programme actually is. And without an honest picture, recovery is not possible.</p>
+
+          <p>Slow down. Establish the facts. Only then build the plan.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What I consistently find in programme recovery</div>
+            <ul class="findings-list">
+              <li><strong>The root cause is almost always in design, not delivery.</strong> Delivery teams get blamed for programme failures that were baked in at architecture stage. The implementation was fine — what it was implementing was not.</li>
+              <li><strong>The first 48 hours are wasted on escalation rather than assessment.</strong> Senior stakeholders want action plans before anyone has established the facts. Visible activity substitutes for diagnosis.</li>
+              <li><strong>Recovery plans are built around activity, not outcomes.</strong> Lists of workstreams and RAG statuses that tell you what people are doing — but not whether any of it moves the programme toward recovery.</li>
+              <li><strong>The programme team already knows what is wrong.</strong> In almost every recovery engagement, the people closest to the delivery have identified the core problems. They have not been asked — or have not felt safe to say.</li>
+              <li><strong>Scope has drifted without formal change control.</strong> What is being delivered bears little resemblance to what was signed off. The gap is rarely documented, rarely costed and rarely acknowledged.</li>
+            </ul>
           </div>
-        </div>
-        <div class="post-cta">
+    </div>
+    <div class="post-cta">
       <div>
         <div class="post-cta-text">Is your programme off-track?</div>
         <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
       </div>
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Discuss Your Programme</a>
-    </div>>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Design <span>Assurance</span></div>
+        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#engagement">Engagement</a></li>
+          <li><a href="index.html#blog">Insights</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
+          <li><a>UK · US · EU · APAC · Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
+      <div class="footer-certs">
+        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
+        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
+        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  });
+});
+</script>
+</body>
+</html>

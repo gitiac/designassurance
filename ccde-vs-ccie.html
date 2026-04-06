@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read eve">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.designassurance.co.uk/ccde-vs-ccie">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/ccde-vs-ccie">
 <meta property="og:title" content="What CCDE teaches you that CCIE never could | Design Assurance">
+<meta property="og:description" content="CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.">
 <meta property="og:site_name" content="Design Assurance">
 <title>What CCDE teaches you that CCIE never could | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -1367,6 +1369,16 @@
   .cert-badge-link:hover { opacity: 0.75; }
   a.cert-badge { text-decoration: none; color: var(--silver); }
   a.cert-badge:hover { opacity: 0.75; }
+  .preview-headings { list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .preview-headings li { font-size: 0.92rem; color: var(--text-muted); font-weight: 300; padding-left: 1.25rem; position: relative; }
+  .preview-headings li::before { content: "—"; position: absolute; left: 0; color: var(--silver-pale); }
+  .preview-pull-quote { border-left: 3px solid var(--navy); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--off-white); border-radius: 0 4px 4px 0; }
+  .preview-pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.6; font-style: italic; margin: 0; font-weight: 400; }
+  .preview-publishing { background: var(--navy); border-radius: 4px; padding: 1.5rem 2rem; margin: 2.5rem 0 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .preview-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver); margin-bottom: 0.3rem; }
+  .preview-date-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 400; }
+  .notify-btn { background: transparent; border: 1px solid rgba(168,180,192,0.35); color: var(--silver-light); padding: 0.5rem 1.1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: all 0.2s; }
+  .notify-btn:hover { border-color: var(--silver-light); color: var(--white); }
   .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
   .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
   .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
@@ -1405,25 +1417,33 @@
       <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
       <span class="post-cat">Design Practice</span>
       <h1 class="post-title">What CCDE teaches you that CCIE never could</h1>
-      <div class="post-meta">May 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <div class="post-meta">23 Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
     </div>
   </div>
 
   <div class="article-content">
     <div class="post-body">
-          <p>CCIE is one of the most respected technical certifications in the networking industry. It tests depth of knowledge, speed of implementation and the ability to build and troubleshoot complex network configurations under pressure. Achieving it requires genuine technical mastery. I hold it, and I am glad I do.</p>
-          <p>But CCDE teaches something that CCIE cannot — and that distinction matters enormously when the question is not how to build a network, but whether the network being built is the right one.</p>
-
-          <h2>What CCIE tests</h2>
-          <p>CCIE tests whether you can implement. Given a set of requirements, a set of equipment and a time constraint, can you produce a working solution? The lab exam is a genuine test of technical capability. Eight hours. A complex topology. A list of tasks. The network either works or it does not.</p>
-
-          <h2>What CCDE tests</h2>
-          <p>CCDE tests whether you should. Given a set of business requirements, constraints, existing infrastructure and strategic objectives — should you use MPLS or segment routing? Should you centralise or distribute the control plane? Should you redesign the WAN or modernise within the existing topology? What are the trade-offs between the available options, and which trade-offs are acceptable given this specific set of requirements and constraints?</p>
-
-          <div style="margin:2.5rem 0 0 0;padding-top:2rem;border-top:1px solid var(--silver-pale);">
-            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#b8960c;border:1px solid rgba(200,180,50,0.4);padding:0.2rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.75rem;">Sneak Preview</div>
-            <p style="font-size:0.95rem;color:var(--text-body);line-height:1.8;font-weight:300;margin:0;">Full article coming soon. Follow <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" style="color:var(--navy);font-weight:500;">Hameed Nazim</a> or <a href="https://www.linkedin.com/company/design-assurance" target="_blank" style="color:var(--navy);font-weight:500;">Design Assurance</a> on LinkedIn to be notified.</p>
-          </div>
+      <p>CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.</p>
+      <div style="margin:2rem 0 0.5rem 0;">
+        <div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
+        <ul class="preview-headings">
+              <li>What CCIE tests</li>
+              <li>What CCDE tests</li>
+              <li>The gap between implementation knowledge and design expertise</li>
+              <li>Why this matters for independent design assurance</li>
+              <li>What design thinking finds that implementation thinking misses</li>
+        </ul>
+      </div>
+      <div class="preview-pull-quote">
+        <p>An excellent CCIE-certified engineer can implement almost any network architecture you put in front of them. That is not the same as being able to determine which architecture should be in front of them in the first place.</p>
+      </div>
+      <div class="preview-publishing">
+        <div>
+          <div class="preview-date">Publishing</div>
+          <div class="preview-date-value">Thursday 23 Apr 2026</div>
+        </div>
+        <a href="mailto:hello@designassurance.co.uk?subject=Notify me: What CCDE teaches you that CCIE never could" class="notify-btn">✉ Notify me</a>
+      </div>
     </div>
     <div class="post-cta">
       <div>
@@ -1433,7 +1453,6 @@
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Start a Conversation</a>
     </div>
   </div>
-
   <footer>
     <div class="footer-inner">
       <div>
@@ -1469,7 +1488,6 @@
     </div>
   </footer>
 </div>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var menu = document.getElementById('mobileMenu');
