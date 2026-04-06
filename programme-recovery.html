@@ -1332,6 +1332,48 @@
     text-decoration: none;
     opacity: 0.75;
   }
+
+  .findings-box {
+    background: var(--off-white);
+    border-left: 3px solid var(--navy);
+    padding: 2rem 2.5rem;
+    margin: 3rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .findings-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+  }
+  .findings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .findings-list li {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .findings-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .findings-list li strong {
+    color: var(--navy);
+    font-weight: 500;
+  }
 </style>
 <style>
   .article-page {
@@ -1448,6 +1490,17 @@
           <h2>Establish a single version of the truth</h2>
           <p>Programmes in trouble are almost always suffering from information fragmentation — multiple conflicting views of status, progress and risk. One of the most valuable things you can do in the first 48 hours is establish a single place where the actual state of the programme is recorded and updated, and make that the only source of truth for all reporting.</p>
           <p>Recovery starts with honesty about where you are. Everything else follows from that.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What we consistently find in programme recovery</div>
+            <ul class="findings-list">
+              <li><strong>The root cause is almost always in design, not delivery.</strong> Delivery teams get blamed for programme failures that were baked in at architecture stage. The implementation was fine — what it was implementing was not.</li>
+              <li><strong>The first 48 hours are wasted on escalation rather than assessment.</strong> Senior stakeholders want action plans before anyone has established the facts. Visible activity substitutes for diagnosis.</li>
+              <li><strong>Recovery plans are built around activity, not outcomes.</strong> Lists of workstreams and RAG statuses that tell you what people are doing — but not whether any of it moves the programme toward recovery.</li>
+              <li><strong>The programme team already knows what is wrong.</strong> In almost every recovery engagement, the people closest to the delivery have identified the core problems. They have not been asked — or have not felt safe to say.</li>
+              <li><strong>Scope has drifted without formal change control.</strong> What is being delivered bears little resemblance to what was signed off. The gap is rarely documented, rarely costed and rarely acknowledged.</li>
+            </ul>
+          </div>
         </div>
     <div class="post-cta">
       <div>

@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The cost of finding a design flaw before implementation is a fraction of finding it after. The commercial case for independent design assurance.">
+<meta name="description" content="After 21 years of independent network and cloud design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/design-assurance">
+<link rel="canonical" href="https://www.designassurance.co.uk/ten-design-failures">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/design-assurance">
-<meta property="og:title" content="Why independent design assurance saves more than it costs | Design Assurance">
-<meta property="og:description" content="The cost of finding a design flaw before implementation is a fraction of finding it after. The commercial case for independent design assurance.">
+<meta property="og:url" content="https://www.designassurance.co.uk/ten-design-failures">
+<meta property="og:title" content="Ten design failures that appear in almost every infrastructure programme | Design Assurance">
+<meta property="og:description" content="After 21 years of independent network and cloud design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
 <meta property="og:site_name" content="Design Assurance">
-<meta property="og:locale" content="en_GB">
-<title>Why independent design assurance saves more than it costs | Design Assurance</title>
+<title>Ten design failures that appear in almost every infrastructure programme | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -38,6 +38,8 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
     color: var(--text-body);
     background: var(--white);
     overflow-x: hidden;
@@ -119,13 +121,20 @@
   #home {
     background: var(--navy);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     padding-top: 72px;
+    max-width: 100vw;
   }
 
+  .hero-content-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
   .hero-grid {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background-image:
       linear-gradient(rgba(168,180,192,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(168,180,192,0.04) 1px, transparent 1px);
@@ -144,7 +153,7 @@
 
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 1100px;
     margin: 0 auto;
     padding: 5rem 5% 5vh;
@@ -721,7 +730,8 @@
   .contact-icon {
     width: 36px;
     height: 36px;
-    background: var(--navy);
+    background: rgba(168,180,192,0.15);
+    border: 1px solid rgba(168,180,192,0.4);
     border-radius: 2px;
     display: flex;
     align-items: center;
@@ -738,14 +748,14 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--silver);
     margin-bottom: 0.2rem;
   }
 
   .contact-item-value {
     font-size: 0.9rem;
     color: var(--navy);
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
   }
 
@@ -851,6 +861,8 @@
     background: var(--navy);
     padding: 3rem 5%;
     border-top: 1px solid rgba(168,180,192,0.1);
+    position: relative;
+    z-index: 10;
   }
 
   .footer-inner {
@@ -1113,6 +1125,17 @@
     border-radius: 2px;
     margin-bottom: 0.5rem;
   }
+  .sneak-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8960c;
+    border: 1px solid rgba(200,180,50,0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
   .blog-card.coming-soon .blog-card-header {
     background: #2a3a4a;
   }
@@ -1332,112 +1355,26 @@
     text-decoration: none;
     opacity: 0.75;
   }
-
-  .findings-box {
-    background: var(--off-white);
-    border-left: 3px solid var(--navy);
-    padding: 2rem 2.5rem;
-    margin: 3rem 0;
-    border-radius: 0 4px 4px 0;
-  }
-  .findings-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 1.25rem;
-  }
-  .findings-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .findings-list li {
-    font-size: 0.92rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    font-weight: 300;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-  .findings-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--navy);
-    font-weight: 500;
-  }
-  .findings-list li strong {
-    color: var(--navy);
-    font-weight: 500;
-  }
 </style>
 <style>
-  .article-page {
-    padding-top: 72px;
-    background: var(--white);
-    min-height: 100vh;
-  }
-  .article-hero {
-    background: var(--navy);
-    padding: 2.5rem 5% 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .article-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-  .article-hero-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
-  .article-hero .post-cat {
-    color: var(--silver) !important;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .article-hero .post-title {
-    color: var(--white) !important;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    margin-bottom: 0.75rem;
-  }
-  .article-hero .post-meta {
-    color: var(--silver-light) !important;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .article-content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 5%;
-  }
-  .article-hero .post-cat {
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-  .article-hero .post-title {
-    margin-bottom: 1rem;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  }
-  .article-hero .post-meta {
-    margin-bottom: 0;
-  }
-  .article-hero-inner a {
-    margin-bottom: 1rem !important;
-  }
+  .article-page { padding-top: 72px; background: var(--white); min-height: 100vh; }
+  .article-hero { background: var(--navy); padding: 2.5rem 5% 2rem; position: relative; overflow: hidden; }
+  .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .article-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+  .article-hero .post-cat { color: var(--silver) !important; display: block; margin-bottom: 0.5rem; }
+  .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
+  .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
+  .cert-badge-link { text-decoration: none; color: inherit; transition: opacity 0.2s; }
+  .cert-badge-link:hover { opacity: 0.75; }
+  a.cert-badge { text-decoration: none; color: var(--silver); }
+  a.cert-badge:hover { opacity: 0.75; }
+  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
+  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
+  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
+  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li strong { color: var(--navy); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -1449,20 +1386,19 @@
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#engagement">Engagement</a></li>
     <li><a href="index.html#blog">Insights</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Request a Design Review</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="index.html#about">About</a>
   <a href="index.html#services">Services</a>
   <a href="index.html#engagement">Engagement</a>
   <a href="index.html#blog">Insights</a>
-  <a href="index.html#contact">Request a Design Review</a>
+  <a href="index.html#contact">Get in Touch</a>
 </div>
 
 <div class="article-page">
@@ -1470,53 +1406,59 @@
     <div class="article-hero-inner">
       <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
       <span class="post-cat">Design Assurance</span>
-      <h1 class="post-title">Why independent design assurance saves more than it costs</h1>
-      <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
+      <h1 class="post-title">Ten design failures that appear in almost every infrastructure programme</h1>
+      <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
     </div>
   </div>
 
   <div class="article-content">
     <div class="post-body">
-          <p>There is a conversation I have regularly with programme sponsors and IT directors. It goes something like this: they are running a multi-million pound infrastructure transformation, they have a vendor and a delivery team in place, and they are wondering whether they really need to spend additional budget on independent design review.</p>
-          <p>My answer is always the same. The question is not whether you can afford independent design assurance. The question is whether you can afford not to have it.</p>
-          <h2>The cost of a design flaw discovered late</h2>
-          <p>Design errors do not cost the same at every stage of a programme. A flaw identified during HLD review costs almost nothing to fix — it is a document change, a conversation, a revised diagram. The same flaw discovered during implementation requires rework, possible hardware changes, extended timelines and the associated costs of delayed go-live.</p>
-          <p>The same flaw discovered after go-live can be catastrophic — unplanned downtime, emergency remediation, reputational damage and in regulated industries, potential compliance breaches.</p>
-          <blockquote><p>The cost of independent design review is fixed and known upfront. The cost of the problems it prevents is open-ended and frequently enormous.</p></blockquote>
-          <h2>What independent actually means</h2>
-          <p>Most programmes have design review built in. The delivery team reviews their own designs. The vendor reviews the designs they helped specify. The programme manager signs off the document.</p>
-          <p>None of these constitute independent review. Every party involved has a vested interest in the design being approved — the vendor wants the contract to proceed, the delivery team wants to move to implementation, the programme manager wants to hit milestones. Independent review means someone with no stake in the outcome looking at the design with fresh eyes and asking the questions nobody else is incentivised to ask.</p>
-          <p>Is this architecture actually fit for purpose? Will it scale to the projected demand? Is the failover design genuinely resilient or does it create a single point of failure at the system level? Does the LLD actually deliver what the HLD promised? Has security been designed in or bolted on?</p>
-          <h2>The specific scenarios where it pays for itself immediately</h2>
-          <p>After 21 years of reviewing designs across financial services, biopharmaceutical, healthcare, media and automotive programmes, there are specific scenarios where independent design assurance consistently delivers immediate, quantifiable value:</p>
-          <h3>Before committing to a vendor solution</h3>
-          <p>Vendor proposals are built to sell. They present architectures that favour the vendor's product portfolio, use case studies from different environments, and make assumptions about your infrastructure that may not hold. An independent review of a vendor proposal before contract signature has prevented organisations from committing to solutions that were fundamentally unsuitable for their environment.</p>
-          <h3>Before significant capital expenditure</h3>
-          <p>When a programme is about to commit to hardware procurement, data centre build or major cloud spend, independent design validation at that point ensures the expenditure is based on an architecture that will actually work. Discovering a fundamental design flaw after hardware is racked is not a recoverable situation without significant additional cost.</p>
-          <h3>When a programme has changed scope</h3>
-          <p>Infrastructure programmes rarely deliver exactly what was originally scoped. Requirements change, timelines shift, and the original design assumptions no longer hold. Independent review at scope change points identifies where the existing design needs to evolve — before those changes are built on a foundation that cannot support them.</p>
-          <h3>Before go-live</h3>
-          <p>Pre-deployment sign-off by an independent CCDE-certified architect provides stakeholders and boards with genuine assurance that what is about to go live has been scrutinised by someone with no interest in the outcome other than whether it works.</p>
-          <h2>The commercial case in simple terms</h2>
-          <p>A typical independent HLD review engagement costs a fraction of a single day of unplanned downtime in a financial services or healthcare environment. It costs less than one week of remediation work on a failed implementation. It costs less than the delay to a go-live that misses a regulatory deadline.</p>
-          <p>The ROI on independent design assurance is not difficult to calculate. What is difficult is making the case for it before a problem occurs — because the value is in what does not happen.</p>
-          <p>That is precisely why it requires an independent voice to make the case. And why, when programmes go wrong, the first question is always the same: was the design independently reviewed?</p>
+
+          <p>After 21 years of reviewing network, security and cloud architectures across financial services, biopharmaceutical, healthcare, media and automotive programmes — the same failures appear with remarkable consistency. None of them are exotic. All of them are avoidable. All of them would have been caught by independent review before implementation began.</p>
+
+          <h2>1. The design is reviewed only by the team that wrote it</h2>
+          <p>This is the most common and most costly failure. Internal review is not independent review. The same assumptions that shaped the design shape its review. The same vendor relationships that influenced the architecture influence its assessment. A design review conducted by the delivery team is not a review — it is a confirmation.</p>
+
+          <h2>2. Scalability is designed for today, not tomorrow</h2>
+          <p>Most HLDs are sized for current load. Few seriously model the traffic, user growth or data volumes that will arrive 12 to 18 months after go-live. When those loads arrive, the architecture cannot accommodate them without significant rework — rework that is far more expensive than designing for scale from the start.</p>
+
+          <h2>3. Security is added after the design is complete</h2>
+          <p>Security as a layer bolted onto a completed design is not security architecture. Firewall rules, access controls and monitoring added at the end of the design process cannot compensate for an architecture that was not designed with security as a first principle. In regulated environments — financial services, healthcare, biopharmaceutical — this is not just a design problem. It is a compliance problem.</p>
+
+          <h2>4. The LLD does not deliver what the HLD promised</h2>
+          <p>High-Level Designs get approved. Low-Level Designs get written months later, by different people, under different constraints. By the time implementation begins, the LLD has often diverged significantly from the approved HLD. This divergence is rarely documented. It is rarely formally approved. And it is almost never communicated to the business stakeholders who signed off the original design.</p>
+
+          <h2>5. Single points of failure inside resilient-looking architectures</h2>
+          <p>A design can have dual power, dual uplinks, redundant firewalls and still have a single point of failure at the integration or dependency layer. Resilience designed at the component level but not at the system level creates architectures that look robust on a diagram but fail in ways that the diagram does not predict. Finding these failures before go-live is precisely what independent review is for.</p>
+
+          <h2>6. Vendor recommendations reflect the integrator's interests, not the client's</h2>
+          <p>This is not always intentional. But the architecture almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on. Independent vendor-neutral review asks the question the delivery team cannot ask objectively: is this the right solution for this requirement, or the most convenient solution for this integrator?</p>
+
+          <h2>7. Compliance requirements are noted but not designed for</h2>
+          <p>Regulatory obligations appear in the requirements section of the HLD. They are acknowledged, listed and referenced. Then the architecture proceeds to ignore them. The design notes the requirement and moves on, assuming it will be addressed somewhere else. In financial services, healthcare and biopharmaceutical environments, this approach leads directly to audit findings, remediation programmes and — in the worst cases — regulatory action.</p>
+
+          <h2>8. The design has no formal sign-off trail</h2>
+          <p>Sign-off exists on paper. Evidence of genuine scrutiny does not. When something goes wrong after go-live and the question is asked — who reviewed this design, when, and what did they find — the honest answer is often that the review was cursory, the sign-off was procedural, and nobody was actually accountable for the technical quality of what was approved.</p>
+
+          <h2>9. Assumptions are stated as facts</h2>
+          <p>HLDs regularly present sizing, performance and resilience assumptions as design decisions without validation against actual requirements or evidence. "The system will support 10,000 concurrent users" appears as a design statement rather than as an assumption that requires testing. When the assumption turns out to be wrong — as assumptions frequently do — the entire design may need to be revisited.</p>
+
+          <h2>10. Nobody has mapped the design to the business outcomes</h2>
+          <p>Business stakeholders approved a set of outcomes. The technical design delivers something adjacent to those outcomes. The gap between what was promised and what was designed is real, documented neither in the HLD nor the LLD, and surfaces only when the business expects the system to do something the architecture cannot support.</p>
 
           <div class="findings-box">
-            <div class="findings-title">What independent review finds that internal review misses</div>
+            <div class="findings-title">The common thread across all ten failures</div>
             <ul class="findings-list">
-              <li><strong>Designs approved with no record of who reviewed them or when.</strong> Sign-off exists on paper. Evidence of genuine scrutiny does not.</li>
-              <li><strong>Assumptions stated as facts.</strong> HLDs regularly present sizing, performance and resilience assumptions as design decisions, with no validation against actual requirements.</li>
-              <li><strong>Single points of failure inside resilient-looking architectures.</strong> Redundancy at the component level but not the system level. A design can have dual everything and still fail at the integration layer.</li>
-              <li><strong>Compliance requirements noted but not designed for.</strong> Regulatory obligations listed in a requirements section, then not reflected in the architecture. The design notes the requirement and proceeds to ignore it.</li>
-              <li><strong>A gap between what was promised and what was designed.</strong> Business stakeholders approved a set of outcomes. The technical design delivers something adjacent — and nobody has formally mapped one to the other.</li>
+              <li><strong>None of these failures are caused by incompetent engineers.</strong> They are caused by incentive structures, time pressure and the absence of independent scrutiny. Delivery teams have every incentive to get designs approved. They have limited incentive to find reasons why they should not be.</li>
+              <li><strong>All of them are visible to an independent reviewer.</strong> An experienced eye that has no stake in the outcome, no relationship with the vendor and no pressure to hit a milestone will find these issues in a structured review. Every time.</li>
+              <li><strong>All of them are significantly cheaper to fix before implementation than after.</strong> A design change costs a document revision. The same change after go-live costs rework, downtime, remediation and — frequently — programme recovery.</li>
             </ul>
           </div>
-        </div>
+    </div>
     <div class="post-cta">
       <div>
-        <div class="post-cta-text">Want independent design assurance on your programme?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+        <div class="post-cta-text">Want to know if your programme has any of these?</div>
+        <div class="post-cta-sub">Independent design review identifies these issues before they become programme problems. All conversations are confidential.</div>
       </div>
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
     </div>
@@ -1548,9 +1490,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">
-        Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.
-      </div>
+      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
       <div class="footer-certs">
         <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
         <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
@@ -1567,9 +1507,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.classList.toggle('open');
   });
   document.querySelectorAll('.mobile-menu a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      menu.classList.remove('open');
-    });
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
   });
 });
 </script>

@@ -1332,6 +1332,48 @@
     text-decoration: none;
     opacity: 0.75;
   }
+
+  .findings-box {
+    background: var(--off-white);
+    border-left: 3px solid var(--navy);
+    padding: 2rem 2.5rem;
+    margin: 3rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .findings-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+  }
+  .findings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .findings-list li {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .findings-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .findings-list li strong {
+    color: var(--navy);
+    font-weight: 500;
+  }
 </style>
 <style>
   .article-page {
@@ -1455,6 +1497,17 @@
           <h2>What good looks like</h2>
           <p>A well-written HLD makes reviewers' jobs boring. Every architectural choice is explained. Trade-offs are acknowledged. Scalability and resilience are demonstrated, not claimed. Security is integrated, not appended. And there is a clear path from HLD to LLD to implementation.</p>
           <p>If your HLD makes for interesting reading — if reviewers are discovering things — it is not ready for approval.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What we consistently find in HLD review</div>
+            <ul class="findings-list">
+              <li><strong>The design has only been reviewed by the team that wrote it.</strong> Internal review is not independent review. The same assumptions, the same blind spots, the same vendor relationships.</li>
+              <li><strong>Scalability is based on current load, not projected growth.</strong> Most HLDs are designed for today. Few account for the traffic, user or data growth that will arrive within 18 months of go-live.</li>
+              <li><strong>Security is a layer, not a design principle.</strong> Firewall rules and access control added at the end of the design process rather than built into the architecture from the start.</li>
+              <li><strong>Vendor recommendations favour the integrator's margin.</strong> The design almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on.</li>
+              <li><strong>The LLD diverges significantly from the approved HLD.</strong> By the time implementation begins, the HLD is often a historical document — evolved without a formal record of what changed and why.</li>
+            </ul>
+          </div>
         </div>
     <div class="post-cta">
       <div>
