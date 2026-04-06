@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cloud architecture is frequently treated as if the network is an afterthought. After reviewing cloud programmes across multiple regulated industries, this assumption is one of the most consistent sources of programme failure.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.designassurance.co.uk/cloud-architecture">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/cloud-architecture">
 <meta property="og:title" content="Why cloud network design is still network design | Design Assurance">
-<meta property="og:description" content="Cloud architecture is frequently treated as if the network is an afterthought. After reviewing cloud programmes across multiple regulated industries, this assumption is one of the most consistent sources of programme failure.">
 <meta property="og:site_name" content="Design Assurance">
 <title>Why cloud network design is still network design | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -1407,53 +1405,28 @@
       <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
       <span class="post-cat">Cloud Architecture</span>
       <h1 class="post-title">Why cloud network design is still network design</h1>
-      <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <div class="post-meta">May 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
     </div>
   </div>
 
   <div class="article-content">
     <div class="post-body">
-
           <p>Cloud architecture is frequently discussed as if the network is an afterthought — a commodity layer that the hyperscaler handles and the architect does not need to think about too carefully. After reviewing cloud migration and transformation programmes across financial services, biopharmaceutical, media and automotive environments, this assumption is one of the most consistent sources of programme failure.</p>
           <p>The network is not a commodity. In complex enterprise environments, it is the architecture. Everything else depends on it working correctly, at scale, securely and with the latency characteristics the application requires.</p>
 
           <h2>What cloud network design actually involves</h2>
-          <p>A cloud network design for an enterprise programme involves decisions that cannot be reversed cheaply once made. VPC and VNet architecture — how the network is segmented, which segments can communicate and which cannot, how those boundaries are enforced — shapes every security, compliance and connectivity decision that follows. Getting it wrong at design stage means rebuilding it under load, with live workloads depending on it.</p>
+          <p>A cloud network design for an enterprise programme involves decisions that cannot be reversed cheaply once made. VPC and VNet architecture — how the network is segmented, which segments can communicate and which cannot, how those boundaries are enforced — shapes every security, compliance and connectivity decision that follows.</p>
           <p>Connectivity architecture — whether to use ExpressRoute, Direct Connect, Transit Gateway, VPN or a combination — determines the latency, bandwidth, resilience and cost profile of everything that connects to the cloud environment. These decisions interact with on-premises infrastructure, with security architecture, with regulatory requirements around data sovereignty, and with the application performance profiles that the business has promised its users.</p>
-          <p>In multi-cloud and hybrid environments, the network design problem is compounded. Traffic flows cross provider boundaries. Security policies must be consistent across environments that use different native tools. Monitoring must be coherent across infrastructure that reports in different formats. These are not problems the hyperscaler solves for you.</p>
 
-          <h2>The AWS Landing Zone — what the network design actually determines</h2>
-          <p>A cloud landing zone is often presented as a governance and account structure exercise. In practice, the most consequential decisions in a landing zone design are network decisions. The account structure determines who can access what. The network design determines whether what they access is reachable, secure and performing as required.</p>
-          <p>Transit Gateway or VPC peering — the choice between a hub-and-spoke model and direct peering — has implications for cost, for routing complexity, for security policy enforcement and for operational overhead that compound significantly as the environment grows. A landing zone designed for 20 accounts behaves very differently at 200 accounts. An architecture that does not account for growth at design stage will require rework at exactly the moment when rework is most disruptive.</p>
-          <p>Network segmentation in a landing zone determines which workloads can communicate with which other workloads. In regulated industries — financial services, healthcare, biopharmaceutical — this is not a technical preference. It is a compliance requirement. The network design either meets that requirement or it does not. There is no middle ground.</p>
-
-          <h2>Latency — the number that cloud architecture gets wrong most often</h2>
-          <p>Cloud architectures are frequently designed with availability and cost in mind. Latency is often treated as something that can be addressed later, with caching, CDN layers or application optimisation. In practice, latency is determined at the network design stage and is very difficult to reduce after the architecture is in production.</p>
-          <p>Multi-region architectures, cross-region data replication, synchronous versus asynchronous communication patterns between services — these choices are made during design and their latency implications are often not modelled against actual application requirements. Discovering that the architecture introduces 40ms of latency into a transaction that requires sub-10ms end-to-end is not a problem that application optimisation can solve. It is a design problem that requires architectural change.</p>
-
-          <h2>Security architecture in cloud environments</h2>
-          <p>Cloud network security is not the same as on-premises network security, and designs that treat it as equivalent consistently produce architectures with security gaps. Security groups and network ACLs in AWS, Network Security Groups in Azure — these are not firewalls in the traditional sense. They behave differently, they are managed differently, and they require a different design approach.</p>
-          <p>East-west traffic — traffic between workloads within the cloud environment — is frequently under-designed in enterprise cloud architectures. On-premises environments have a defined network perimeter. Cloud environments do not. Lateral movement within a cloud environment is significantly easier than within a well-segmented on-premises network, and the network design must account for this from the start.</p>
-
-          <h2>What independent cloud network review looks for</h2>
-          <p>An independent review of a cloud network architecture asks questions that the delivery team — under pressure to get the design approved and implementation started — does not always ask. Does the segmentation model meet the actual compliance requirements, not just the stated ones? Has the latency been modelled against real application performance profiles? Is the security architecture consistent across all accounts and regions, or does it vary in ways that create exploitable gaps? Does the design scale to projected growth, and what does it look like at 2x and 5x current load?</p>
-          <p>These are not exotic questions. They are the standard questions of rigorous network architecture. The difference between good cloud network design and poor cloud network design is not technical knowledge — it is independent scrutiny applied before implementation commits the organisation to a set of architectural decisions that are expensive to reverse.</p>
-
-          <div class="findings-box">
-            <div class="findings-title">What we consistently find in cloud network design review</div>
-            <ul class="findings-list">
-              <li><strong>Latency has not been modelled against application requirements.</strong> The network design introduces latency that the application cannot accommodate, discovered during testing or — worse — after go-live.</li>
-              <li><strong>East-west traffic is uncontrolled.</strong> Perimeter security is in place. Lateral movement between workloads within the environment is largely unconstrained.</li>
-              <li><strong>The landing zone does not scale.</strong> A hub-and-spoke architecture designed for a pilot environment that does not account for the routing and cost implications of growth beyond 30-40 accounts.</li>
-              <li><strong>Data sovereignty requirements are acknowledged but not enforced.</strong> The design states that data will remain within a specific region. The architecture does not technically enforce this.</li>
-              <li><strong>Security policy is inconsistent across accounts.</strong> Core accounts are well governed. Workload accounts have been provisioned with varying standards over time, creating an inconsistent security posture with no remediation plan.</li>
-            </ul>
+          <div style="margin:2.5rem 0 0 0;padding-top:2rem;border-top:1px solid var(--silver-pale);">
+            <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#b8960c;border:1px solid rgba(200,180,50,0.4);padding:0.2rem 0.6rem;border-radius:2px;display:inline-block;margin-bottom:0.75rem;">Sneak Preview</div>
+            <p style="font-size:0.95rem;color:var(--text-body);line-height:1.8;font-weight:300;margin:0;">Full article coming soon. Follow <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" style="color:var(--navy);font-weight:500;">Hameed Nazim</a> or <a href="https://www.linkedin.com/company/design-assurance" target="_blank" style="color:var(--navy);font-weight:500;">Design Assurance</a> on LinkedIn to be notified.</p>
           </div>
     </div>
     <div class="post-cta">
       <div>
         <div class="post-cta-text">Want independent review of your cloud network architecture?</div>
-        <div class="post-cta-sub">All conversations are confidential. No obligation.</div>
+        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
       </div>
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Cloud Review</a>
     </div>
