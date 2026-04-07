@@ -902,9 +902,12 @@
 
   .footer-links {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+  }
+  .footer-links-contact {
+    grid-template-columns: 1fr;
   }
 
   .footer-links a {
@@ -1489,13 +1492,4 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var menu = document.getElementById('mobileMenu');
-  document.querySelector('.hamburger').addEventListener('click', function() {
-    menu.classList.toggle('open');
-  });
-  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
-    a.addEventListener('click', function() { menu.classList.remove('open'); });
-  });
-});
-</script>
-</body>
-</html>
+  document.querySelector('.hamburger').addE
