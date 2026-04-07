@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="After 21 years of independent design review, the same ten failures appear with remarkable consistency across every sector, every vendor and every programme size">
+<meta name="description" content="After 21 years of independent network and cloud design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.designassurance.co.uk/ten-design-failures">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/ten-design-failures">
 <meta property="og:title" content="Ten design failures that appear in almost every infrastructure programme | Design Assurance">
-<meta property="og:description" content="After 21 years of independent design review, the same ten failures appear with remarkable consistency across every sector, every vendor and every programme size. None of them are exotic. All of them a">
+<meta property="og:description" content="After 21 years of independent network and cloud design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.">
 <meta property="og:site_name" content="Design Assurance">
 <title>Ten design failures that appear in almost every infrastructure programme | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -1369,17 +1369,12 @@
   .cert-badge-link:hover { opacity: 0.75; }
   a.cert-badge { text-decoration: none; color: var(--silver); }
   a.cert-badge:hover { opacity: 0.75; }
-  .preview-headings { list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
-  .preview-headings li { font-size: 0.92rem; color: var(--text-muted); font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .preview-headings li::before { content: "—"; position: absolute; left: 0; color: var(--silver-pale); }
-  .preview-pull-quote { border-left: 3px solid var(--navy); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--off-white); border-radius: 0 4px 4px 0; }
-  .preview-pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.6; font-style: italic; margin: 0; font-weight: 400; }
-  .preview-publishing { background: var(--navy); border-radius: 4px; padding: 1.5rem 2rem; margin: 2.5rem 0 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .preview-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver); margin-bottom: 0.3rem; }
-  .preview-date-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 400; }
-  .preview-notify { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-  .notify-btn { background: transparent; border: 1px solid rgba(168,180,192,0.35); color: var(--silver-light); padding: 0.5rem 1.1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: all 0.2s; }
-  .notify-btn:hover { border-color: var(--silver-light); color: var(--white); }
+  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
+  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
+  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
+  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li strong { color: var(--navy); font-weight: 500; }
 </style>
 </head>
 <body>
@@ -1418,43 +1413,52 @@
 
   <div class="article-content">
     <div class="post-body">
-      <p>After 21 years of independent design review, the same ten failures appear with remarkable consistency across every sector, every vendor and every programme size. None of them are exotic. All of them are avoidable.</p>
 
-      <div style="margin:2rem 0 0.5rem 0;">
-        <div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-        <ul class="preview-headings">
-              <li>1. The design is reviewed only by the team that wrote it</li>
-              <li>2. Scalability is designed for today, not tomorrow</li>
-              <li>3. Security is added after the design is complete</li>
-              <li>4. The LLD does not deliver what the HLD promised</li>
-              <li>5. Single points of failure inside resilient-looking architectures</li>
-              <li>6. Vendor recommendations reflect the integrator's interests, not the client's</li>
-              <li>7. Compliance requirements are noted but not designed for</li>
-              <li>8. The design has no formal sign-off trail</li>
-              <li>9. Assumptions are stated as facts</li>
-              <li>10. Nobody has mapped the design to the business outcomes</li>
-        </ul>
-      </div>
+          <p>After 21 years of reviewing network, security and cloud architectures across financial services, biopharmaceutical, healthcare, media and automotive programmes — the same failures appear with remarkable consistency. None of them are exotic. All of them are avoidable. All of them would have been caught by independent review before implementation began.</p>
 
-      <div class="preview-pull-quote">
-        <p>A design review conducted by the delivery team is not a review — it is a confirmation.</p>
-      </div>
+          <h2>1. The design is reviewed only by the team that wrote it</h2>
+          <p>This is the most common and most costly failure. Internal review is not independent review. The same assumptions that shaped the design shape its review. The same vendor relationships that influenced the architecture influence its assessment. A design review conducted by the delivery team is not a review — it is a confirmation.</p>
 
-      <div class="preview-publishing">
-        <div>
-          <div class="preview-date">Publishing</div>
-          <div class="preview-date-value">Thursday 10 April 2026</div>
-        </div>
-        <div class="preview-notify">
-          <a href="mailto:hello@designassurance.co.uk?subject=Notify me: Ten design failures that appear in almost every infrastructure programme" class="notify-btn">✉ Notify me</a>
-        </div>
-      </div>
+          <h2>2. Scalability is designed for today, not tomorrow</h2>
+          <p>Most HLDs are sized for current load. Few seriously model the traffic, user growth or data volumes that will arrive 12 to 18 months after go-live. When those loads arrive, the architecture cannot accommodate them without significant rework — rework that is far more expensive than designing for scale from the start.</p>
+
+          <h2>3. Security is added after the design is complete</h2>
+          <p>Security as a layer bolted onto a completed design is not security architecture. Firewall rules, access controls and monitoring added at the end of the design process cannot compensate for an architecture that was not designed with security as a first principle. In regulated environments — financial services, healthcare, biopharmaceutical — this is not just a design problem. It is a compliance problem.</p>
+
+          <h2>4. The LLD does not deliver what the HLD promised</h2>
+          <p>High-Level Designs get approved. Low-Level Designs get written months later, by different people, under different constraints. By the time implementation begins, the LLD has often diverged significantly from the approved HLD. This divergence is rarely documented. It is rarely formally approved. And it is almost never communicated to the business stakeholders who signed off the original design.</p>
+
+          <h2>5. Single points of failure inside resilient-looking architectures</h2>
+          <p>A design can have dual power, dual uplinks, redundant firewalls and still have a single point of failure at the integration or dependency layer. Resilience designed at the component level but not at the system level creates architectures that look robust on a diagram but fail in ways that the diagram does not predict. Finding these failures before go-live is precisely what independent review is for.</p>
+
+          <h2>6. Vendor recommendations reflect the integrator's interests, not the client's</h2>
+          <p>This is not always intentional. But the architecture almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on. Independent vendor-neutral review asks the question the delivery team cannot ask objectively: is this the right solution for this requirement, or the most convenient solution for this integrator?</p>
+
+          <h2>7. Compliance requirements are noted but not designed for</h2>
+          <p>Regulatory obligations appear in the requirements section of the HLD. They are acknowledged, listed and referenced. Then the architecture proceeds to ignore them. The design notes the requirement and moves on, assuming it will be addressed somewhere else. In financial services, healthcare and biopharmaceutical environments, this approach leads directly to audit findings, remediation programmes and — in the worst cases — regulatory action.</p>
+
+          <h2>8. The design has no formal sign-off trail</h2>
+          <p>Sign-off exists on paper. Evidence of genuine scrutiny does not. When something goes wrong after go-live and the question is asked — who reviewed this design, when, and what did they find — the honest answer is often that the review was cursory, the sign-off was procedural, and nobody was actually accountable for the technical quality of what was approved.</p>
+
+          <h2>9. Assumptions are stated as facts</h2>
+          <p>HLDs regularly present sizing, performance and resilience assumptions as design decisions without validation against actual requirements or evidence. "The system will support 10,000 concurrent users" appears as a design statement rather than as an assumption that requires testing. When the assumption turns out to be wrong — as assumptions frequently do — the entire design may need to be revisited.</p>
+
+          <h2>10. Nobody has mapped the design to the business outcomes</h2>
+          <p>Business stakeholders approved a set of outcomes. The technical design delivers something adjacent to those outcomes. The gap between what was promised and what was designed is real, documented neither in the HLD nor the LLD, and surfaces only when the business expects the system to do something the architecture cannot support.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">The common thread across all ten failures</div>
+            <ul class="findings-list">
+              <li><strong>None of these failures are caused by incompetent engineers.</strong> They are caused by incentive structures, time pressure and the absence of independent scrutiny. Delivery teams have every incentive to get designs approved. They have limited incentive to find reasons why they should not be.</li>
+              <li><strong>All of them are visible to an independent reviewer.</strong> An experienced eye that has no stake in the outcome, no relationship with the vendor and no pressure to hit a milestone will find these issues in a structured review. Every time.</li>
+              <li><strong>All of them are significantly cheaper to fix before implementation than after.</strong> A design change costs a document revision. The same change after go-live costs rework, downtime, remediation and — frequently — programme recovery.</li>
+            </ul>
+          </div>
     </div>
-
     <div class="post-cta">
       <div>
         <div class="post-cta-text">Want to know if your programme has any of these?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+        <div class="post-cta-sub">Independent design review identifies these issues before they become programme problems. All conversations are confidential.</div>
       </div>
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
     </div>
