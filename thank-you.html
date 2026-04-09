@@ -3,22 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Most programme failures trace back to a network or security design problem, not a project management one. A CCDE and CCIE perspective on technical programme recovery.">
-<meta name="author" content="Hameed Nazim, Design Assurance">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/programme-recovery">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/programme-recovery">
-<meta property="og:title" content="Programme recovery — what the first 48 hours actually looks like | Design Assurance">
-<meta property="og:description" content="Most programme failures trace back to a network or security design problem. A CCDE and CCIE perspective on technical programme recovery.">
-<meta property="og:site_name" content="Design Assurance">
-<title>Programme recovery — what the first 48 hours actually looks like | Design Assurance</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Message Received | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/favicon-48.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1361,154 +1350,97 @@
   }
 </style>
 <style>
-  .article-page { padding-top: 72px; background: var(--white); min-height: 100vh; }
-  .article-hero { background: var(--navy); padding: 2.5rem 5% 2rem; position: relative; overflow: hidden; }
-  .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-  .article-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
-  .article-hero .post-cat { color: var(--silver) !important; display: block; margin-bottom: 0.5rem; }
-  .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
-  .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-  .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
-  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
-  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
-  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
-  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
-  .findings-list li strong { color: var(--navy); font-weight: 500; }
-  .footer-links { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
-  .footer-links-contact { grid-template-columns: 1fr; }
+  .thankyou-page {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5%;
+    text-align: center;
+  }
+  .thankyou-inner {
+    max-width: 560px;
+  }
+  .thankyou-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(168,180,192,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 1.4rem;
+    color: var(--silver-light);
+  }
+  .thankyou-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .thankyou-body {
+    font-size: 0.97rem;
+    color: var(--silver-light);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+  .thankyou-meta {
+    font-size: 0.78rem;
+    color: var(--silver);
+    letter-spacing: 0.06em;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(168,180,192,0.15);
+    border-radius: 4px;
+  }
+  .thankyou-btn {
+    background: var(--silver-light);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .thankyou-btn:hover {
+    background: var(--white);
+  }
 </style>
 </head>
 <body>
 <nav>
-  <a class="nav-logo" href="index.html">Design <span>Assurance</span></a>
+  <a class="nav-logo" href="/">Design <span>Assurance</span></a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#engagement">Engagement</a></li>
-    <li><a href="index.html#blog">Insights</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#engagement">Engagement</a></li>
+    <li><a href="/#blog">Insights</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#services">Services</a>
-  <a href="index.html#engagement">Engagement</a>
-  <a href="index.html#blog">Insights</a>
-  <a href="index.html#contact">Get in Touch</a>
-</div>
-<div class="article-page">
-  <div class="article-hero">
-    <div class="article-hero-inner">
-      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
-      <span class="post-cat">Programme Recovery</span>
-      <h1 class="post-title">Programme recovery — what the first 48 hours actually looks like</h1>
-      <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
-    </div>
+
+<div class="thankyou-page">
+  <div class="thankyou-inner">
+    <div class="thankyou-icon">✓</div>
+    <h1 class="thankyou-title">Message received</h1>
+    <p class="thankyou-body">Thank you for getting in touch. I will respond within one business day.</p>
+    <div class="thankyou-meta">All conversations are confidential &nbsp;·&nbsp; No obligation to proceed</div>
+    <a href="/" class="thankyou-btn">Back to Design Assurance</a>
   </div>
-  <div class="article-content">
-    <div class="post-body">
-          <p>When a programme is declared off-track, the instinct is to escalate, reorganise and replan. In my experience — as a CCDE and CCIE certified consultant who has spent 21 years working at the intersection of engineering and programme delivery — the first 48 hours should be spent doing something different entirely. Reading the designs.</p>
-
-          <p>Most programme failures are not project management failures. They are network and security design failures. The routing architecture does not support the traffic model. The firewall policy contradicts the segmentation design. The LLD has diverged from the HLD and nobody has formally documented what changed or why. These are technical problems, and they require a technical diagnosis before any recovery plan can be meaningful.</p>
-
-          <h2>What the first 48 hours should actually look like</h2>
-          <p>Before any workshop, stakeholder meeting or re-baseline conversation, I read everything: the original HLD, the current LLD, the change log if one exists, the programme risk register, and any previous review or assurance reports. Not to form conclusions — to understand the gap between what was designed and what is being built.</p>
-
-          <p>Then I talk to the engineers. Not in workshops. Not in status meetings. In direct, informal conversations about what is actually happening at the network and system level. Engineers know exactly what is wrong. They have usually known for some time. They have not always felt safe to say so — or nobody with the right technical background has asked the right questions.</p>
-
-          <h2>The technical questions that matter</h2>
-          <p>After 21 years of network and security programme delivery and recovery, I have found that almost every failure traces back to the same technical questions not being answered honestly before implementation began:</p>
-
-          <p><strong>Is the network design actually fit for purpose?</strong> Not whether it was approved — whether the routing, switching, segmentation and security architecture will support the traffic patterns, failover requirements and compliance obligations the business actually operates under.</p>
-
-          <p><strong>Does the LLD deliver what the HLD promised?</strong> In a significant proportion of troubled programmes, the Low-Level Design has drifted materially from the approved High-Level Design. The drift is rarely documented. The technical implications are rarely understood by anyone outside the engineering team.</p>
-
-          <p><strong>Is the implementation technically achievable with the current design?</strong> Some designs look credible on paper but cannot be implemented as specified — because of hardware constraints, vendor limitations, environmental dependencies, or timing conflicts that only become visible when you read the LLD alongside the implementation plan.</p>
-
-          <h2>The bridge between engineering and the boardroom</h2>
-          <p>One of the reasons programme recovery is difficult is that the people with the technical picture — the engineers — are rarely the people presenting to the board. And the people presenting to the board rarely have the technical depth to know whether what they are presenting is accurate.</p>
-
-          <p>My role in recovery is to close that gap. I can read a Cisco routing configuration and identify a design flaw. I can also stand in front of a CTO or IT Director and explain, in plain language, what that flaw means for the programme — what the risk is, what the remediation requires, and what a realistic recovery timeline looks like.</p>
-
-          <p>That combination — CCDE and CCIE certified technical depth, with the communication skills to translate it clearly for non-technical stakeholders — is what makes recovery possible when a programme has lost trust in its own reporting.</p>
-
-          <h2>What recovery actually requires</h2>
-          <p>Technical recovery is not a project management exercise. Re-baselining the plan, reorganising the governance structure and running more frequent RAG status meetings does not fix a routing design problem. It documents the failure more carefully.</p>
-
-          <p>What recovery requires is an honest technical assessment, a clear identification of the root cause at the design level, and a realistic remediation plan that the engineering team can actually implement. Not an optimistic plan. Not a plan built to give the board what they want to hear. A plan grounded in what the network and security architecture can actually support.</p>
-
-          <p>Slow down. Read the designs. Talk to the engineers. Only then build the plan.</p>
-
-          <div class="findings-box">
-            <div class="findings-title">What I consistently find in programme recovery</div>
-            <ul class="findings-list">
-              <li><strong>The root cause is almost always in the network or security design, not the delivery.</strong> Delivery teams get blamed for failures that were baked in at architecture stage. The implementation was executed correctly — what it was implementing was not fit for purpose.</li>
-              <li><strong>The LLD has diverged from the HLD without formal change control.</strong> What is being built bears little resemblance to what was approved. The gap is undocumented, uncosted and unacknowledged.</li>
-              <li><strong>The engineers already know what is wrong.</strong> In almost every recovery engagement, the people closest to the implementation have identified the core technical problems. They have not been asked by someone with the right credentials — or have not felt it was safe to say.</li>
-              <li><strong>Nobody has read both the HLD and the LLD end to end.</strong> Particularly not someone with the technical depth to identify the discrepancies between them and understand what those discrepancies mean in production.</li>
-              <li><strong>The board is working from a picture that does not reflect technical reality.</strong> RAG statuses and milestone reports describe the programme management view of the programme — not the engineering view. Closing that gap is where recovery begins.</li>
-            </ul>
-          </div>
-    </div>
-    <div class="post-cta">
-      <div>
-        <div class="post-cta-text">Is your programme off-track?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
-      </div>
-      <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Discuss Your Programme</a>
-    </div>
-  </div>
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Design <span>Assurance</span></div>
-        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigation</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#engagement">Engagement</a></li>
-          <li><a href="index.html#blog">Insights</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links footer-links-contact">
-          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var menu = document.getElementById('mobileMenu');
-  document.querySelector('.hamburger').addEventListener('click', function() {
-    menu.classList.toggle('open');
-  });
-  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
-    a.addEventListener('click', function() { menu.classList.remove('open'); });
-  });
-});
-</script>
+
 </body>
 </html>

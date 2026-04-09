@@ -57,4 +57,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.designassurance.co.uk/thank-you</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
 </urlset>
