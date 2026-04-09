@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cloud architecture is regularly treated as if the network layer designs itself. After reviewing programmes across financial services, biopharmaceutical and heal">
+<meta name="description" content="Cloud architecture is treated as if the network layer designs itself. After reviewing cloud programmes across regulated industries, this is one of the most consistent sources of post-migration failure. A CCDE perspective on cloud network design.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.designassurance.co.uk/cloud-architecture">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.designassurance.co.uk/cloud-architecture">
 <meta property="og:title" content="Why cloud network design is still network design | Design Assurance">
-<meta property="og:description" content="Cloud architecture is regularly treated as if the network layer designs itself. After reviewing programmes across financial services, biopharmaceutical and healthcare, this assumption is one of the mo">
+<meta property="og:description" content="Cloud architecture is treated as if the network layer designs itself. A CCDE perspective on what cloud network design actually requires.">
 <meta property="og:site_name" content="Design Assurance">
 <title>Why cloud network design is still network design | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -19,7 +19,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -907,12 +906,9 @@
 
   .footer-links {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 1.5rem;
-  }
-  .footer-links-contact {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .footer-links a {
@@ -1373,26 +1369,15 @@
   .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
   .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
   .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
-  .cert-badge-link { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-  .cert-badge-link:hover { opacity: 0.75; }
-  a.cert-badge { text-decoration: none; color: var(--silver); }
-  a.cert-badge:hover { opacity: 0.75; }
-  .preview-headings { list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
-  .preview-headings li { font-size: 0.92rem; color: var(--text-muted); font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .preview-headings li::before { content: "—"; position: absolute; left: 0; color: var(--silver-pale); }
-  .preview-pull-quote { border-left: 3px solid var(--navy); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--off-white); border-radius: 0 4px 4px 0; }
-  .preview-pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.6; font-style: italic; margin: 0; font-weight: 400; }
-  .preview-publishing { background: var(--navy); border-radius: 4px; padding: 1.5rem 2rem; margin: 2.5rem 0 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .preview-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver); margin-bottom: 0.3rem; }
-  .preview-date-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 400; }
-  .notify-btn { background: transparent; border: 1px solid rgba(168,180,192,0.35); color: var(--silver-light); padding: 0.5rem 1.1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: all 0.2s; }
-  .notify-btn:hover { border-color: var(--silver-light); color: var(--white); }
   .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
   .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
   .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
   .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
   .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
   .findings-list li strong { color: var(--navy); font-weight: 500; }
+  .footer-links { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+  .footer-links-contact { grid-template-columns: 1fr; }
+  a.cert-badge { text-decoration: none; color: var(--silver); }
 </style>
 </head>
 <body>
@@ -1418,40 +1403,62 @@
   <a href="index.html#blog">Insights</a>
   <a href="index.html#contact">Get in Touch</a>
 </div>
-
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
       <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
       <span class="post-cat">Cloud Architecture</span>
       <h1 class="post-title">Why cloud network design is still network design</h1>
-      <div class="post-meta">09 Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <div class="post-meta">9 Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
     </div>
   </div>
-
   <div class="article-content">
     <div class="post-body">
-      <p>Cloud architecture is regularly treated as if the network layer designs itself. After reviewing programmes across financial services, biopharmaceutical and healthcare, this assumption is one of the most consistent sources of post-migration failure.</p>
-      <div style="margin:2rem 0 0.5rem 0;">
-        <div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-        <ul class="preview-headings">
-              <li>What cloud network design actually involves</li>
-              <li>The AWS Landing Zone — what the network design actually determines</li>
-              <li>Latency and MTU — the two numbers cloud architecture gets wrong most often</li>
-              <li>Security architecture in cloud environments</li>
-              <li>What independent cloud network review looks for</li>
-        </ul>
-      </div>
-      <div class="preview-pull-quote">
-        <p>The network is not a commodity. In complex enterprise environments, it is the architecture. Everything else depends on it.</p>
-      </div>
-      <div class="preview-publishing">
-        <div>
-          <div class="preview-date">Publishing</div>
-          <div class="preview-date-value">Thursday 09 Apr 2026</div>
-        </div>
-        <a href="mailto:hello@designassurance.co.uk" class="notify-btn">✉ Notify me</a>
-      </div>
+          <p>Cloud architecture is regularly discussed as if the network layer designs itself — a commodity handled by the hyperscaler that the architect does not need to think about too carefully. After reviewing cloud migration and transformation programmes across financial services, biopharmaceutical, healthcare and automotive environments, I can say with confidence that this assumption is one of the most consistent sources of post-migration failure.</p>
+
+          <p>The network is not a commodity. In complex enterprise environments, it is the architecture. Everything else — application performance, security posture, compliance, resilience — depends on the network design being correct. And getting it correct in a cloud environment requires the same depth of thinking that enterprise network design has always required.</p>
+
+          <h2>What cloud network design actually involves</h2>
+          <p>A cloud network design for an enterprise programme involves decisions that cannot be reversed cheaply once made. VPC and VNet architecture — how the network is segmented, which segments can communicate and which cannot, how those boundaries are enforced — shapes every security, compliance and connectivity decision that follows. Getting this wrong at the start means rebuilding it later, under pressure, with production systems in place.</p>
+
+          <p>Connectivity architecture — whether to use ExpressRoute, Direct Connect, Transit Gateway, VPN or a combination — determines the latency, bandwidth, resilience and cost profile of everything that connects to the cloud environment. These decisions interact with on-premises infrastructure, with security architecture, with regulatory requirements around data sovereignty, and with the application performance profiles that the business has promised its users.</p>
+
+          <h2>Latency and MTU — the two numbers cloud architecture gets wrong most often</h2>
+          <p>Latency is the number most cloud network designs either ignore or underestimate. On-premises applications are often designed with the assumption of sub-millisecond network latency within a data centre. When those applications move to cloud — or when they need to communicate between cloud and on-premises environments — the latency profile changes significantly. A design that does not model the expected latency under real traffic conditions, and validate that the application can tolerate it, is not a complete design.</p>
+
+          <p>MTU is equally critical and consistently overlooked. Maximum Transmission Unit mismatches between on-premises and cloud environments, or between different cloud services and connectivity paths, cause fragmentation, retransmission and degraded throughput that is notoriously difficult to diagnose once in production. ExpressRoute and VPN tunnels, overlay networks and encapsulation protocols all introduce MTU constraints that must be designed for explicitly. A network that works perfectly in testing — where traffic volumes are low and the impact of fragmentation is masked — can degrade significantly under production load when MTU issues surface at scale.</p>
+
+          <p>Both latency and MTU need to be modelled at design stage, validated against application requirements, and documented in the LLD with specific configuration values — not left as implementation details to be resolved later.</p>
+
+          <h2>Security architecture in cloud environments</h2>
+          <p>Cloud security architecture is not a firewall rule set applied at the perimeter. In a well-designed cloud network, security is enforced at multiple layers — at the VPC or VNet boundary, at the subnet level, at the endpoint level, and at the application layer — with each layer designed to be independently defensible.</p>
+
+          <p>The mistake I see most frequently is treating cloud security as equivalent to on-premises perimeter security, simply moved to a virtual appliance. The result is a flat, over-permissive network that passes a checkbox review but would not survive a lateral movement attack. In regulated environments — financial services, healthcare, biopharmaceutical — this is not just a design problem. It is a compliance problem that surfaces at audit.</p>
+
+          <p>Security groups, network access control lists, private endpoints, service endpoints and private DNS resolution all need to be designed together, not configured independently. The interactions between them are where the gaps appear.</p>
+
+          <h2>The AWS Landing Zone — what the network design actually determines</h2>
+          <p>AWS Landing Zone and Azure Landing Zone frameworks provide an opinionated starting point for cloud network architecture. They are not a substitute for network design. A Landing Zone tells you how to organise your accounts and management hierarchy. It does not tell you how to design your VPC CIDR ranges, your Transit Gateway routing tables, your Direct Connect or ExpressRoute redundancy model, or your hybrid DNS architecture.</p>
+
+          <p>I have reviewed programmes where a Landing Zone was deployed and the team considered the network design done. The Landing Zone was correctly deployed. The network design — the decisions that determine whether the environment will actually work for the organisation's specific applications, traffic patterns, security requirements and compliance obligations — had not been done at all.</p>
+
+          <h2>What independent cloud network review looks for</h2>
+          <p>When I review a cloud network design, I am looking for the decisions that will determine whether the environment works in production — not just in a proof of concept or a testing environment. The questions I ask are the same questions a CCDE-level network architect asks of any design:</p>
+
+          <p>Does the segmentation model reflect the actual security and compliance requirements, or is it a simplified approximation that will need to be reworked when a real requirement is applied to it? Has the latency between cloud and on-premises been modelled against the applications that will use it, and have MTU constraints been identified and designed for? Is the routing architecture resilient, or does it have a single point of failure that the redundancy diagrams do not reveal? Does the LLD specify actual configuration values — IP ranges, ASNs, BGP communities, MTU settings, security group rules — or does it describe intent without specifying implementation?</p>
+
+          <p>Cloud network design is still network design. The platform is different. The principles are not.</p>
+
+          <div class="findings-box">
+            <div class="findings-title">What I consistently find in cloud network design review</div>
+            <ul class="findings-list">
+              <li><strong>Latency and MTU have not been modelled against application requirements.</strong> The design assumes performance will be acceptable. Production reveals it is not.</li>
+              <li><strong>The Landing Zone is treated as the network design.</strong> Account structure and management hierarchy are in place. Routing, segmentation, MTU and hybrid connectivity design are not.</li>
+              <li><strong>Security is perimeter-based rather than layered.</strong> A virtual firewall appliance at the edge. Flat, over-permissive networks behind it.</li>
+              <li><strong>The LLD contains intent, not configuration.</strong> "BGP will be used" rather than the ASNs, communities, route filters and failover behaviour that make BGP work correctly in this specific environment.</li>
+              <li><strong>Hybrid connectivity resilience is designed at the circuit level, not the routing level.</strong> Two ExpressRoute circuits. One BGP routing design that fails over to neither of them correctly under real failure conditions.</li>
+            </ul>
+          </div>
     </div>
     <div class="post-cta">
       <div>
@@ -1480,9 +1487,9 @@
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
-        <ul class="footer-links footer-links-contact">
+        <ul class="footer-links">
           <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
+          <li><a>UK · US · EU · APAC · Middle East</a></li>
         </ul>
       </div>
     </div>
@@ -1497,4 +1504,15 @@
   </footer>
 </div>
 <script>
-document.addEventListener('DOMConten
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  });
+});
+</script>
+</body>
+</html>
