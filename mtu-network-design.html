@@ -1416,7 +1416,8 @@
     <div class="post-body">
           <p>MTU mismatches are one of the most consistently underestimated risks in network migrations. Not because engineers do not know about MTU — they do. But because standard testing almost never catches it. And in the pressure of a migration window, nobody is specifically looking for it.</p>
 
-          <p>Ping, traceroute, telnet, SSH — none of these will reveal an MTU problem unless you are specifically testing for it. Small packets pass cleanly. The mismatch only becomes visible when production traffic — larger packets, higher volumes, real application behaviour — hits the path. By then, the migration is live and the pressure to diagnose and fix is intense.</p>
+          <blockquote><p>MTU problems are infrastructure-layer failures that present as application-layer symptoms. Slow applications. Intermittent timeouts. Selective failures that follow a pattern nobody initially connects to the network.</p></blockquote>
+          <p>Ping, traceroute, telnet, SSH, HTTPS — none of these will reveal an MTU problem unless you are specifically testing for it. Small packets pass cleanly. The mismatch only becomes visible when production traffic — larger packets, higher volumes, real application behaviour — hits the path. By then, the migration is live and the pressure to diagnose and fix is intense.</p>
 
           <p>Here is what it looks like in production. Three real examples.</p>
 
@@ -1428,7 +1429,7 @@
           <p>Applications running within the VXLAN fabric — fine. The same applications, once their VLANs were extended over the DCI into the ACI fabric — severely degraded throughput. Not down. Just slow enough to be noticed by users and painful enough to generate escalations.</p>
           <p>The VXLAN encapsulation overhead combined with the DCI path MTU created fragmentation that only became visible at production traffic volumes. In a test window with low traffic and small payloads, everything looked healthy. The issue was invisible until the application was under real load with real packet sizes.</p>
 
-          <h2>Plant moved to SD-WAN — Cisco ISE RADIUS proxy broke</h2>
+          <h2>Remote Site moved to SD-WAN — Cisco ISE RADIUS proxy broke</h2>
           <p>Not the SD-WAN configuration. Not the ISE policy. Not the authentication logic. The ISE interface MTU — not adjusted to account for the overhead introduced by the SD-WAN overlay. RADIUS packets that had always been fine on the legacy WAN were now being fragmented. Authentication appeared to work intermittently, which made diagnosis harder — intermittent failures are always harder to pin down than consistent ones. Adjusting the ISE interface MTU fixed it immediately.</p>
 
           <h2>Why standard testing does not catch this</h2>
@@ -1438,6 +1439,7 @@
           <h2>What to design for</h2>
           <p>MTU needs to be treated as a first-class design consideration — not an implementation detail left for the engineers to sort out during build. At design stage, every overlay in the path should be identified, its overhead documented, and the effective MTU calculated end-to-end. That calculated MTU should be validated against the application requirements.</p>
           <p>Jumbo frames help but do not eliminate the problem — they raise the ceiling, but overlay overhead still reduces it, and not every device in the path may support jumbo frames. Path MTU Discovery helps but is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages. Do not rely on PMTUD as your safety net.</p>
+          <blockquote><p>Do not rely on Path MTU Discovery as your safety net. PMTUD is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages — silently, without any indication that fragmentation is occurring.</p></blockquote>
           <p>Test explicitly for MTU before go-live. Not with ping defaults — with ping extended to maximum packet size, with iPerf or equivalent under load, with the actual application where possible. Document the expected MTU at every significant point in the design. Include it in the LLD with specific values, not as a generic note that MTU should be considered.</p>
 
           <div class="findings-box">
