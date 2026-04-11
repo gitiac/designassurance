@@ -1466,6 +1466,54 @@
     background: rgba(200,180,50,0.03);
   }
 
+    /* ── BLOG TABS ── */
+    .blog-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--silver-light);
+      padding-bottom: 0;
+    }
+    .blog-tab {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      padding: 0.6rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--silver);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: -1px;
+      white-space: nowrap;
+    }
+    .blog-tab:hover { color: var(--navy); }
+    .blog-tab.active {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+      font-weight: 500;
+    }
+    .blog-card { transition: opacity 0.2s ease; }
+    .blog-card.hidden { display: none !important; }
+    #featuredPost.hidden { display: none !important; }
+    #blogNoResults { grid-column: 1 / -1; }
+    .blog-card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--silver);
+      background: var(--off-white);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
 </style>
 </head>
 <body>
@@ -2006,148 +2054,148 @@
 
       <div id="blogList" class="blog-list">
 
-                        <!-- FEATURED POST -->
-        <div class="blog-featured">
-          <div class="blog-featured-left">
-            <div>
-              <div class="featured-label">Latest Post</div>
-              <div class="featured-title">Why Are Your Top Engineers So Demotivated?</div>
-              <div class="featured-excerpt">You spend millions on technology and almost nothing on the people who run it. After 21 years working inside technology programmes, I have seen this pattern more times than I can count — organisations that invest heavily in technology and almost nothing in the people who run it.</div>
-            </div>
-            <div>
-              <div class="featured-meta">11 April 2026 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Leadership &amp; Engineering Culture</div>
-              <br>
-              <a href="top-engineers.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
-            </div>
+      <!-- CATEGORY TABS -->
+      <div class="blog-tabs" id="blogTabs">
+        <button class="blog-tab active" data-filter="all" onclick="filterBlog('all')">All</button>
+        <button class="blog-tab" data-filter="design" onclick="filterBlog('design')">Design &amp; Architecture</button>
+        <button class="blog-tab" data-filter="programme" onclick="filterBlog('programme')">Programme &amp; Leadership</button>
+        <button class="blog-tab" data-filter="engineering" onclick="filterBlog('engineering')">Network Engineering</button>
+        <button class="blog-tab" data-filter="advisory" onclick="filterBlog('advisory')">Advisory &amp; Commercial</button>
+      </div>
+
+      <!-- FEATURED POST -->
+      <div class="blog-featured" id="featuredPost">
+        <div class="blog-featured-left">
+          <div>
+            <div class="featured-label">Latest Post</div>
+            <div class="featured-title">Why Are Your Top Engineers So Demotivated?</div>
+            <div class="featured-excerpt">You spend millions on technology and almost nothing on the people who run it. After 21 years working inside technology programmes, I have seen this pattern more times than I can count — organisations that invest heavily in technology and almost nothing in the people who run it.</div>
           </div>
-          <div class="blog-featured-right">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">10%</div>
-            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">10% of engineers carry the team. The training budget gets cut before the vendor contract does. The external consultant confirms what your engineers already told you — at ten times the cost and six months later.</div>
+          <div>
+            <div class="featured-meta">11 April 2026 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Leadership &amp; Engineering Culture</div>
+            <br>
+            <a href="top-engineers.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
+          </div>
+        </div>
+        <div class="blog-featured-right">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">10%</div>
+          <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">10% of engineers carry the team. The training budget gets cut before the vendor contract does. The external consultant confirms what your engineers already told you — at ten times the cost and six months later.</div>
+        </div>
+      </div>
+
+      <!-- ARTICLE GRID -->
+      <div class="blog-grid" id="blogGrid">
+
+        <!-- DESIGN & ARCHITECTURE -->
+        <div class="blog-card" data-category="design" onclick="window.location.href='hld-review.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Design Assurance</span>
+            <div class="blog-card-title">Five things wrong with every HLD I have ever reviewed</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">After 21 years of reviewing High-Level Designs — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Read →</span></div>
           </div>
         </div>
 
-        <!-- PUBLISHED ARTICLES -->
-        <div style="margin-bottom:1.5rem;margin-top:2rem;">
-          <div class="section-label">Published</div>
-        </div>
-        <div class="blog-grid">
-          <div class="blog-card" onclick="window.location.href='programme-recovery.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Programme Recovery</span>
-              <div class="blog-card-title">Programme recovery — what the first 48 hours actually looks like</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">When a programme is off-track, the instinct is to escalate, reorganise and replan. In my experience, the first 48 hours should be spent doing something different entirely.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 5 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
+        <div class="blog-card" data-category="design" onclick="window.location.href='ten-design-failures.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Design Assurance</span>
+            <div class="blog-card-title">Ten design failures that appear in almost every infrastructure programme</div>
           </div>
-          <div class="blog-card" onclick="window.location.href='hld-review.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Design Assurance</span>
-              <div class="blog-card-title">Five things wrong with every HLD I have ever reviewed</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">After 21 years of reviewing High-Level Designs — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 6 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
-          </div>
-          <div class="blog-card" onclick="window.location.href='ten-design-failures.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Design Assurance</span>
-              <div class="blog-card-title">Ten design failures that appear in almost every infrastructure programme</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">After 21 years of independent design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 7 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
-          </div>
-          <div class="blog-card" onclick="window.location.href='design-assurance.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Design Assurance</span>
-              <div class="blog-card-title">Why independent design assurance saves more than it costs</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">The cost of finding a design flaw before implementation is a fraction of finding it after. Here is the commercial case for independent design assurance.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 5 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="blog-card" onclick="window.location.href='cloud-architecture.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Cloud Architecture</span>
-              <div class="blog-card-title">Why cloud network design is still network design</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">Cloud architecture is regularly treated as if the network layer designs itself. After reviewing programmes across regulated industries, this assumption is one of the most consistent sources of post-migration failure.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 7 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="blog-card" onclick="window.location.href='mtu-network-design.html'">
-            <div class="blog-card-header">
-              <span class="blog-card-cat">Network Design</span>
-              <div class="blog-card-title">MTU: The Network Problem That Hides Until Go-Live</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">Ping, traceroute, SSH, telnet, HTTPS — standard testing almost never catches MTU mismatches. Three real examples from production environments — and why the problem only shows up after go-live.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 6 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">After 21 years of independent design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
           </div>
         </div>
 
-        <!-- COMING SOON ARTICLES -->
-        <div style="margin-bottom:1.5rem;margin-top:3rem;">
-          <div class="section-label">Coming Soon</div>
-          <p style="font-size:0.85rem;color:var(--text-muted);font-weight:300;margin-top:0.25rem;">Follow on <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" style="color:var(--navy);">LinkedIn</a> to be notified when each article publishes.</p>
-        </div>
-        <div class="blog-grid">
-          <div class="blog-card draft" onclick="window.location.href='ccde-vs-ccie.html'">
-            <div class="blog-card-header">
-              <span class="draft-tag">Sneak Preview</span><span class="blog-card-cat">Design Practice</span>
-              <div class="blog-card-title">What CCDE teaches you that CCIE never could</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 6 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
+        <div class="blog-card" data-category="design" onclick="window.location.href='design-assurance.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Design Assurance</span>
+            <div class="blog-card-title">Why independent design assurance saves more than it costs</div>
           </div>
-          <div class="blog-card draft" onclick="window.location.href='vendor-assessment.html'">
-            <div class="blog-card-header">
-              <span class="draft-tag">Sneak Preview</span><span class="blog-card-cat">Vendor Assessment</span>
-              <div class="blog-card-title">How to evaluate a vendor proposal without being sold to</div>
-            </div>
-            <div class="blog-card-body">
-              <div class="blog-card-excerpt">Vendor proposals are built to sell, not to inform. After reviewing hundreds of them, I have a structured approach to cutting through the marketing and assessing what is actually being proposed.</div>
-              <div class="blog-card-meta">
-                <span>Apr 2026 &nbsp;·&nbsp; 5 min</span>
-                <span class="blog-card-read">Read →</span>
-              </div>
-            </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">The cost of finding a design flaw before implementation is a fraction of finding it after. Independent review is not an overhead — it is a risk management decision.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Read →</span></div>
           </div>
         </div>
 
-      </div><!-- end blogList -->
+        <div class="blog-card" data-category="design" onclick="window.location.href='cloud-architecture.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Cloud Architecture</span>
+            <div class="blog-card-title">Why cloud network design is still network design</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">Cloud architecture is treated as if the network layer designs itself. After reviewing programmes across regulated industries, this is one of the most consistent sources of post-migration failure.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
+          </div>
+        </div>
+
+        <div class="blog-card" data-category="design" onclick="window.location.href='ccde-vs-ccie.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Design Thinking</span>
+            <span class="blog-card-tag">Coming Soon</span>
+            <div class="blog-card-title">What CCDE teaches you that CCIE never could</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">After holding both certifications and using both daily, the distinction between implementation thinking and design thinking changes how you read every architecture document.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Preview →</span></div>
+          </div>
+        </div>
+
+        <!-- PROGRAMME & LEADERSHIP -->
+        <div class="blog-card" data-category="programme" onclick="window.location.href='programme-recovery.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Programme Recovery</span>
+            <div class="blog-card-title">Programme recovery — what the first 48 hours actually looks like</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">Most programme failures trace back to a network or security design problem, not a project management one. What the first 48 hours of technical recovery actually involves.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Read →</span></div>
+          </div>
+        </div>
+
+        <div class="blog-card" data-category="programme" onclick="window.location.href='top-engineers.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Leadership &amp; Engineering Culture</span>
+            <div class="blog-card-title">Why Are Your Top Engineers So Demotivated?</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">You spend millions on technology and almost nothing on the people who run it. A message to CTOs and IT Directors — from someone who has seen this from both sides.</div>
+            <div class="blog-card-meta"><span>11 Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
+          </div>
+        </div>
+
+        <!-- NETWORK ENGINEERING -->
+        <div class="blog-card" data-category="engineering" onclick="window.location.href='mtu-network-design.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Network Design</span>
+            <div class="blog-card-title">MTU: The Network Problem That Hides Until Go-Live</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">Ping, traceroute, SSH, telnet, HTTPS — standard testing almost never catches MTU mismatches. Three real examples from production environments and why the problem only shows up after go-live.</div>
+            <div class="blog-card-meta"><span>12 Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Read →</span></div>
+          </div>
+        </div>
+
+        <!-- ADVISORY & COMMERCIAL -->
+        <div class="blog-card" data-category="advisory" onclick="window.location.href='vendor-assessment.html'">
+          <div class="blog-card-header">
+            <span class="blog-card-cat">Vendor Assessment</span>
+            <span class="blog-card-tag">Coming Soon</span>
+            <div class="blog-card-title">How to evaluate a vendor proposal without being sold to</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-excerpt">The vendor who wins the evaluation is not always the vendor who delivers the best outcome. An independent framework for assessing proposals on technical merit rather than presentation quality.</div>
+            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Preview →</span></div>
+          </div>
+        </div>
+
+      </div><!-- end blogGrid -->
+
+      <div id="blogNoResults" style="display:none;text-align:center;padding:3rem 0;color:var(--silver);font-size:0.9rem;font-weight:300;">No published articles in this category yet — check back soon.</div>
+
+    </div><!-- end blogList -->
 
 
       <!-- INLINE BLOG POSTS -->
@@ -2589,6 +2637,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
-</script>
+
+  // ── BLOG CATEGORY FILTER ──────────────────────────────────────────────
+  function filterBlog(category) {
+    // Update active tab
+    document.querySelectorAll('.blog-tab').forEach(function(tab) {
+      tab.classList.toggle('active', tab.dataset.filter === category);
+    });
+
+    var cards = document.querySelectorAll('#blogGrid .blog-card');
+    var featured = document.getElementById('featuredPost');
+    var noResults = document.getElementById('blogNoResults');
+    var visibleCount = 0;
+
+    cards.forEach(function(card) {
+      var match = category === 'all' || card.dataset.category === category;
+      card.classList.toggle('hidden', !match);
+      if (match) visibleCount++;
+    });
+
+    // Hide featured when filtering to specific category (it's in Programme)
+    if (featured) {
+      featured.classList.toggle('hidden', category !== 'all' && category !== 'programme');
+    }
+
+    // Show no results message if nothing visible
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  </script>
 </body>
 </html>
