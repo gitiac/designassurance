@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="After 21 years working inside technology programmes, the same pattern repeats. Organisations invest heavily in technology and almost nothing in the people who run it. A message to CTOs and IT Directors.">
+<meta name="author" content="Hameed Nazim, Design Assurance">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.designassurance.co.uk/top-engineers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.designassurance.co.uk/top-engineers">
+<meta property="og:title" content="Why Are Your Top Engineers So Demotivated? | Design Assurance">
+<meta property="og:description" content="You spend millions on technology and almost nothing on the people who run it. A message to CTOs and IT Directors — from someone who has seen this from both sides.">
+<meta property="og:site_name" content="Design Assurance">
+<title>Why Are Your Top Engineers So Demotivated? | Design Assurance</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/favicon-48.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2044;
+    --navy-mid: #1a3260;
+    --navy-light: #243d73;
+    --silver: #a8b4c0;
+    --silver-light: #c8d4de;
+    --silver-pale: #e8edf2;
+    --white: #ffffff;
+    --off-white: #f5f7f9;
+    --text-body: #2a3545;
+    --text-muted: #5a6878;
+    --accent: #c8d4de;
+    --gold-accent: #b8960c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    color: var(--text-body);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAVIGATION */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: rgba(15, 32, 68, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(168, 180, 192, 0.15);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--silver); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--silver-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--silver);
+    color: var(--silver-light) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    transition: all 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--silver) !important;
+    color: var(--navy) !important;
+  }
+
+  /* SECTIONS */
+  section {
+    display: none !important;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.active {
+    display: block !important;
+    overflow: visible;
+  }
+
+  /* HERO */
+  #home {
+    background: var(--navy);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 72px;
+    max-width: 100vw;
+  }
+
+  .hero-content-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(168,180,192,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,180,192,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(26,50,96,0.8) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 5% 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--silver);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title strong {
+    font-weight: 600;
+    color: var(--silver-light);
+    display: block;
+  }
+
+  .hero-body {
+    font-size: 1rem;
+    color: var(--silver-light);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--silver-light);
+    color: var(--navy);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--silver-light);
+    padding: 0.85rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid rgba(168,180,192,0.4);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--silver-light);
+    color: var(--white);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(168,180,192,0.12);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+
+  .hero-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(168,180,192,0.25);
+    transform: translateX(4px);
+  }
+
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-card-body {
+    font-size: 0.82rem;
+    color: var(--silver);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .hero-card-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(168,180,192,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(168,180,192,0.1);
+    border-bottom: 1px solid rgba(168,180,192,0.1);
+    padding: 2rem 5%;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--silver-light);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--silver);
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  /* SECTORS */
+  .sectors {
+    background: var(--navy);
+    padding: 3rem 5%;
+    border-top: 1px solid rgba(168,180,192,0.08);
+  }
+
+  .sectors-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .sectors-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+
+  .sectors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .sector-tag {
+    font-size: 0.78rem;
+    color: var(--silver-light);
+    border: 1px solid rgba(168,180,192,0.18);
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* PAGE SECTIONS - ABOUT / SERVICES / CONTACT */
+  .page-hero {
+    background: var(--navy);
+    padding: 8rem 5% 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .page-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .page-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .page-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--silver);
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  /* ABOUT PAGE */
+  .about-content {
+    background: var(--white);
+    padding: 2.5rem 5%;
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+
+  .about-credentials {
+    background: var(--navy);
+    padding: 2.5rem;
+    border-radius: 4px;
+  }
+
+  .credential-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(168,180,192,0.15);
+  }
+
+  .credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(168,180,192,0.08);
+  }
+
+  .credential-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .credential-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--silver);
+    border-radius: 50%;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  .credential-text {
+    font-size: 0.88rem;
+    color: var(--silver-light);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .credential-text strong {
+    display: block;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .about-sectors {
+    background: var(--off-white);
+    padding: 5rem 5%;
+    border-top: 1px solid var(--silver-pale);
+  }
+
+  .about-sectors-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .sector-card {
+    background: var(--white);
+    border: 1px solid var(--silver-pale);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .sector-card:hover {
+    border-color: var(--navy);
+    transform: translateY(-2px);
+  }
+
+  .sector-card-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .sector-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* SERVICES PAGE */
+  .services-content {
+    background: var(--white);
+    padding: 2.5rem 5%;
+  }
+
+  .services-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .services-intro {
+    max-width: 620px;
+    margin-bottom: 4rem;
+  }
+
+  .services-intro p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .services-tier {
+    margin-bottom: 4rem;
+  }
+
+  .tier-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--silver-pale);
+  }
+
+  .tier-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--silver-pale);
+    line-height: 1;
+  }
+
+  .tier-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  .tier-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--off-white);
+    border: 1px solid var(--silver-pale);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--navy);
+    transition: height 0.3s;
+  }
+
+  .service-card:hover::before { height: 100%; }
+
+  .service-card:hover {
+    border-color: rgba(15,32,68,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15,32,68,0.08);
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* CONTACT PAGE */
+  .contact-content {
+    background: var(--white);
+    padding: 2.5rem 5%;
+    min-height: calc(100vh - 300px);
+  }
+
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .contact-left p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(168,180,192,0.15);
+    border: 1px solid rgba(168,180,192,0.4);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+
+  .contact-item-text {
+    padding-top: 0.2rem;
+  }
+
+  .contact-item-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .contact-item-value:hover { color: var(--navy-mid); }
+
+  .contact-note {
+    background: var(--off-white);
+    border-left: 3px solid var(--navy);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .contact-note p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .contact-form {
+    background: var(--navy);
+    padding: 2.5rem;
+    border-radius: 4px;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1.75rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(168,180,192,0.2);
+    color: var(--white);
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    font-family: 'DM Sans', sans-serif;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus {
+    border-color: rgba(168,180,192,0.5);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: rgba(168,180,192,0.4);
+  }
+
+  .form-select option { background: var(--navy); }
+
+  .form-textarea { height: 120px; resize: vertical; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--silver-light);
+    color: var(--navy);
+    border: none;
+    padding: 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover {
+    background: var(--white);
+    transform: translateY(-1px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 3rem 5%;
+    border-top: 1px solid rgba(168,180,192,0.1);
+    position: relative;
+    z-index: 10;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand span { color: var(--silver); }
+
+  .footer-desc {
+    font-size: 0.82rem;
+    color: var(--silver);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 300px;
+  }
+
+  .footer-col-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+    color: rgba(168,180,192,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--white); cursor: pointer; }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(168,180,192,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    color: rgba(168,180,192,0.5);
+    line-height: 1.6;
+  }
+
+  .footer-certs {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .cert-badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--silver);
+    border: 1px solid rgba(168,180,192,0.2);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .fade-up-1 { animation-delay: 0.1s; opacity: 0; }
+  .fade-up-2 { animation-delay: 0.2s; opacity: 0; }
+  .fade-up-3 { animation-delay: 0.3s; opacity: 0; }
+  .fade-up-4 { animation-delay: 0.4s; opacity: 0; }
+  .fade-up-5 { animation-delay: 0.5s; opacity: 0; }
+
+  /* RESPONSIVE */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 200;
+    position: relative;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--silver-light);
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(15,32,68,0.98);
+    backdrop-filter: blur(12px);
+    z-index: 999;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid rgba(168,180,192,0.15);
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: var(--silver-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(168,180,192,0.08);
+    display: block;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--white); }
+
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; min-height: auto; padding: 6vh 5%; }
+    .hero-right { display: none; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 900px) {
+    .engagement-grid { grid-template-columns: 1fr 1fr !important; }
+    .engagement-faq { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .sectors-grid { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-featured { grid-template-columns: 1fr; }
+    .blog-featured-right { display: none; }
+    .engagement-grid { grid-template-columns: 1fr !important; }
+    .engagement-faq { grid-template-columns: 1fr !important; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .sectors-grid { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* BLOG */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .blog-card {
+    background: var(--white);
+    border: 1px solid var(--silver-pale);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .blog-card:hover {
+    border-color: var(--navy);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(15,32,68,0.1);
+  }
+  .blog-card-header {
+    background: var(--navy);
+    padding: 1.75rem;
+    position: relative;
+  }
+  .blog-card-cat {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .blog-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .blog-card-body {
+    padding: 1.5rem;
+  }
+  .blog-card-excerpt {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+  }
+  .blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    color: var(--silver);
+    letter-spacing: 0.04em;
+    border-top: 1px solid var(--silver-pale);
+    padding-top: 0.75rem;
+  }
+  .blog-card.coming-soon {
+    opacity: 0.45;
+  }
+  .blog-card.draft {
+    border: 1px solid rgba(200,180,50,0.3);
+  }
+  .draft-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8960c;
+    border: 1px solid rgba(200,180,50,0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .sneak-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8960c;
+    border: 1px solid rgba(200,180,50,0.4);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .blog-card.coming-soon .blog-card-header {
+    background: #2a3a4a;
+  }
+  .coming-soon-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--silver);
+    border: 1px solid rgba(168,180,192,0.25);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .blog-card-read {
+    color: var(--navy);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .blog-featured {
+    background: var(--navy);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .blog-featured-left {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .blog-featured-right {
+    background: var(--navy-mid);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid rgba(168,180,192,0.1);
+  }
+  .featured-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .featured-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--silver);
+  }
+  .featured-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .featured-excerpt {
+    font-size: 0.88rem;
+    color: var(--silver-light);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+  .featured-meta {
+    font-size: 0.72rem;
+    color: var(--silver);
+    letter-spacing: 0.06em;
+  }
+  .blog-post-full {
+    display: none;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+  .blog-post-full.visible { display: block; }
+  .blog-list { display: block; }
+  .blog-list.hidden { display: none; }
+  .post-back {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .post-back:hover { opacity: 0.7; }
+  .post-cat {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .post-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--silver-pale);
+  }
+  .post-body p {
+    font-size: 0.97rem;
+    color: var(--text-body);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  .post-body h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 2.5rem 0 1rem;
+    line-height: 1.2;
+  }
+  .post-body h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin: 2rem 0 0.75rem;
+  }
+  .post-body ul {
+    margin: 0 0 1.5rem 1.5rem;
+  }
+  .post-body ul li {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 0.4rem;
+  }
+  .post-body blockquote {
+    border-left: 3px solid var(--navy);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--off-white);
+    border-radius: 0 4px 4px 0;
+  }
+  .post-body blockquote p {
+    font-style: italic;
+    color: var(--navy);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .post-cta {
+    background: var(--navy);
+    padding: 2rem 2.5rem;
+    border-radius: 4px;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .post-cta-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 400;
+  }
+  .post-cta-sub {
+    font-size: 0.82rem;
+    color: var(--silver);
+    margin-top: 0.25rem;
+    font-weight: 300;
+  }
+  @media (max-width: 900px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-featured { grid-template-columns: 1fr; }
+    .blog-featured-right { display: none; }
+  }
+
+
+  .cert-badge-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .cert-badge-link:hover {
+    opacity: 0.75;
+  }
+  a.cert-badge {
+    text-decoration: none;
+    color: var(--silver);
+  }
+  a.cert-badge:hover {
+    text-decoration: none;
+    opacity: 0.75;
+  }
+</style>
+<style>
+  .article-page { padding-top: 72px; background: var(--white); min-height: 100vh; }
+  .article-hero { background: var(--navy); padding: 2.5rem 5% 2rem; position: relative; overflow: hidden; }
+  .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .article-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+  .article-hero .post-cat { color: var(--silver) !important; display: block; margin-bottom: 0.5rem; }
+  .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
+  .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
+  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
+  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
+  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
+  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li strong { color: var(--navy); font-weight: 500; }
+  .footer-links { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+  .footer-links-contact { grid-template-columns: 1fr; }
+  a.cert-badge { text-decoration: none; color: var(--silver); }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">Design <span>Assurance</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#engagement">Engagement</a></li>
+    <li><a href="index.html#blog">Insights</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#engagement">Engagement</a>
+  <a href="index.html#blog">Insights</a>
+  <a href="index.html#contact">Get in Touch</a>
+</div>
+<div class="article-page">
+  <div class="article-hero">
+    <div class="article-hero-inner">
+      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
+      <span class="post-cat">Leadership &amp; Engineering Culture</span>
+      <h1 class="post-title">Why Are Your Top Engineers So Demotivated?</h1>
+      <div class="post-meta">Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
+    </div>
+  </div>
+  <div class="article-content">
+    <div class="post-body">
+          <p>You have spent millions. The new data centre is built. The SD-WAN is deployed. The Wi-Fi refresh is done. The vendor was excellent. The project closed on time.</p>
+
+          <p>And your best engineers are quietly updating their CVs.</p>
+
+          <p>After 21 years working inside technology programmes — as an engineer, as an architect, and as an independent consultant brought in when things go wrong — I have seen this pattern more times than I can count. Organisations that invest heavily in technology and almost nothing in the people who run it. Here is what it looks like from the inside.</p>
+
+          <h2>10% of your engineers are carrying the team. Nobody is acknowledging it.</h2>
+          <p>In almost every network and infrastructure team I have worked with, the same pattern holds. A small number of engineers — usually two or three people — are the ones who actually understand how everything works. They are the ones who get called at 11pm when something breaks. They are the ones who quietly fix the problems that would otherwise become major incidents. They are the ones the vendors call when they need someone who can actually read a packet capture.</p>
+          <p>The rest of the team ranges from competent to passengers.</p>
+          <p>And every single one of them gets the same annual review. The same pay band. The same token training budget — if there is one at all. The engineers carrying the weight know exactly what they are worth. They also know exactly how they are being treated relative to that worth. The calculation they eventually make is not complicated.</p>
+
+          <h2>You will spend £50,000 on an external consultant before you spend £5,000 on your own engineers.</h2>
+          <p>I am that external consultant. I have walked into organisations, been briefed by engineers who knew the answer before I arrived, and been paid a significant day rate to confirm what they had already told their manager six months earlier.</p>
+          <p>The engineers in the room during that briefing said nothing. They had learned that saying it internally got them nowhere. Saying it through someone expensive and external got it heard.</p>
+          <p>The irony is not lost on me. And it should not be lost on you.</p>
+          <p>Meanwhile, the request for a CCIE training course — £3,000, submitted in January — is still sitting in the approval queue in October. The team away day that would cost less than one day of my rate has been cancelled for the third year running because of budget pressure.</p>
+
+          <h2>The loudest engineer gets to implement the most interesting projects.</h2>
+          <p>Technical ability and the ability to self-promote are different skills. In most teams, the projects — the migrations, the new deployments, the things that go on a CV — flow toward the engineers who are most visible in meetings. Not necessarily the most capable.</p>
+          <p>The quiet engineer who fixes things before anyone notices they were broken never gets to present at the all-hands. The engineer who is confident in front of senior stakeholders — regardless of whether their technical judgement is sound — gets sponsorship for the high-profile work.</p>
+          <p>Over time, the best engineers conclude that technical excellence is not what gets rewarded here. Some of them adapt and become more political. Most of them leave.</p>
+
+          <h2>You are buying products your engineers told you not to buy.</h2>
+          <p>The vendor came in. The presentation was impressive. The executive sponsor was in the room. The decision was made.</p>
+          <p>Three engineers raised concerns in the pre-sales process. They were told the business case was already approved. The concerns were noted in a meeting minutes document that nobody read again.</p>
+          <p>Eighteen months later, you are paying an external consultant to diagnose why the deployment is not performing as the vendor promised. The engineers who raised concerns originally are still on the team. They remember. They have stopped raising concerns.</p>
+
+          <h2>What this actually costs you</h2>
+          <p>Engineer replacement — recruitment, onboarding, the 6–12 months before someone is genuinely productive in a complex environment — typically costs 1.5 to 2x annual salary. For a senior network engineer that is £80,000 to £120,000 per departure, conservatively.</p>
+          <p>The training course was £3,000. The away day was £2,000. The pay review that would have retained them was £8,000 a year. The external consultant you will now hire to cover the gap while you recruit is £800 a day.</p>
+          <p>The maths is not complicated. The problem is that the cost of losing an engineer is invisible and deferred, while the cost of investing in them is visible and immediate. Human beings — including directors and CTOs — are not naturally good at that trade-off.</p>
+
+          <h2>What to do about it</h2>
+          <p>This is not a call to spend money you do not have. It is a call to spend it differently.</p>
+          <p>Find out who is actually carrying your team. Ask the engineers — not the managers. Pay them accordingly. Give them the projects that will develop them, not just the ones that are safe to delegate.</p>
+          <p>Approve the training budget. Not as a reward. As an investment in the infrastructure your entire organisation depends on.</p>
+          <p>When engineers raise technical concerns about a vendor recommendation or a proposed design — take it seriously. They are closer to the reality than the vendor's sales team. A CCDE or CCIE on your team telling you something will not work is worth more than a vendor's reference architecture telling you it will.</p>
+          <p>And before you hire the next external consultant — ask yourself whether someone on your team already knows the answer. They probably do. They are just waiting to be asked. And if they do know — if their answer saves you that consultant's fee — reward them for it. A monetary bonus of 20 to 25 percent of what you were about to spend on someone external who knew less. A place at an industry conference. A training course they have been asking for. The form the reward takes matters less than the fact that the reward exists. Engineers remember when their expertise is valued. They also remember when it is not.</p>
+          <p>At this point, some readers will say: HR policy does not allow ad hoc bonuses. Finance will not approve it. It falls within their existing job responsibilities. If that is your organisation's position, then I would suggest you apply some of the same thinking to your HR and finance functions that you apply to your engineering teams. You have adopted agile frameworks in your technology delivery. You iterate, you adapt, you remove blockers. Your HR and finance policies were written for a different era. If they prevent you from rewarding the people keeping your infrastructure running, they are not protecting the organisation — they are costing it.</p>
+
+          <h2>One final thought</h2>
+          <p>The engineers keeping your infrastructure running are not demotivated because they are lazy or disengaged. They are demotivated because they are smart enough to see exactly how they are being treated relative to their contribution — and rational enough to act on it eventually.</p>
+          <p>The ones who stay quiet and keep working despite all of this are not a sign that everything is fine. They are a sign that the exit has not become more attractive than the frustration. Yet.</p>
+    </div>
+    <div class="post-cta">
+      <div>
+        <div class="post-cta-text">If you are an engineer who recognises this — tag your manager.</div>
+        <div class="post-cta-sub">If you are a director who wants an honest, independent view of the technical health of your team — get in touch.</div>
+      </div>
+      <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Get in Touch</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Design <span>Assurance</span></div>
+        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#engagement">Engagement</a></li>
+          <li><a href="index.html#blog">Insights</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
+          <li><a>UK · US · EU · APAC · Middle East</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
+      <div class="footer-certs">
+        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
+        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
+        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  });
+});
+</script>
+</body>
+</html>

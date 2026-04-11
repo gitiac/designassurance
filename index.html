@@ -2073,6 +2073,32 @@
               </div>
             </div>
           </div>
+          <div class="blog-card" onclick="window.location.href='top-engineers.html'">
+            <div class="blog-card-header">
+              <span class="blog-card-cat">Leadership &amp; Engineering Culture</span>
+              <div class="blog-card-title">Why Are Your Top Engineers So Demotivated?</div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-excerpt">You spend millions on technology and almost nothing on the people who run it. A message to CTOs and IT Directors — from someone who has seen this from both sides.</div>
+              <div class="blog-card-meta">
+                <span>Apr 2026 &nbsp;·&nbsp; 7 min</span>
+                <span class="blog-card-read">Read →</span>
+              </div>
+            </div>
+          </div>
+          <div class="blog-card" onclick="window.location.href='mtu-network-design.html'">
+            <div class="blog-card-header">
+              <span class="blog-card-cat">Network Design</span>
+              <div class="blog-card-title">MTU: The Network Problem That Hides Until Go-Live</div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-excerpt">Ping passes. Traceroute looks clean. Production traffic fails. Three real MTU problems from network migrations — and why standard testing never catches them.</div>
+              <div class="blog-card-meta">
+                <span>Apr 2026 &nbsp;·&nbsp; 6 min</span>
+                <span class="blog-card-read">Read →</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- COMING SOON ARTICLES -->
@@ -2299,6 +2325,32 @@
         <div class="post-cta"><div><div class="post-cta-text">Want to understand what independent design thinking delivers?</div><div class="post-cta-sub">All initial conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Start a Conversation</a></div>
       </div>
 
+
+      <div class="blog-post-full" id="top-engineers">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Leadership &amp; Engineering Culture</span>
+        <h1 class="post-title">Why Are Your Top Engineers So Demotivated?</h1>
+        <div class="post-meta">Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
+        <div class="post-body">
+          <p>You have spent millions. The new data centre is built. The SD-WAN is deployed. The Wi-Fi refresh is done. And your best engineers are quietly updating their CVs.</p>
+          <p>After 21 years working inside technology programmes — as an engineer, as an architect, and as an independent consultant — I have seen this pattern more times than I can count.</p>
+          <p><a href="top-engineers.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
+        </div>
+        <div class="post-cta"><div><div class="post-cta-text">If you are an engineer who recognises this — tag your manager.</div><div class="post-cta-sub">If you are a director who wants an honest view of the technical health of your team — get in touch.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Get in Touch</a></div>
+      </div>
+
+      <div class="blog-post-full" id="mtu-network-design">
+        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
+        <span class="post-cat">Network Design</span>
+        <h1 class="post-title">MTU: The Network Problem That Hides Until Go-Live</h1>
+        <div class="post-meta">Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+        <div class="post-body">
+          <p>MTU mismatches are one of the most consistently underestimated risks in network migrations. Standard testing almost never catches them. Three real examples from production environments.</p>
+          <p><a href="mtu-network-design.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
+        </div>
+        <div class="post-cta"><div><div class="post-cta-text">Want an independent review of your migration design before go-live?</div><div class="post-cta-sub">MTU, latency and overlay design reviewed as part of every HLD and LLD assessment.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a></div>
+      </div>
+
             <div class="blog-post-full" id="vendor-assessment">
         <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
         <span class="post-cat">Vendor Assessment</span>
@@ -2506,7 +2558,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('section').forEach(function(s) {
     s.style.display = 'none';
   });
-  var postIds = ['hld-review','programme-recovery','ten-design-failures','design-assurance-value','cloud-architecture','ccde-vs-ccie','vendor-assessment'];
+  var postIds = ['hld-review','programme-recovery','ten-design-failures','design-assurance-value','cloud-architecture','ccde-vs-ccie','vendor-assessment','top-engineers','mtu-network-design'];
   var sectionIds = ['home','about','services','engagement','blog','contact'];
   var hash = window.location.hash.replace('#','');
   if (postIds.indexOf(hash) !== -1) {
