@@ -1,2712 +1,657 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Independent network, security and cloud design assurance. CCDE and CCIE certified consultant with 21 years' experience. HLD and LLD review, programme recovery and pre-deployment sign-off across the UK, US, EU and APAC.">
-<meta name="keywords" content="design assurance, network design review, HLD review, LLD review, CCDE, CCIE, network consultant, cloud architecture, programme recovery, independent design assurance, network architect UK, AWS network design, Azure network design, hybrid cloud architecture">
-<meta name="author" content="Hameed Nazim, Design Assurance">
+<title>Verijuris | Conseil Juridique Spécialisé – Droit du travail, Protection des données, Assurance-chômage</title>
+<meta name="description" content="Dr. iur. Nour Ahmad Nazim — juriste spécialisé en droit du travail, protection des données (LPD/RGPD) et assurance-chômage en Suisse. Conseil confidentiel en français, anglais et allemand.">
+<meta name="author" content="Dr. iur. Nour Ahmad Nazim">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk">
+<link rel="canonical" href="https://verijuris.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<meta name="theme-color" content="#0D1B2A">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.designassurance.co.uk">
-<meta property="og:title" content="Design Assurance | Independent Network, Security &amp; Cloud Design Review">
-<meta property="og:description" content="CCDE and CCIE certified independent design assurance. 21 years experience across financial services, pharma, healthcare, media and automotive.">
-<meta property="og:site_name" content="Design Assurance">
-<meta property="og:locale" content="en_GB">
-<title>Design Assurance | Independent Network, Security &amp; Cloud Design Assurance</title>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/favicon-48.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:url" content="https://verijuris.com/">
+<meta property="og:title" content="Verijuris | Conseil Juridique Spécialisé – Suisse">
+<meta property="og:description" content="Dr. iur. Nour Ahmad Nazim — juriste spécialisé en droit du travail, protection des données et assurance-chômage. Conseil confidentiel en FR / EN / DE.">
+<meta property="og:site_name" content="Verijuris">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Verijuris","url":"https://verijuris.com","email":"nourahmad.nazim@verijuris.com","founder":{"@type":"Person","name":"Nour Ahmad Nazim","honorificPrefix":"Dr. iur."},"areaServed":{"@type":"Country","name":"Switzerland"},"serviceType":["Droit du travail","Protection des données","Assurance-chômage"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0f2044;
-    --navy-mid: #1a3260;
-    --navy-light: #243d73;
-    --silver: #a8b4c0;
-    --silver-light: #c8d4de;
-    --silver-pale: #e8edf2;
-    --white: #ffffff;
-    --off-white: #f5f7f9;
-    --text-body: #2a3545;
-    --text-muted: #5a6878;
-    --accent: #c8d4de;
-    --gold-accent: #b8960c;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-    max-width: 100vw;
-    color: var(--text-body);
-    background: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* NAVIGATION */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 200;
-    background: rgba(15, 32, 68, 0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(168, 180, 192, 0.15);
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--white);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--silver); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    align-items: center;
-  }
-
-  .nav-links a {
-    color: var(--silver-light);
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 400;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--white); }
-
-  .nav-cta {
-    background: transparent;
-    border: 1px solid var(--silver);
-    color: var(--silver-light) !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 2px;
-    transition: all 0.2s !important;
-  }
-
-  .nav-cta:hover {
-    background: var(--silver) !important;
-    color: var(--navy) !important;
-  }
-
-  /* SECTIONS */
-  section {
-    display: none !important;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
-
-  section.active {
-    display: block !important;
-    overflow: visible;
-  }
-
-  /* HERO */
-  #home {
-    background: var(--navy);
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
-    padding-top: 72px;
-    max-width: 100vw;
-  }
-
-  .hero-content-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(168,180,192,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(168,180,192,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .hero-glow {
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(26,50,96,0.8) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 5% 5vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    min-height: calc(100vh - 72px);
-  }
-
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--silver);
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .hero-title strong {
-    font-weight: 600;
-    color: var(--silver-light);
-    display: block;
-  }
-
-  .hero-body {
-    font-size: 1rem;
-    color: var(--silver-light);
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    max-width: 480px;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--silver-light);
-    color: var(--navy);
-    padding: 0.85rem 2rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.2s;
-    border-radius: 2px;
-  }
-
-  .btn-primary:hover {
-    background: var(--white);
-    transform: translateY(-1px);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--silver-light);
-    padding: 0.85rem 2rem;
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border: 1px solid rgba(168,180,192,0.4);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.2s;
-    border-radius: 2px;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--silver-light);
-    color: var(--white);
-  }
-
-  .hero-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .hero-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(168,180,192,0.12);
-    padding: 1.5rem;
-    border-radius: 4px;
-    transition: all 0.3s;
-  }
-
-  .hero-card:hover {
-    background: rgba(255,255,255,0.07);
-    border-color: rgba(168,180,192,0.25);
-    transform: translateX(4px);
-  }
-
-  .hero-card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-card-body {
-    font-size: 0.82rem;
-    color: var(--silver);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  .hero-card-icon {
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(168,180,192,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  /* STATS BAR */
-  .stats-bar {
-    background: var(--navy-mid);
-    border-top: 1px solid rgba(168,180,192,0.1);
-    border-bottom: 1px solid rgba(168,180,192,0.1);
-    padding: 2rem 5%;
-  }
-
-  .stats-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .stat-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 300;
-    color: var(--silver-light);
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--silver);
-    margin-top: 0.25rem;
-    display: block;
-  }
-
-  /* SECTORS */
-  .sectors {
-    background: var(--navy);
-    padding: 3rem 5%;
-    border-top: 1px solid rgba(168,180,192,0.08);
-  }
-
-  .sectors-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .sectors-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1.5rem;
-    opacity: 0.7;
-  }
-
-  .sectors-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .sector-tag {
-    font-size: 0.78rem;
-    color: var(--silver-light);
-    border: 1px solid rgba(168,180,192,0.18);
-    padding: 0.35rem 0.9rem;
-    border-radius: 2px;
-    letter-spacing: 0.04em;
-  }
-
-  /* PAGE SECTIONS - ABOUT / SERVICES / CONTACT */
-  .page-hero {
-    background: var(--navy);
-    padding: 8rem 5% 3rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .page-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .page-hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-
-  .page-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .page-eyebrow::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--silver);
-  }
-
-  .page-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.15;
-    max-width: 700px;
-  }
-
-  /* ABOUT PAGE */
-  .about-content {
-    background: var(--white);
-    padding: 2.5rem 5%;
-  }
-
-  .about-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-
-  .about-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
-    color: var(--text-body);
-    line-height: 1.85;
-    margin-bottom: 1.2rem;
-    font-weight: 300;
-  }
-
-  .about-credentials {
-    background: var(--navy);
-    padding: 2.5rem;
-    border-radius: 4px;
-  }
-
-  .credential-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(168,180,192,0.15);
-  }
-
-  .credential-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 1.2rem;
-    border-bottom: 1px solid rgba(168,180,192,0.08);
-  }
-
-  .credential-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .credential-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--silver);
-    border-radius: 50%;
-    margin-top: 0.45rem;
-    flex-shrink: 0;
-  }
-
-  .credential-text {
-    font-size: 0.88rem;
-    color: var(--silver-light);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  .credential-text strong {
-    display: block;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 0.92rem;
-    margin-bottom: 0.15rem;
-  }
-
-  .about-sectors {
-    background: var(--off-white);
-    padding: 5rem 5%;
-    border-top: 1px solid var(--silver-pale);
-  }
-
-  .about-sectors-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 3rem;
-    line-height: 1.2;
-  }
-
-  .sectors-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .sector-card {
-    background: var(--white);
-    border: 1px solid var(--silver-pale);
-    padding: 1.5rem;
-    border-radius: 4px;
-    transition: all 0.2s;
-  }
-
-  .sector-card:hover {
-    border-color: var(--navy);
-    transform: translateY(-2px);
-  }
-
-  .sector-card-name {
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.25rem;
-  }
-
-  .sector-card-desc {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  /* SERVICES PAGE */
-  .services-content {
-    background: var(--white);
-    padding: 2.5rem 5%;
-  }
-
-  .services-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .services-intro {
-    max-width: 620px;
-    margin-bottom: 4rem;
-  }
-
-  .services-intro p {
-    font-size: 1rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  .services-tier {
-    margin-bottom: 4rem;
-  }
-
-  .tier-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--silver-pale);
-  }
-
-  .tier-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--silver-pale);
-    line-height: 1;
-  }
-
-  .tier-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--navy);
-  }
-
-  .tier-subtitle {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .service-card {
-    background: var(--off-white);
-    border: 1px solid var(--silver-pale);
-    padding: 2rem;
-    border-radius: 4px;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--navy);
-    transition: height 0.3s;
-  }
-
-  .service-card:hover::before { height: 100%; }
-
-  .service-card:hover {
-    border-color: rgba(15,32,68,0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(15,32,68,0.08);
-  }
-
-  .service-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .service-desc {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* CONTACT PAGE */
-  .contact-content {
-    background: var(--white);
-    padding: 2.5rem 5%;
-    min-height: calc(100vh - 300px);
-  }
-
-  .contact-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-
-  .contact-left h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
-
-  .contact-left p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-
-  .contact-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .contact-icon {
-    width: 36px;
-    height: 36px;
-    background: rgba(168,180,192,0.15);
-    border: 1px solid rgba(168,180,192,0.4);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 0.85rem;
-  }
-
-  .contact-item-text {
-    padding-top: 0.2rem;
-  }
-
-  .contact-item-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 0.2rem;
-  }
-
-  .contact-item-value {
-    font-size: 0.9rem;
-    color: var(--navy);
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .contact-item-value:hover { color: var(--navy-mid); }
-
-  .contact-note {
-    background: var(--off-white);
-    border-left: 3px solid var(--navy);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .contact-note p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-    font-style: italic;
-    font-weight: 300;
-  }
-
-  .contact-form {
-    background: var(--navy);
-    padding: 2.5rem;
-    border-radius: 4px;
-  }
-
-  .form-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 1.75rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.25rem;
-  }
-
-  .form-label {
-    display: block;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 0.5rem;
-  }
-
-  .form-input,
-  .form-textarea,
-  .form-select {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(168,180,192,0.2);
-    color: var(--white);
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
-    font-family: 'DM Sans', sans-serif;
-    border-radius: 2px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-input:focus,
-  .form-textarea:focus,
-  .form-select:focus {
-    border-color: rgba(168,180,192,0.5);
-  }
-
-  .form-input::placeholder,
-  .form-textarea::placeholder {
-    color: rgba(168,180,192,0.4);
-  }
-
-  .form-select option { background: var(--navy); }
-
-  .form-textarea { height: 120px; resize: vertical; }
-
-  .form-submit {
-    width: 100%;
-    background: var(--silver-light);
-    color: var(--navy);
-    border: none;
-    padding: 0.9rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: all 0.2s;
-    font-family: 'DM Sans', sans-serif;
-    margin-top: 0.5rem;
-  }
-
-  .form-submit:hover {
-    background: var(--white);
-    transform: translateY(-1px);
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--navy);
-    padding: 3rem 5%;
-    border-top: 1px solid rgba(168,180,192,0.1);
-    position: relative;
-    z-index: 10;
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 0.75rem;
-  }
-
-  .footer-brand span { color: var(--silver); }
-
-  .footer-desc {
-    font-size: 0.82rem;
-    color: var(--silver);
-    line-height: 1.7;
-    font-weight: 300;
-    max-width: 300px;
-  }
-
-  .footer-col-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1rem;
-  }
-
-  .footer-links {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 1.5rem;
-  }
-  .footer-links-contact {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-links a {
-    font-size: 0.82rem;
-    color: rgba(168,180,192,0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--white); cursor: pointer; }
-
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(168,180,192,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-legal {
-    font-size: 0.75rem;
-    color: rgba(168,180,192,0.5);
-    line-height: 1.6;
-  }
-
-  .footer-certs {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .cert-badge {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: var(--silver);
-    border: 1px solid rgba(168,180,192,0.2);
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-up {
-    animation: fadeUp 0.6s ease forwards;
-  }
-
-  .fade-up-1 { animation-delay: 0.1s; opacity: 0; }
-  .fade-up-2 { animation-delay: 0.2s; opacity: 0; }
-  .fade-up-3 { animation-delay: 0.3s; opacity: 0; }
-  .fade-up-4 { animation-delay: 0.4s; opacity: 0; }
-  .fade-up-5 { animation-delay: 0.5s; opacity: 0; }
-
-  /* RESPONSIVE */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-    z-index: 200;
-    position: relative;
-  }
-  .hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--silver-light);
-    transition: all 0.3s;
-    border-radius: 2px;
-  }
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: rgba(15,32,68,0.98);
-    backdrop-filter: blur(12px);
-    z-index: 999;
-    padding: 1.5rem 5%;
-    border-bottom: 1px solid rgba(168,180,192,0.15);
-    flex-direction: column;
-    gap: 0;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    color: var(--silver-light);
-    text-decoration: none;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 400;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(168,180,192,0.08);
-    display: block;
-    transition: color 0.2s;
-  }
-  .mobile-menu a:last-child { border-bottom: none; }
-  .mobile-menu a:hover { color: var(--white); }
-
-  @media (max-width: 900px) {
-    .hero-content { grid-template-columns: 1fr; min-height: auto; padding: 6vh 5%; }
-    .hero-right { display: none; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .sectors-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; }
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-  }
-  @media (max-width: 900px) {
-    .engagement-grid { grid-template-columns: 1fr 1fr !important; }
-    .engagement-faq { grid-template-columns: 1fr !important; }
-  }
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .sectors-grid { grid-template-columns: 1fr 1fr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-    .blog-grid { grid-template-columns: 1fr; }
-    .blog-featured { grid-template-columns: 1fr; }
-    .blog-featured-right { display: none; }
-    .engagement-grid { grid-template-columns: 1fr !important; }
-    .engagement-faq { grid-template-columns: 1fr !important; }
-  }
-
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .sectors-grid { grid-template-columns: 1fr 1fr; }
-    .stats-inner { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* BLOG */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-  }
-  .blog-card {
-    background: var(--white);
-    border: 1px solid var(--silver-pale);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.25s;
-    cursor: pointer;
-  }
-  .blog-card:hover {
-    border-color: var(--navy);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(15,32,68,0.1);
-  }
-  .blog-card-header {
-    background: var(--navy);
-    padding: 1.75rem;
-    position: relative;
-  }
-  .blog-card-cat {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 0.6rem;
-    display: block;
-  }
-  .blog-card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--white);
-    line-height: 1.3;
-  }
-  .blog-card-body {
-    padding: 1.5rem;
-  }
-  .blog-card-excerpt {
-    font-size: 0.83rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    font-weight: 300;
-    margin-bottom: 1.25rem;
-  }
-  .blog-card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.72rem;
-    color: var(--silver);
-    letter-spacing: 0.04em;
-    border-top: 1px solid var(--silver-pale);
-    padding-top: 0.75rem;
-  }
-  .blog-card.coming-soon {
-    opacity: 0.45;
-  }
-  .blog-card.draft {
-    border: 1px solid rgba(200,180,50,0.3);
-  }
-  .draft-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #b8960c;
-    border: 1px solid rgba(200,180,50,0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .sneak-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #b8960c;
-    border: 1px solid rgba(200,180,50,0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .blog-card.coming-soon .blog-card-header {
-    background: #2a3a4a;
-  }
-  .coming-soon-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--silver);
-    border: 1px solid rgba(168,180,192,0.25);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .blog-card-read {
-    color: var(--navy);
-    font-weight: 500;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .blog-featured {
-    background: var(--navy);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .blog-featured-left {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .blog-featured-right {
-    background: var(--navy-mid);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-left: 1px solid rgba(168,180,192,0.1);
-  }
-  .featured-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .featured-label::before {
-    content: '';
-    display: block;
-    width: 16px;
-    height: 1px;
-    background: var(--silver);
-  }
-  .featured-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .featured-excerpt {
-    font-size: 0.88rem;
-    color: var(--silver-light);
-    line-height: 1.75;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
-  .featured-meta {
-    font-size: 0.72rem;
-    color: var(--silver);
-    letter-spacing: 0.06em;
-  }
-  .blog-post-full {
-    display: none;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 1.5rem 0;
-  }
-  .blog-post-full.visible { display: block; }
-  .blog-list { display: block; }
-  .blog-list.hidden { display: none; }
-  .post-back {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--navy);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .post-back:hover { opacity: 0.7; }
-  .post-cat {
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--silver);
-    margin-bottom: 0.75rem;
-    display: block;
-  }
-  .post-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
-  .post-meta {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--silver-pale);
-  }
-  .post-body p {
-    font-size: 0.97rem;
-    color: var(--text-body);
-    line-height: 1.9;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-  }
-  .post-body h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin: 2.5rem 0 1rem;
-    line-height: 1.2;
-  }
-  .post-body h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin: 2rem 0 0.75rem;
-  }
-  .post-body ul {
-    margin: 0 0 1.5rem 1.5rem;
-  }
-  .post-body ul li {
-    font-size: 0.95rem;
-    color: var(--text-body);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 0.4rem;
-  }
-  .post-body blockquote {
-    border-left: 3px solid var(--navy);
-    padding: 1rem 1.5rem;
-    margin: 2rem 0;
-    background: var(--off-white);
-    border-radius: 0 4px 4px 0;
-  }
-  .post-body blockquote p {
-    font-style: italic;
-    color: var(--navy);
-    font-size: 1.05rem;
-    margin: 0;
-  }
-  .post-cta {
-    background: var(--navy);
-    padding: 2rem 2.5rem;
-    border-radius: 4px;
-    margin-top: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .post-cta-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--white);
-    font-weight: 400;
-  }
-  .post-cta-sub {
-    font-size: 0.82rem;
-    color: var(--silver);
-    margin-top: 0.25rem;
-    font-weight: 300;
-  }
-  @media (max-width: 900px) {
-    .blog-grid { grid-template-columns: 1fr; }
-    .blog-featured { grid-template-columns: 1fr; }
-    .blog-featured-right { display: none; }
-  }
-
-
-  .cert-badge-link {
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s;
-  }
-  .cert-badge-link:hover {
-    opacity: 0.75;
-  }
-  a.cert-badge {
-    text-decoration: none;
-    color: var(--silver);
-  }
-  a.cert-badge:hover {
-    text-decoration: none;
-    opacity: 0.75;
-  }
-
-  .findings-box {
-    background: var(--off-white);
-    border-left: 3px solid var(--navy);
-    padding: 2rem 2.5rem;
-    margin: 3rem 0;
-    border-radius: 0 4px 4px 0;
-  }
-  .findings-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 1.25rem;
-  }
-  .findings-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .findings-list li {
-    font-size: 0.92rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    font-weight: 300;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-  .findings-list li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--navy);
-    font-weight: 500;
-  }
-  .findings-list li strong {
-    color: var(--navy);
-    font-weight: 500;
-  }
-  .preview-headings {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .preview-headings li {
-    font-size: 0.92rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    padding-left: 1.25rem;
-    position: relative;
-  }
-  .preview-headings li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--silver-pale);
-  }
-
-  .draft-tag, .sneak-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #b8960c;
-    border: 1px solid rgba(200,180,50,0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .coming-soon-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--silver);
-    border: 1px solid rgba(168,180,192,0.25);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .blog-card.coming-soon { opacity: 0.45; }
-  .blog-card.draft { border: 1px solid rgba(200,180,50,0.3); }
-  .blog-card.coming-soon .blog-card-header { background: #2a3a4a; }
-  .cert-badge-link { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-  .cert-badge-link:hover { opacity: 0.75; }
-  a.cert-badge { text-decoration: none; color: var(--silver); }
-  a.cert-badge:hover { opacity: 0.75; }
-  .footer-links-contact { grid-template-columns: 1fr; }
-  .engagement-grid { display: grid; gap: 1.5rem; }
-  .sneak-preview-box {
-    border-left: 3px solid rgba(200,180,50,0.4);
-    padding: 1rem 1.5rem;
-    margin: 2rem 0;
-    background: rgba(200,180,50,0.03);
-  }
-
-    /* ── BLOG TABS ── */
-    .blog-tabs {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--silver-light);
-      padding-bottom: 0;
-    }
-    .blog-tab {
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 0.6rem 1rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--silver);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-bottom: -1px;
-      white-space: nowrap;
-    }
-    .blog-tab:hover { color: var(--navy); }
-    .blog-tab.active {
-      color: var(--navy);
-      border-bottom-color: var(--navy);
-      font-weight: 500;
-    }
-    .blog-card { transition: opacity 0.2s ease; }
-    .blog-card.hidden { display: none !important; }
-    #featuredPost.hidden { display: none !important; }
-    #blogNoResults { grid-column: 1 / -1; }
-    .blog-card-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--silver);
-      background: var(--off-white);
-      padding: 0.2rem 0.5rem;
-      border-radius: 2px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
-
+:root{
+  --navy:#0D1B2A;--navy-mid:#1A2D42;
+  --gold:#C9A84C;--gold-light:#E8C97A;
+  /* lighter home palette */
+  --hero-bg:#16273A;--hero-bg2:#1C3048;
+  --cream:#F7F3EC;--cream-dark:#EDE5D4;
+  --text:#1A1A2E;--text-light:#5A6070;--white:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+
+/* LANG BAR */
+.lang-bar{background:var(--navy);display:flex;justify-content:flex-end;align-items:center;padding:8px 48px;gap:4px;flex-shrink:0}
+.lang-btn{background:none;border:1px solid transparent;color:rgba(255,255,255,0.5);font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;cursor:pointer;transition:all .25s;border-radius:2px}
+.lang-btn:hover,.lang-btn.active{color:var(--gold);border-color:var(--gold)}
+.lang-sep{color:rgba(255,255,255,0.2);font-size:10px}
+
+/* HEADER */
+.site-header{background:var(--navy);position:sticky;top:0;z-index:100;flex-shrink:0;border-bottom:1px solid rgba(201,168,76,0.2)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:68px}
+
+/* LOGO — Verijuris wordmark, always inline */
+.logo{text-decoration:none;background:none;border:none;cursor:pointer;padding:0;display:flex;flex-direction:column;align-items:flex-start}
+.logo-wordmark{display:flex;align-items:baseline;line-height:1}
+.logo-V{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1}
+.logo-rest{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--white);line-height:1}
+.logo-tag{font-size:9px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:2px;font-family:'Jost',sans-serif}
+
+/* TAB NAV */
+.tab-nav{display:flex;align-items:stretch;padding:0 48px;border-top:1px solid rgba(255,255,255,0.06);height:44px}
+.tab-btn{background:none;border:none;color:rgba(255,255,255,0.5);font-family:'Jost',sans-serif;font-size:11px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:0 20px;cursor:pointer;position:relative;transition:color .22s;display:flex;align-items:center;white-space:nowrap}
+.tab-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
+.tab-btn:hover{color:rgba(255,255,255,0.85)}
+.tab-btn.active{color:var(--white)}
+.tab-btn.active::after{transform:scaleX(1)}
+.tab-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:500!important;border-radius:2px;margin:8px 0 8px 10px;padding:0 18px!important;height:28px;align-self:center;transition:background .22s!important}
+.tab-cta::after{display:none!important}
+.tab-cta:hover,.tab-cta.active{background:var(--gold-light)!important;color:var(--navy)!important}
+
+/* PANELS */
+.page-panel{display:none;flex:1;animation:fadeIn .3s ease}
+.page-panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* SHARED */
+.section{padding:80px}
+.section-dark{background:var(--navy)}
+.section-label{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,50px);font-weight:300;line-height:1.15;margin-bottom:20px}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--text-light);max-width:580px}
+.on-dark .section-title{color:var(--white)}
+.on-dark .section-body{color:rgba(255,255,255,0.6)}
+.gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);opacity:.25}
+.page-hero{padding:68px 80px 56px;position:relative;overflow:hidden}
+.page-hero.dark{background:var(--navy)}
+.page-hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(201,168,76,.015) 40px,rgba(201,168,76,.015) 41px);pointer-events:none}
+.page-hero>*{position:relative;z-index:1}
+
+/* BUTTONS */
+.btn-primary{background:var(--gold);color:var(--navy);padding:13px 30px;border:none;border-radius:2px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,transform .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+
+/* ── HOME — lighter palette ── */
+.hero{background:var(--hero-bg);min-height:calc(100vh - 116px);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(201,168,76,.07) 0%,transparent 65%),repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(201,168,76,.018) 40px,rgba(201,168,76,.018) 41px);pointer-events:none}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 80px;position:relative;z-index:1}
+.hero-eyebrow{font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:12px;animation:fadeUp .5s ease .1s both}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,62px);font-weight:300;color:var(--white);line-height:1.1;margin-bottom:14px;animation:fadeUp .5s ease .2s both}
+.hero-title em{font-style:italic;color:var(--gold-light)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2vw,22px);font-weight:300;color:rgba(255,255,255,0.55);margin-bottom:28px;font-style:italic;animation:fadeUp .5s ease .25s both}
+.hero-desc{font-size:14.5px;font-weight:300;line-height:1.95;color:rgba(255,255,255,0.72);max-width:460px;animation:fadeUp .5s ease .3s both}
+
+/* hero right card */
+.hero-visual{display:flex;align-items:center;justify-content:center;padding:60px 48px;position:relative;z-index:1}
+.hero-card{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.25);border-radius:4px;padding:40px 34px;width:100%;max-width:360px;backdrop-filter:blur(10px);animation:fadeUp .5s ease .3s both}
+.hero-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--gold);margin-bottom:22px}
+.hero-card-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.09)}
+.hero-card-item:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hero-card-icon{width:32px;height:32px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.35);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.hero-card-text h4{color:rgba(255,255,255,0.92);font-size:12px;font-weight:500;margin-bottom:4px}
+.hero-card-text p{color:rgba(255,255,255,0.52);font-size:12px;font-weight:300;line-height:1.6}
+.hero-langs{margin-top:20px;padding-top:18px;border-top:1px solid rgba(201,168,76,0.22);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.hero-langs-label{font-size:10px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.38)}
+.lang-badge{background:rgba(201,168,76,0.16);color:var(--gold);font-size:10px;font-weight:500;letter-spacing:.1em;padding:3px 9px;border-radius:2px;border:1px solid rgba(201,168,76,0.28)}
+
+/* quicklinks — lighter on home */
+.quicklinks{background:var(--hero-bg2);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(201,168,76,0.15)}
+.quicklink{background:none;border:none;border-right:1px solid rgba(201,168,76,0.12);padding:24px 28px;cursor:pointer;text-align:left;transition:background .2s}
+.quicklink:last-child{border-right:none}
+.quicklink:hover{background:rgba(201,168,76,0.07)}
+.quicklink-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.quicklink-title{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:rgba(255,255,255,0.72)}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,0.15)}
+.service-card{background:var(--cream);padding:44px 38px;position:relative;transition:background .3s}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .4s}
+.service-card:hover{background:var(--white)}
+.service-card:hover::before{height:100%}
+.service-icon{font-size:26px;margin-bottom:16px}
+.service-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);margin-bottom:12px}
+.service-desc{font-size:13px;font-weight:300;line-height:1.85;color:var(--text-light)}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.approach-item{text-align:center;padding:34px 22px;border:1px solid rgba(201,168,76,0.2);border-radius:2px;transition:border-color .3s,background .3s}
+.approach-item:hover{border-color:var(--gold);background:rgba(201,168,76,0.04)}
+.approach-icon{font-size:26px;margin-bottom:14px}
+.approach-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px}
+.approach-desc{font-size:13px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.5)}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:72px;align-items:start;padding:80px}
+.about-img-wrap{position:relative}
+.about-img-wrap::before{content:'';position:absolute;inset:-14px -14px 14px 14px;border:1px solid rgba(201,168,76,0.3);border-radius:2px;z-index:0}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:2px;position:relative;z-index:1;filter:grayscale(15%)}
+.about-img-fallback{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy) 100%);border-radius:2px;display:none;align-items:center;justify-content:center}
+.about-badge{position:absolute;bottom:-22px;right:-22px;background:var(--gold);color:var(--navy);padding:16px 22px;border-radius:2px;z-index:2;text-align:center}
+.about-badge-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;line-height:1}
+.about-badge-text{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.about-text{font-size:14px;font-weight:300;line-height:1.9;color:var(--text-light);margin-bottom:24px}
+.about-text strong{color:var(--navy);font-weight:500}
+.about-section-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin:28px 0 10px}
+.lang-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.lang-pill{background:var(--navy);color:var(--cream);font-size:11px;font-weight:400;letter-spacing:.1em;padding:6px 13px;border-radius:2px}
+.philosophy-section{padding:80px;background:var(--navy);text-align:center}
+.philosophy-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,34px);font-weight:300;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.55;max-width:740px;margin:0 auto;position:relative;padding:0 48px}
+.philosophy-quote::before,.philosophy-quote::after{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--gold);opacity:.35;position:absolute;line-height:1}
+.philosophy-quote::before{content:'\201C';top:-16px;left:0}
+.philosophy-quote::after{content:'\201D';bottom:-44px;right:0}
+.philosophy-source{margin-top:28px;font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+/* ── BLOG ── */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,0.1)}
+.blog-card{background:var(--cream);display:flex;flex-direction:column;position:relative;overflow:hidden;text-decoration:none;transition:background .25s}
+.blog-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height .4s}
+.blog-card:hover{background:var(--white)}
+.blog-card:hover::before{height:100%}
+.blog-card-inner{padding:40px 36px;flex:1;display:flex;flex-direction:column}
+.blog-tag{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.blog-tag::before{content:'';display:block;width:16px;height:1px;background:var(--gold)}
+.blog-date{font-size:11px;font-weight:300;color:var(--text-light);margin-bottom:12px}
+.blog-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);line-height:1.3;margin-bottom:14px}
+.blog-excerpt{font-size:13px;font-weight:300;line-height:1.8;color:var(--text-light);flex:1}
+.blog-footer{padding:18px 36px 28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--cream-dark)}
+.blog-read{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.blog-arrow{font-size:16px;color:var(--gold);transition:transform .2s}
+.blog-card:hover .blog-arrow{transform:translateX(4px)}
+.blog-card.placeholder{cursor:default;opacity:.5;pointer-events:none}
+.blog-card.placeholder::before{display:none}
+.ph-line{height:10px;background:var(--cream-dark);border-radius:2px;margin-bottom:10px}
+.ph-line.s{width:55%}
+.ph-line.m{width:78%}
+
+/* ── CONTACT ── */
+.contact-body{display:grid;grid-template-columns:1fr 1.35fr;gap:60px;align-items:start;padding:80px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--cream-dark)}
+.contact-detail:last-of-type{border-bottom:none;margin-bottom:0}
+.contact-detail-icon{width:40px;height:40px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.contact-detail-text h4{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:5px}
+.contact-detail-text a,.contact-detail-text p{font-size:14px;font-weight:400;color:var(--navy);text-decoration:none;transition:color .2s}
+.contact-detail-text a:hover{color:var(--gold)}
+.contact-note{background:var(--navy);color:rgba(255,255,255,0.6);padding:20px 24px;border-radius:2px;font-size:12px;font-weight:300;line-height:1.85;margin-top:24px;border-left:3px solid var(--gold)}
+.contact-form{background:var(--white);padding:44px 38px;border-radius:2px;box-shadow:0 4px 28px rgba(0,0,0,0.07)}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--navy);margin-bottom:5px}
+.form-subtitle{font-size:13px;color:var(--text-light);font-weight:300;margin-bottom:26px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.form-group label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light)}
+.form-group input,.form-group textarea,.form-group select{background:var(--cream);border:1px solid var(--cream-dark);border-radius:2px;padding:10px 13px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:var(--navy);transition:border-color .25s;outline:none;width:100%}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:108px}
+.form-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:13px;border-radius:2px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .25s;margin-top:4px}
+.form-submit:hover{background:var(--gold);color:var(--navy)}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.12);padding:28px 80px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.footer-logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--white)}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,0.3);letter-spacing:.06em}
+.footer-links{display:flex;gap:20px;align-items:center}
+.footer-link{font-size:11px;font-weight:300;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s;letter-spacing:.06em}
+.footer-link:hover{color:var(--gold)}
+.proton-badge{background:rgba(108,74,182,0.3);border:1px solid rgba(108,74,182,0.5);color:#a78bfa;font-size:10px;padding:2px 8px;border-radius:2px}
+
+/* I18N */
+[data-lang]{display:none}
+span[data-lang]{display:none}
+.lang-fr [data-lang="fr"],.lang-en [data-lang="en"],.lang-de [data-lang="de"]{display:block}
+.lang-fr span[data-lang="fr"],.lang-en span[data-lang="en"],.lang-de span[data-lang="de"]{display:inline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .lang-bar,.nav-inner{padding-left:20px;padding-right:20px}
+  .tab-nav{padding:0 12px;overflow-x:auto}
+  .tab-btn{padding:0 12px;font-size:10px}
+  .hero{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero-content{padding:52px 24px}
+  .page-hero,.section{padding:48px 24px}
+  .services-grid,.blog-grid{grid-template-columns:1fr}
+  .approach-grid{grid-template-columns:1fr;gap:16px}
+  .about-grid{grid-template-columns:1fr;gap:40px;padding:48px 24px}
+  .contact-body{grid-template-columns:1fr;gap:32px;padding:48px 24px}
+  .philosophy-section{padding:52px 24px}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+  .form-row{grid-template-columns:1fr}
+  .quicklinks{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .quicklinks{grid-template-columns:1fr}
+  .logo-V,.logo-rest{font-size:24px}
+}
 </style>
 </head>
-<body>
+<body class="lang-fr">
 
-<nav>
-  <a class="nav-logo" href="#" onclick="showSection('home')">Design <span>Assurance</span></a>
-  <ul class="nav-links">
-    <li><a href="#" onclick="showSection('home')">Home</a></li>
-    <li><a href="#" onclick="showSection('about')">About</a></li>
-    <li><a href="#" onclick="showSection('services')">Services</a></li>
-    <li><a href="#" onclick="showSection('engagement')">Engagement</a></li>
-    <li><a href="#" onclick="showSection('blog')">Insights</a></li>
-    <li><a href="#" onclick="showSection('contact')" class="nav-cta">Get in Touch</a></li>
-  </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="mobileNav('home')">Home</a>
-  <a href="#" onclick="mobileNav('about')">About</a>
-  <a href="#" onclick="mobileNav('services')">Services</a>
-  <a href="#" onclick="mobileNav('engagement')">Engagement</a>
-  <a href="#" onclick="mobileNav('blog')">Insights</a>
-  <a href="#" onclick="mobileNav('contact')">Get in Touch</a>
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('fr',this)">FR</button>
+  <span class="lang-sep">|</span>
+  <button class="lang-btn" onclick="setLang('en',this)">EN</button>
+  <span class="lang-sep">|</span>
+  <button class="lang-btn" onclick="setLang('de',this)">DE</button>
 </div>
 
-
-<!-- HOME -->
-<section id="home">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="page-eyebrow">CCDE &nbsp;|&nbsp; CCIE Certified &nbsp;|&nbsp; 21 Years' Experience</div>
-      <h1 class="hero-title fade-up fade-up-2">Independent<br><strong>Design Assurance</strong>for Complex Programmes</h1>
-      <p class="hero-body fade-up fade-up-3">I bridge the gap between engineering and the boardroom — understanding both the technology and the business constraints that shape it. With a CCDE and CCIE, I know not just whether a design is theoretically sound, but whether it is practically implementable. Vendor-neutral design review, validation and programme recovery across DC migrations, WAN transformations, SD-WAN deployments and hybrid cloud transitions across AWS and Azure.</p>
-      <div class="hero-actions fade-up fade-up-4">
-        <a href="#" class="btn-primary" onclick="showSection('services')">MY SERVICES</a>
-        <a href="#" class="btn-outline" onclick="showSection('contact')">START A CONVERSATION</a>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="nav-inner">
+    <button class="logo" onclick="showTab('home')" aria-label="Verijuris — Accueil">
+      <div class="logo-wordmark">
+        <span class="logo-V">V</span><span class="logo-rest">erijuris</span>
       </div>
+      <span class="logo-tag">
+        <span data-lang="fr">Conseil Juridique</span>
+        <span data-lang="en">Legal Advisory</span>
+        <span data-lang="de">Rechtsberatung</span>
+      </span>
+    </button>
+  </div>
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" id="tab-home" role="tab" onclick="showTab('home')">
+      <span data-lang="fr">Accueil</span><span data-lang="en">Home</span><span data-lang="de">Startseite</span>
+    </button>
+    <button class="tab-btn" id="tab-services" role="tab" onclick="showTab('services')">
+      <span data-lang="fr">Services</span><span data-lang="en">Services</span><span data-lang="de">Leistungen</span>
+    </button>
+    <button class="tab-btn" id="tab-about" role="tab" onclick="showTab('about')">
+      <span data-lang="fr">À propos</span><span data-lang="en">About</span><span data-lang="de">Über mich</span>
+    </button>
+    <button class="tab-btn" id="tab-blog" role="tab" onclick="showTab('blog')">Blog</button>
+    <button class="tab-btn tab-cta" id="tab-contact" role="tab" onclick="showTab('contact')">
+      <span data-lang="fr">Contact</span><span data-lang="en">Contact</span><span data-lang="de">Kontakt</span>
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HOME ═══ -->
+<div class="page-panel active" id="panel-home">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span data-lang="fr">Juriste Spécialisé · Suisse</span>
+        <span data-lang="en">Specialist Legal Advisor · Switzerland</span>
+        <span data-lang="de">Spezialisierter Jurist · Schweiz</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-lang="fr">L'expertise juridique <em>au service</em> de vos droits</span>
+        <span data-lang="en">Legal expertise <em>in service</em> of your rights</span>
+        <span data-lang="de">Juristische Expertise <em>für</em> Ihre Rechte</span>
+      </h1>
+      <p class="hero-subtitle">Dr. iur. Nour Ahmad Nazim</p>
+      <p class="hero-desc">
+        <span data-lang="fr">Du droit du travail à la protection des données personnelles, bénéficiez d'un conseil spécialisé, dispensé par un juriste fort de plus de 25 ans d'expérience professionnelle en Suisse.</span>
+        <span data-lang="en">From labour law to personal data protection, benefit from specialised legal advice delivered by a jurist with over 25 years of professional experience in Switzerland.</span>
+        <span data-lang="de">Vom Arbeitsrecht bis zum Datenschutz erhalten Sie spezialisierte Rechtsberatung — von einem Juristen mit über 25 Jahren Berufserfahrung in der Schweiz.</span>
+      </p>
     </div>
-    <div class="hero-right fade-up fade-up-5">
+    <div class="hero-visual">
       <div class="hero-card">
-        <div class="hero-card-icon">✓</div>
-        <div class="hero-card-title">Design Assurance</div>
-        <div class="hero-card-body">Independent review of high and low-level designs against requirements, best practice and scalability.</div>
+        <div class="hero-card-title">
+          <span data-lang="fr">Domaines d'expertise</span>
+          <span data-lang="en">Areas of expertise</span>
+          <span data-lang="de">Fachgebiete</span>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">🛡️</div>
+          <div class="hero-card-text">
+            <h4><span data-lang="fr">Protection des données</span><span data-lang="en">Data Protection</span><span data-lang="de">Datenschutz</span></h4>
+            <p><span data-lang="fr">Droit fédéral, cantonal et européen (RGPD)</span><span data-lang="en">Federal, cantonal and European law (GDPR)</span><span data-lang="de">Bundesrecht, kantonales Recht und europäisches Recht (DSGVO)</span></p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">⚖️</div>
+          <div class="hero-card-text">
+            <h4><span data-lang="fr">Droit du travail</span><span data-lang="en">Labour Law</span><span data-lang="de">Arbeitsrecht</span></h4>
+            <p><span data-lang="fr">Toute question relative au contrat de travail (CO)</span><span data-lang="en">All questions relating to employment contracts (CO)</span><span data-lang="de">Alle Fragen zum Arbeitsvertrag (OR)</span></p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">📋</div>
+          <div class="hero-card-text">
+            <h4><span data-lang="fr">Assurance-chômage</span><span data-lang="en">Unemployment Insurance</span><span data-lang="de">Arbeitslosenversicherung</span></h4>
+            <p><span data-lang="fr">Toute question relative à la loi sur l'assurance-chômage</span><span data-lang="en">All questions relating to unemployment insurance law</span><span data-lang="de">Alle Fragen zum Arbeitslosenversicherungsgesetz</span></p>
+          </div>
+        </div>
+        <div class="hero-langs">
+          <span class="hero-langs-label"><span data-lang="fr">Langues</span><span data-lang="en">Languages</span><span data-lang="de">Sprachen</span> :</span>
+          <span class="lang-badge">FR</span><span class="lang-badge">EN</span><span class="lang-badge">DE</span>
+        </div>
       </div>
-      <div class="hero-card">
-        <div class="hero-card-icon">◎</div>
-        <div class="hero-card-title">Programme Delivery & Recovery</div>
-        <div class="hero-card-body">When programmes are off-track, I diagnose quickly and deliver a clear path to recovery.</div>
+    </div>
+  </section>
+
+  <div class="quicklinks">
+    <button class="quicklink" onclick="showTab('services')">
+      <div class="quicklink-label"><span data-lang="fr">Services</span><span data-lang="en">Services</span><span data-lang="de">Leistungen</span></div>
+      <div class="quicklink-title"><span data-lang="fr">Droit du travail, protection des données, assurance-chômage</span><span data-lang="en">Labour law, Data protection, Unemployment insurance</span><span data-lang="de">Arbeitsrecht, Datenschutz, Arbeitslosenversicherung</span></div>
+    </button>
+    <button class="quicklink" onclick="showTab('about')">
+      <div class="quicklink-label"><span data-lang="fr">À propos</span><span data-lang="en">About</span><span data-lang="de">Über mich</span></div>
+      <div class="quicklink-title">Dr. iur. Nour Ahmad Nazim</div>
+    </button>
+    <button class="quicklink" onclick="showTab('blog')">
+      <div class="quicklink-label">Blog</div>
+      <div class="quicklink-title"><span data-lang="fr">Jurisprudence & commentaires</span><span data-lang="en">Case law & commentary</span><span data-lang="de">Rechtsprechung & Kommentare</span></div>
+    </button>
+    <button class="quicklink" onclick="showTab('contact')">
+      <div class="quicklink-label"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span><span data-lang="de">Kontakt</span></div>
+      <div class="quicklink-title" style="font-size:13px">nourahmad.nazim@verijuris.com</div>
+    </button>
+  </div>
+</div>
+
+<!-- ═══ SERVICES ═══ -->
+<div class="page-panel" id="panel-services">
+  <div class="page-hero dark on-dark">
+    <div class="section-label"><span data-lang="fr">Domaines de pratique</span><span data-lang="en">Practice areas</span><span data-lang="de">Tätigkeitsbereiche</span></div>
+    <h1 class="section-title"><span data-lang="fr">Trois piliers, un seul <em>engagement</em></span><span data-lang="en">Three pillars, one <em>commitment</em></span><span data-lang="de">Drei Säulen, ein <em>Engagement</em></span></h1>
+    <p class="section-body"><span data-lang="fr">Un conseil ciblé dans les domaines qui touchent directement à la vie professionnelle et aux droits fondamentaux en Suisse.</span><span data-lang="en">Focused advice in the areas that directly affect professional life and fundamental rights in Switzerland.</span><span data-lang="de">Gezielte Beratung in Bereichen, die das Berufsleben und die Grundrechte in der Schweiz unmittelbar betreffen.</span></p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🛡️</div>
+      <div class="service-name"><span data-lang="fr">Protection des données</span><span data-lang="en">Data Protection</span><span data-lang="de">Datenschutz</span></div>
+      <p class="service-desc">
+        <span data-lang="fr">Conseil juridique en matière de protection des données, conformément au droit suisse (fédéral et cantonal) ainsi qu'au Règlement général sur la protection des données (RGPD) de l'UE. Certification CAS en protection des données (2021).</span>
+        <span data-lang="en">Legal advice on data protection, in compliance with Swiss law (federal and cantonal) and the EU General Data Protection Regulation (GDPR). Certified in data protection (CAS, 2021).</span>
+        <span data-lang="de">Rechtsberatung im Bereich Datenschutz gemäss schweizerischem Recht (Bund und Kantone) sowie der Datenschutz-Grundverordnung (DSGVO) der EU. Zertifizierter Datenschutzexperte (CAS, 2021).</span>
+      </p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚖️</div>
+      <div class="service-name"><span data-lang="fr">Droit du travail</span><span data-lang="en">Labour Law</span><span data-lang="de">Arbeitsrecht</span></div>
+      <p class="service-desc">
+        <span data-lang="fr">Analyse de contrats de travail, licenciements, heures supplémentaires, certificats de travail, discrimination et conflits professionnels.</span>
+        <span data-lang="en">Analysis of employment contracts, terminations, overtime, work certificates, discrimination and professional conflicts.</span>
+        <span data-lang="de">Analyse von Arbeitsverträgen, Kündigungen, Überstunden, Arbeitszeugnissen, Diskriminierung und beruflichen Konflikten.</span>
+      </p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <div class="service-name"><span data-lang="fr">Assurance-chômage</span><span data-lang="en">Unemployment Insurance</span><span data-lang="de">Arbeitslosenversicherung</span></div>
+      <p class="service-desc">
+        <span data-lang="fr">Conseil relatif au droit aux indemnités, aux suspensions (sanctions), à l'aptitude au placement, aux procédures d'opposition et de recours, ainsi qu'aux obligations de la personne assurée.</span>
+        <span data-lang="en">Advice on entitlement to benefits, suspensions (sanctions), suitability for placement, objection and appeal procedures, and the obligations of the insured person.</span>
+        <span data-lang="de">Beratung zu Leistungsansprüchen, Einstellungen (Sanktionen), Vermittlungsfähigkeit, Einsprache- und Beschwerdeverfahren sowie den Pflichten der versicherten Person.</span>
+      </p>
+    </div>
+  </div>
+  <div class="gold-divider"></div>
+  <section class="section section-dark on-dark">
+    <div class="section-label"><span data-lang="fr">Ma méthode</span><span data-lang="en">My approach</span><span data-lang="de">Meine Methode</span></div>
+    <h2 class="section-title"><span data-lang="fr">Qualité, <em>éthique</em> et confidentialité</span><span data-lang="en">Quality, <em>ethics</em> and confidentiality</span><span data-lang="de">Qualität, <em>Ethik</em> und Vertraulichkeit</span></h2>
+    <div class="approach-grid">
+      <div class="approach-item">
+        <div class="approach-icon">✉️</div>
+        <div class="approach-title"><span data-lang="fr">Consultation par courriel</span><span data-lang="en">Email consultation</span><span data-lang="de">E-Mail-Beratung</span></div>
+        <p class="approach-desc"><span data-lang="fr">Toutes les demandes traitées exclusivement par courriel, délai de réponse garanti de 7 jours.</span><span data-lang="en">All requests handled exclusively by email, with a guaranteed 7-day response time.</span><span data-lang="de">Alle Anfragen ausschliesslich per E-Mail, garantierte Antwortzeit von 7 Tagen.</span></p>
       </div>
-      <div class="hero-card">
-        <div class="hero-card-icon">◈</div>
-        <div class="hero-card-title">Advisory</div>
-        <div class="hero-card-body">Senior independent expertise on demand — giving boards and sponsors genuine assurance.</div>
+      <div class="approach-item">
+        <div class="approach-icon">🔒</div>
+        <div class="approach-title">Proton Mail</div>
+        <p class="approach-desc"><span data-lang="fr">Messagerie suisse à haut niveau de confidentialité, avec un chiffrement de bout en bout.</span><span data-lang="en">Swiss email service with high confidentiality and end-to-end encryption.</span><span data-lang="de">Schweizer E-Mail-Dienst mit hohem Datenschutzniveau und Ende-zu-Ende-Verschlüsselung.</span></p>
+      </div>
+      <div class="approach-item">
+        <div class="approach-icon">🌍</div>
+        <div class="approach-title"><span data-lang="fr">Approche interculturelle</span><span data-lang="en">Intercultural approach</span><span data-lang="de">Interkultureller Ansatz</span></div>
+        <p class="approach-desc"><span data-lang="fr">Six langues, plusieurs cultures eurasiennes — une écoute adaptée à chaque contexte.</span><span data-lang="en">Six languages, several Eurasian cultures — attentive listening for any context.</span><span data-lang="de">Sechs Sprachen, mehrere eurasische Kulturen — aufmerksames Zuhören für jeden Kontext.</span></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<div class="page-panel" id="panel-about">
+  <div class="page-hero dark on-dark">
+    <div class="section-label"><span data-lang="fr">À propos de moi</span><span data-lang="en">About me</span><span data-lang="de">Über mich</span></div>
+    <h1 class="section-title"><span data-lang="fr">L'expertise au <em>carrefour</em> des cultures et du droit</span><span data-lang="en">Expertise at the <em>crossroads</em> of cultures and law</span><span data-lang="de">Expertise an der <em>Schnittstelle</em> von Kulturen und Recht</span></h1>
+  </div>
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="https://verijuris.com/wp-content/uploads/2025/12/nazim_nourahmad-2.jpg" alt="Dr. Nour Ahmad Nazim" class="about-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-img-fallback"></div>
+      <div class="about-badge">
+        <div class="about-badge-num">25+</div>
+        <div class="about-badge-text"><span data-lang="fr">Ans de pratique</span><span data-lang="en">Years practice</span><span data-lang="de">Jahre Praxis</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="about-text">
+        <span data-lang="fr">Ma culture juridique et mon approche du droit sont forgées par une solide formation académique internationale et plus de 25 ans de pratique en Suisse. Diplômé du MGIMO — institution de prestige comparée souvent à l'Université de Harvard — j'ai poursuivi mon cursus en Suisse où j'ai obtenu mon Doctorat en droit à l'Université de Neuchâtel en 2001. En 2021, j'ai consolidé mon expertise par un CAS en protection des données. J'ai notamment œuvré, durant de nombreuses années, pour l'État de Neuchâtel ainsi que pour le Secrétariat d'État à l'économie (SECO) à Berne.</span>
+        <span data-lang="en">My legal culture and approach to law are shaped by a solid international academic background and over 25 years of practice in Switzerland. A graduate of MGIMO — an institution of prestige often compared to Harvard University — I continued my studies in Switzerland where I obtained my Doctorate in Law at the University of Neuchâtel in 2001. In 2021, I consolidated my expertise with a CAS in data protection. I have worked for many years for the Canton of Neuchâtel and the State Secretariat for Economic Affairs (SECO) in Bern.</span>
+        <span data-lang="de">Meine Rechtskultur und mein Ansatz zum Recht sind durch eine solide internationale akademische Ausbildung und über 25 Jahre Praxis in der Schweiz geprägt. Als Absolvent des MGIMO — einer Prestigeinstitution, die oft mit der Harvard University verglichen wird — setzte ich mein Studium in der Schweiz fort, wo ich 2001 meinen Doktortitel in Rechtswissenschaften an der Universität Neuenburg erlangte. 2021 festigte ich meine Expertise mit einem CAS in Datenschutz. Ich habe viele Jahre für den Kanton Neuenburg und das Staatssekretariat für Wirtschaft (SECO) in Bern gearbeitet.</span>
+      </p>
+
+      <div class="about-section-title">
+        <span data-lang="fr">Une expertise pluridisciplinaire et polyglotte</span>
+        <span data-lang="en">A multidisciplinary and multilingual expertise</span>
+        <span data-lang="de">Eine multidisziplinäre und mehrsprachige Expertise</span>
+      </div>
+      <p class="about-text">
+        <span data-lang="fr">Juriste généraliste avec un fort ancrage en droit public, je me suis spécialisé dans les piliers de la vie sociale et économique suisse : le droit du travail, les assurances sociales et la protection des données. Ma force réside également dans ma capacité à naviguer entre les cultures. Parlant six langues (dont quatre langues européennes et deux langues asiatiques) et imprégné de plusieurs cultures eurasiennes, j'offre une écoute attentive aux situations personnelles, qu'elles s'inscrivent dans un contexte local ou international.</span>
+        <span data-lang="en">A generalist jurist with a strong grounding in public law, I have specialised in the pillars of Swiss social and economic life: labour law, social insurance and data protection. My strength also lies in my ability to navigate between cultures. Speaking six languages (including four European and two Asian languages) and immersed in several Eurasian cultures, I offer attentive listening to personal situations, whether in a local or international context.</span>
+        <span data-lang="de">Als vielseitiger Jurist mit starkem Fundament im öffentlichen Recht habe ich mich auf die Säulen des schweizerischen Sozial- und Wirtschaftslebens spezialisiert: Arbeitsrecht, Sozialversicherungen und Datenschutz. Meine Stärke liegt auch in meiner Fähigkeit, zwischen Kulturen zu navigieren. Mit sechs Sprachen (darunter vier europäischen und zwei asiatischen) und vertraut mit mehreren eurasischen Kulturen biete ich aufmerksames Zuhören für persönliche Situationen, ob lokal oder international.</span>
+      </p>
+
+      <div class="about-section-title">
+        <span data-lang="fr">L'éthique comme fil conducteur</span>
+        <span data-lang="en">Ethics as a guiding thread</span>
+        <span data-lang="de">Ethik als roter Faden</span>
+      </div>
+      <p class="about-text">
+        <span data-lang="fr">Au-delà de la déontologie de mon métier, ma pratique est guidée par une quête de sens. Mes réflexions philosophiques sur l'existence, que je partage sur mon blog <em>Vivre avec philosophie</em>, nourrissent également ma vision du métier : la recherche de la vérité et de la justice, <em>sub specie aeternitatis</em>, sont les fondements de chacun de mes conseils.</span>
+        <span data-lang="en">Beyond the ethics of my profession, my practice is guided by a quest for meaning. My philosophical reflections on existence, which I share on my blog <em>Vivre avec philosophie</em>, also nourish my vision of the profession: the search for truth and justice, <em>sub specie aeternitatis</em>, are the foundations of each of my pieces of advice.</span>
+        <span data-lang="de">Über die Berufsethik hinaus wird meine Praxis von einer Sinnsuche geleitet. Meine philosophischen Überlegungen zur Existenz, die ich in meinem Blog <em>Vivre avec philosophie</em> teile, nähren auch meine Berufsvision: Die Suche nach Wahrheit und Gerechtigkeit, <em>sub specie aeternitatis</em>, sind die Grundlagen jedes meiner Ratschläge.</span>
+      </p>
+
+      <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:9px;margin-top:8px">
+        <span data-lang="fr">6 langues parlées</span><span data-lang="en">6 languages spoken</span><span data-lang="de">6 gesprochene Sprachen</span>
+      </p>
+      <div class="lang-grid">
+        <span class="lang-pill">Français</span><span class="lang-pill">English</span><span class="lang-pill">Deutsch</span><span class="lang-pill">Русский</span>
+        <span class="lang-pill">+ 2 <span data-lang="fr">langues asiatiques</span><span data-lang="en">Asian languages</span><span data-lang="de">asiatische Sprachen</span></span>
       </div>
     </div>
   </div>
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div>
-        <span class="stat-value">21</span>
-        <span class="stat-label">Years' Experience</span>
+</div>
+
+<!-- ═══ BLOG ═══ -->
+<div class="page-panel" id="panel-blog">
+  <div class="page-hero dark on-dark">
+    <div class="section-label">Blog</div>
+    <h1 class="section-title">
+      <span data-lang="fr">Jurisprudence & <em>commentaires</em></span>
+      <span data-lang="en">Case law & <em>commentary</em></span>
+      <span data-lang="de">Rechtsprechung & <em>Kommentare</em></span>
+    </h1>
+    <p class="section-body">
+      <span data-lang="fr">Analyse d'arrêts récents et commentaires sur les évolutions du droit du travail, de la protection des données et de l'assurance-chômage en Suisse.</span>
+      <span data-lang="en">Analysis of recent rulings and commentary on developments in labour law, data protection and unemployment insurance in Switzerland.</span>
+      <span data-lang="de">Analyse aktueller Urteile und Kommentare zu Entwicklungen im Arbeitsrecht, Datenschutz und Arbeitslosenversicherung in der Schweiz.</span>
+    </p>
+  </div>
+  <div class="blog-grid">
+    <a class="blog-card" href="blog-coordination-securite-sociale.html">
+      <div class="blog-card-inner">
+        <div class="blog-tag">
+          <span data-lang="fr">Assurance-chômage · Droit européen</span>
+          <span data-lang="en">Unemployment Insurance · EU Law</span>
+          <span data-lang="de">Arbeitslosenversicherung · EU-Recht</span>
+        </div>
+        <div class="blog-date">31 mars 2026</div>
+        <div class="blog-title">
+          <span data-lang="fr">Coordination de la sécurité sociale — langue de procédure et droit européen</span>
+          <span data-lang="en">Social security coordination — language of procedure and EU law</span>
+          <span data-lang="de">Koordinierung der sozialen Sicherheit — Verfahrenssprache und EU-Recht</span>
+        </div>
+        <p class="blog-excerpt">
+          <span data-lang="fr">Arrêt TF 8C_248/2022 : une caisse de chômage cantonale peut-elle exiger qu'une opposition soit rédigée en allemand lorsque l'administré est ressortissant français ?</span>
+          <span data-lang="en">Federal Tribunal 8C_248/2022: can a cantonal unemployment fund require an objection to be written in German when the claimant is a French national?</span>
+          <span data-lang="de">Bundesgericht 8C_248/2022: Kann eine kantonale Arbeitslosenkasse verlangen, dass ein Einspruch auf Deutsch verfasst wird, wenn der Versicherte französischer Staatsbürger ist?</span>
+        </p>
       </div>
-      <div>
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;display:block;"><span class="stat-value">CCDE</span></a>
-        <span class="stat-label">Cisco Certified Design Expert</span>
+      <div class="blog-footer">
+        <span class="blog-read"><span data-lang="fr">Lire l'article</span><span data-lang="en">Read article</span><span data-lang="de">Artikel lesen</span></span>
+        <span class="blog-arrow">→</span>
       </div>
-      <div>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;display:block;"><span class="stat-value">CCIE</span></a>
-        <span class="stat-label">Cisco Certified Internetwork Expert</span>
+    </a>
+    <a class="blog-card" href="blog-contrat-travail-provision-licenciement-abusif.html">
+      <div class="blog-card-inner">
+        <div class="blog-tag">
+          <span data-lang="fr">Droit du travail</span>
+          <span data-lang="en">Labour Law</span>
+          <span data-lang="de">Arbeitsrecht</span>
+        </div>
+        <div class="blog-date">23 février 2026</div>
+        <div class="blog-title">
+          <span data-lang="fr">Contrat de travail, droit à la provision et licenciement abusif</span>
+          <span data-lang="en">Employment contract, right to commission and wrongful dismissal</span>
+          <span data-lang="de">Arbeitsvertrag, Provisionsanspruch und missbräuchliche Kündigung</span>
+        </div>
+        <p class="blog-excerpt">
+          <span data-lang="fr">Arrêt TF 4A_233/2025 : la "participation effective" aux ventes peut couvrir des tâches de coordination, et un licenciement trop proche d'une réclamation salariale est présumé abusif.</span>
+          <span data-lang="en">Federal Tribunal 4A_233/2025: "effective participation" in sales can cover coordination tasks, and dismissal too close to a salary claim is presumed abusive.</span>
+          <span data-lang="de">Bundesgericht 4A_233/2025: «Wirksame Beteiligung» an Verkäufen kann Koordinationsaufgaben umfassen; eine Kündigung kurz nach einer Lohnforderung gilt als missbräuchlich.</span>
+        </p>
       </div>
-      <div>
-        <span class="stat-value" style="font-size:1.9rem;line-height:1;">7+</span>
-        <span class="stat-label" style="white-space:nowrap;">Industry Sectors</span>
+      <div class="blog-footer">
+        <span class="blog-read"><span data-lang="fr">Lire l'article</span><span data-lang="en">Read article</span><span data-lang="de">Artikel lesen</span></span>
+        <span class="blog-arrow">→</span>
       </div>
+    </a>
+    <a class="blog-card" href="blog-chomage-prolongation-delai-cadre-120-indemnites.html">
+      <div class="blog-card-inner">
+        <div class="blog-tag">
+          <span data-lang="fr">Assurance-chômage</span>
+          <span data-lang="en">Unemployment Insurance</span>
+          <span data-lang="de">Arbeitslosenversicherung</span>
+        </div>
+        <div class="blog-date">27 février 2026</div>
+        <div class="blog-title">
+          <span data-lang="fr">Chômage — prolongation du délai-cadre et 120 indemnités supplémentaires</span>
+          <span data-lang="en">Unemployment — extension of the framework period and 120 additional benefits</span>
+          <span data-lang="de">Arbeitslosigkeit — Verlängerung der Rahmenfrist und 120 zusätzliche Taggelder</span>
+        </div>
+        <p class="blog-excerpt">
+          <span data-lang="fr">Arrêt TF 8C_546/2025 : c'est l'âge au moment de l'ouverture du délai-cadre, et non à son échéance, qui détermine le droit aux 120 indemnités supplémentaires pour chômeurs proches de la retraite.</span>
+          <span data-lang="en">Federal Tribunal 8C_546/2025: it is the age at the start of the benefit period, not at its end, that determines entitlement to 120 additional benefits for those nearing retirement.</span>
+          <span data-lang="de">Bundesgericht 8C_546/2025: Das Alter bei Eröffnung der Rahmenfrist — nicht bei deren Ablauf — bestimmt den Anspruch auf 120 zusätzliche Taggelder für rentennahe Arbeitslose.</span>
+        </p>
+      </div>
+      <div class="blog-footer">
+        <span class="blog-read"><span data-lang="fr">Lire l'article</span><span data-lang="en">Read article</span><span data-lang="de">Artikel lesen</span></span>
+        <span class="blog-arrow">→</span>
+      </div>
+    </a>
+    <div class="blog-card placeholder">
+      <div class="blog-card-inner">
+        <div class="blog-tag" style="color:transparent">—</div>
+        <div class="ph-line m" style="margin-bottom:16px"></div>
+        <div class="ph-line s" style="margin-bottom:20px"></div>
+        <div class="ph-line m"></div><div class="ph-line m"></div><div class="ph-line s"></div>
+      </div>
+      <div class="blog-footer"><span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dark)"><span data-lang="fr">À venir</span><span data-lang="en">Coming soon</span><span data-lang="de">Demnächst</span></span></div>
     </div>
   </div>
-  <div class="sectors">
-    <div class="sectors-inner">
-      <div class="sectors-label">Sectors I Serve</div>
-      <div class="sectors-list">
-        <span class="sector-tag">Financial Services</span>
-        <span class="sector-tag">Banking</span>
-        <span class="sector-tag">Biopharmaceutical</span>
-        <span class="sector-tag">Healthcare &amp; NHS</span>
-        <span class="sector-tag">Media</span>
-        <span class="sector-tag">Automotive</span>
-        <span class="sector-tag">Government &amp; Defence</span>
-        <span class="sector-tag">Technology &amp; Telecoms</span>
-        <span class="sector-tag">Insurance</span>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="page-panel" id="panel-contact">
+  <div class="page-hero dark on-dark">
+    <div class="section-label"><span data-lang="fr">Me contacter</span><span data-lang="en">Get in touch</span><span data-lang="de">Kontakt</span></div>
+    <h1 class="section-title"><span data-lang="fr">Votre première <em>consultation</em></span><span data-lang="en">Your first <em>consultation</em></span><span data-lang="de">Ihre erste <em>Beratung</em></span></h1>
+    <p class="section-body"><span data-lang="fr">Décrivez votre situation par courriel. Je vous répondrai dans un délai de 7 jours avec une analyse précise et des pistes concrètes.</span><span data-lang="en">Describe your situation by email. I will respond within 7 days with a precise analysis and concrete guidance.</span><span data-lang="de">Beschreiben Sie Ihre Situation per E-Mail. Ich antworte innerhalb von 7 Tagen mit präziser Analyse.</span></p>
+  </div>
+  <div class="contact-body">
+    <div>
+      <div class="contact-detail"><div class="contact-detail-icon">✉️</div><div class="contact-detail-text"><h4>Email</h4><a href="mailto:nourahmad.nazim@verijuris.com">nourahmad.nazim@verijuris.com</a></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">🌐</div><div class="contact-detail-text"><h4><span data-lang="fr">Langues de consultation</span><span data-lang="en">Consultation languages</span><span data-lang="de">Beratungssprachen</span></h4><p>Français · English · Deutsch</p></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">⏱️</div><div class="contact-detail-text"><h4><span data-lang="fr">Délai de réponse</span><span data-lang="en">Response time</span><span data-lang="de">Antwortzeit</span></h4><p><span data-lang="fr">Maximum 7 jours ouvrables</span><span data-lang="en">Maximum 7 working days</span><span data-lang="de">Maximal 7 Werktage</span></p></div></div>
+      <div class="contact-detail"><div class="contact-detail-icon">🔒</div><div class="contact-detail-text"><h4>Proton Mail</h4><p><span data-lang="fr">Messagerie suisse sécurisée, chiffrement de bout en bout</span><span data-lang="en">Secure Swiss email, end-to-end encryption</span><span data-lang="de">Sicherer Schweizer E-Mail-Dienst, Ende-zu-Ende-Verschlüsselung</span></p></div></div>
+      <div class="contact-note">
+        <span data-lang="fr">La confidentialité des données transmises par courriel ne peut être garantie à 100%. En utilisant ce formulaire, vous acceptez expressément que la réponse vous soit adressée par courriel, malgré les risques inhérents à ce mode de communication.</span>
+        <span data-lang="en">The confidentiality of data transmitted by email cannot be guaranteed 100%. By using this form, you expressly accept that the response will be sent to you by email, despite the inherent risks of this mode of communication.</span>
+        <span data-lang="de">Die Vertraulichkeit der per E-Mail übermittelten Daten kann nicht zu 100% garantiert werden. Durch die Nutzung dieses Formulars akzeptieren Sie ausdrücklich, dass die Antwort per E-Mail übermittelt wird, trotz der damit verbundenen Risiken.</span>
       </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-title"><span data-lang="fr">Envoyer une demande</span><span data-lang="en">Send a request</span><span data-lang="de">Anfrage senden</span></div>
+      <div class="form-subtitle"><span data-lang="fr">Décrivez votre situation en détail.</span><span data-lang="en">Describe your situation in detail.</span><span data-lang="de">Beschreiben Sie Ihre Situation ausführlich.</span></div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="merci.html">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="form-group"><label><span data-lang="fr">Nom</span><span data-lang="en">Last name</span><span data-lang="de">Nachname</span> *</label><input type="text" name="lastname" required></div>
+          <div class="form-group"><label><span data-lang="fr">Prénom</span><span data-lang="en">First name</span><span data-lang="de">Vorname</span> *</label><input type="text" name="firstname" required></div>
+        </div>
+        <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+        <div class="form-group"><label><span data-lang="fr">Téléphone</span><span data-lang="en">Phone</span><span data-lang="de">Telefon</span></label><input type="tel" name="phone"></div>
+        <div class="form-group">
+          <label><span data-lang="fr">Domaine concerné</span><span data-lang="en">Area of concern</span><span data-lang="de">Betroffener Bereich</span></label>
+          <select name="domain">
+            <option value=""></option>
+            <option value="data"><span data-lang="fr">Protection des données</span><span data-lang="en">Data Protection</span><span data-lang="de">Datenschutz</span></option>
+            <option value="labour"><span data-lang="fr">Droit du travail</span><span data-lang="en">Labour Law</span><span data-lang="de">Arbeitsrecht</span></option>
+            <option value="unemployment"><span data-lang="fr">Assurance-chômage</span><span data-lang="en">Unemployment Insurance</span><span data-lang="de">Arbeitslosenversicherung</span></option>
+            <option value="other"><span data-lang="fr">Autre</span><span data-lang="en">Other</span><span data-lang="de">Sonstiges</span></option>
+          </select>
+        </div>
+        <div class="form-group"><label><span data-lang="fr">Votre message</span><span data-lang="en">Your message</span><span data-lang="de">Ihre Nachricht</span> *</label><textarea name="message" required></textarea></div>
+        <button type="submit" class="form-submit"><span data-lang="fr">Envoyer le message</span><span data-lang="en">Send message</span><span data-lang="de">Nachricht senden</span></button>
+      </form>
     </div>
   </div>
-  <footer>
-    <div class="footer-inner">
-      <div><div class="footer-brand">Design <span>Assurance</span></div><p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p></div>
-      <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('about')">About</a></li><li><a onclick="showSection('services')">Services</a></li><li><a onclick="showSection('engagement')">Engagement</a></li><li><a onclick="showSection('blog')">Insights</a></li><li><a onclick="showSection('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-col-title">Contact</div><ul class="footer-links footer-links-contact"><li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li><li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section>
+</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">About</div>
-      <h1 class="page-title">21 years of delivery discipline across the UK, US, EU and APAC — now available as independent assurance</h1>
-    </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo-text">Verijuris</div>
+  <div class="footer-copy">© 2026 Verijuris · Dr. iur. Nour Ahmad Nazim · Suisse</div>
+  <div class="footer-links">
+    <a href="disclaimer.html" class="footer-link"><span data-lang="fr">Limitation de responsabilité</span><span data-lang="en">Disclaimer</span><span data-lang="de">Haftungsausschluss</span></a>
+    <span class="proton-badge">Proton Mail</span>
   </div>
-  <div class="about-content">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="about-inner">
-        <div class="about-text">
-          <h2>The problem I solve</h2>
-          <p>Most infrastructure programmes don't fail in delivery — they fail in design. Flawed architectures, unvalidated low-level designs and unchallenged vendor recommendations create problems that surface during implementation or after go-live, when they are most expensive to fix.</p>
-          <p>My edge over senior engineers is that I understand business requirements and constraints — not just what is technically possible, but what the business actually needs. My edge over architects is that I know whether a design is practical and implementable — not just theoretically sound on paper.</p>
-          <p>I sit between the engineering team and the boardroom. I speak both languages. When a CTO or IT Director needs an honest, independent picture of the technical state of a programme — one that is grounded in reality rather than optimism — that is where I add the most value.</p>
-          <h2 style="margin-top: 2rem;">About me</h2>
-          <p>Design Assurance was founded by a CCDE and CCIE certified consultant with 21 years of experience across network, security and cloud programmes. My background spans highly regulated, high-security environments including financial services, biopharmaceutical, healthcare, media and automotive sectors. I am contracted via Tier 1 global system integrators since 2016.</p>
-          <p>I am vendor-neutral. I have no allegiance to any platform, product or integrator. My only interest is in whether your design will work — and whether it can actually be built.</p>
-        </div>
-      <div>
-        <div class="about-credentials">
-          <div class="credential-title">Credentials & Experience</div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong><a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;">CCDE — Cisco Certified Design Expert</a></strong>
-              Active certification. One of the rarest Architecture &amp; Design credentials globally.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong><a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;">CCIE — Cisco Certified Internetwork Expert</a></strong>
-              Active certification. Industry benchmark for network expertise.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong><a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;">AWS Solutions Architect Associate</a></strong>
-              Cloud architecture across hybrid and multi-cloud environments.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong><a href="https://www.credly.com/badges/de940824-79d1-4049-a4aa-c3c10291de51" target="_blank" rel="noopener noreferrer" class="cert-badge-link" style="color:inherit;">AWS Security Specialty</a></strong>
-              Cloud security architecture and compliance frameworks.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong>PCNSE — Palo Alto Networks</strong>
-              Security design across enterprise environments.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong>21 Years' Experience</strong>
-              DC, WAN, cloud, campus and wireless transformation across 7+ sectors across the UK, US, EU, APAC and Middle East.
-            </div>
-          </div>
-          <div class="credential-item">
-            <div class="credential-dot"></div>
-            <div class="credential-text">
-              <strong>9+ Years Independent Consulting</strong>
-              Contracted via Tier 1 global system integrators since 2016.
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="about-sectors">
-    <div class="about-sectors-inner">
-      <div class="section-label">Where I Work</div>
-      <h2 class="section-heading">Sectors I serve</h2>
-      <div class="sectors-grid">
-        <div class="sector-card"><div class="sector-card-name">Financial Services &amp; Banking</div><div class="sector-card-desc">High-stakes infrastructure where regulatory compliance and resilience are non-negotiable.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Biopharmaceutical</div><div class="sector-card-desc">GxP-compliant infrastructure in global biopharmaceutical environments with strict security and validation requirements.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Healthcare &amp; NHS</div><div class="sector-card-desc">Mission-critical infrastructure across NHS Trusts and healthcare organisations.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Insurance</div><div class="sector-card-desc">Highly regulated environments with complex compliance and resilience requirements. Expanding into insurance sector engagements.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Media</div><div class="sector-card-desc">High-bandwidth, low-latency environments with complex content delivery requirements.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Automotive</div><div class="sector-card-desc">OT/IT convergence, SD-WAN and global WAN transformation programmes.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Defence &amp; Government</div><div class="sector-card-desc">Highly regulated, security-cleared environments across the UK and internationally. Expanding into defence engagements.</div></div>
-        <div class="sector-card"><div class="sector-card-name">Technology &amp; Telecoms</div><div class="sector-card-desc">Complex network architecture and cloud transformation across technology organisations.</div></div>
-      </div>
-    </div>
-  </div>
-    <footer>
-    <div class="footer-inner">
-      <div><div class="footer-brand">Design <span>Assurance</span></div><p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p></div>
-      <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('about')">About</a></li><li><a onclick="showSection('services')">Services</a></li><li><a onclick="showSection('engagement')">Engagement</a></li><li><a onclick="showSection('blog')">Insights</a></li><li><a onclick="showSection('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-col-title">Contact</div><ul class="footer-links footer-links-contact"><li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li><li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Services</div>
-      <h1 class="page-title">Independent assurance across the full programme lifecycle</h1>
-    </div>
-  </div>
-
-  <div class="services-content">
-    <div class="services-inner">
-      <div class="services-intro">
-        <p>I provide vendor-neutral design assurance across network, security, cloud, campus and wireless transformation programmes — bringing the technical depth to know whether a design will work in practice, and the communication skills to translate that assessment clearly for boards, CTOs and IT Directors. Every engagement is delivered by a CCDE and CCIE certified consultant with 21 years of hands-on programme experience.</p>
-      </div>
-
-      <div class="services-tier">
-        <div class="tier-header">
-          <div class="tier-number">01</div>
-          <div>
-            <div class="tier-title">Design Assurance</div>
-            <div class="tier-subtitle">Independent review, validation and sign-off</div>
-          </div>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-name">HLD Review & Validation</div>
-            <div class="service-desc">Independent review of High-Level Designs against business requirements, scalability and best practice — identifying risks before they become expensive problems.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">LLD Review & Validation</div>
-            <div class="service-desc">Detailed technical scrutiny of Low-Level Designs — checking implementation feasibility, configuration accuracy and production readiness.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">HLD & LLD Gap Analysis</div>
-            <div class="service-desc">Reviewing whether the LLD actually delivers what the HLD promised — a critical and often overlooked failure point in large transformation programmes.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">Pre-Deployment Sign-Off</div>
-            <div class="service-desc">Independent technical sign-off before go-live — giving stakeholders and boards confidence that what is being deployed is fit for production.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">HLD &amp; LLD Creation</div>
-            <div class="service-desc">Full authoring of High-Level and Low-Level Designs — vendor-neutral, built around your requirements, and written at the level of detail engineers can actually implement from.</div>
-          </div>
-            <div class="service-card">
-              <div class="service-name">As-Built Architecture Review</div>
-              <div class="service-desc">Independent post-deployment review of infrastructure against the approved design — identifying deviations, configuration drift, technical debt and risks before they become operational problems.</div>
-            </div>
-          
-        </div>
-      </div>
-
-      <div class="services-tier">
-        <div class="tier-header">
-          <div class="tier-number">02</div>
-          <div>
-            <div class="tier-title">Programme Delivery, Recovery &amp; Engineering</div>
-            <div class="tier-subtitle">Delivering, stabilising and implementing complex network programmes</div>
-          </div>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-name">Programme Recovery</div>
-            <div class="service-desc">When a programme is off-track, I come in and find the technical root cause — reading the HLD, the LLD and talking directly to the engineers. Most programme failures trace back to a network or security design problem. Finding it is where recovery begins.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">Design Assurance Retainer</div>
-            <div class="service-desc">Ongoing independent design review throughout a programme lifecycle — catching drift between design intent and implementation reality before it becomes a problem.</div>
-          </div>
-
-            <div class="service-card">
-              <div class="service-name">Network Engineering &amp; Implementation</div>
-              <div class="service-desc">Taking approved HLD and LLD designs through to configuration, build and deployment. Enterprise network, campus, data centre and WAN — CCIE-level implementation where the client has an approved design and requires expert delivery.</div>
-            </div>
-            <div class="service-card">
-              <div class="service-name">Cloud Network Implementation</div>
-              <div class="service-desc">AWS and Azure network implementation — VPC and VNet architecture, Transit Gateway, Direct Connect, ExpressRoute and hybrid cloud connectivity, realised from approved design into production configuration.</div>
-            </div>
-            <div class="service-card">
-              <div class="service-name">SD-WAN / SR-MPLS Deployment &amp; Commissioning</div>
-              <div class="service-desc">End-to-end SD-WAN and SR-MPLS implementation from approved design through to production cutover and validation — including legacy integration, failover testing and sign-off against the original design intent.</div>
-            </div>
-          
-        </div>
-      </div>
-
-      <div class="services-tier">
-        <div class="tier-header">
-          <div class="tier-number">03</div>
-          <div>
-            <div class="tier-title">Advisory</div>
-            <div class="tier-subtitle">Senior independent expertise on demand</div>
-          </div>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-name">Technical Due Diligence</div>
-            <div class="service-desc">Independent technical assessment for M&amp;A, outsourcing and major procurement decisions — providing boards and decision-makers with an honest, ground-truth view of infrastructure quality and risk, free from vendor or integrator influence.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">Vendor & Solution Assessment</div>
-            <div class="service-desc">Independent evaluation of vendor proposals and solution designs — ensuring clients are not buying an overengineered, unsuitable or commercially compromised solution.</div>
-          </div>
-          <div class="service-card">
-            <div class="service-name">Architecture Advisory</div>
-            <div class="service-desc">Senior independent design expertise for CTOs, IT Directors and boards who need a trusted technical voice — someone who understands both the engineering reality and the business constraints, and can translate clearly between the two.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Design <span>Assurance</span></div>
-        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigation</div>
-        <ul class="footer-links">
-          <li><a onclick="showSection('home')">Home</a></li>
-          <li><a onclick="showSection('about')">About</a></li>
-          <li><a onclick="showSection('services')">Services</a></li>
-          <li><a onclick="showSection('engagement')">Engagement</a></li>
-          <li><a onclick="showSection('blog')">Insights</a></li>
-          <li><a onclick="showSection('contact')">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links footer-links-contact">
-          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        Design Assurance is a trading name of Network Fabric Limited. Registered in England & Wales. &copy; 2026 Design Assurance.
-      </div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section>
-
-<!-- ENGAGEMENT -->
-<section id="engagement">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Engagement Model</div>
-      <h1 class="page-title">Flexible engagements built around your programme</h1>
-    </div>
-  </div>
-
-  <div style="background:var(--white);padding:2.5rem 5%;">
-    <div style="max-width:1100px;margin:0 auto;">
-
-      <div style="max-width:640px;margin-bottom:4rem;">
-        <p style="font-size:0.97rem;color:var(--text-muted);line-height:1.85;font-weight:300;">Every programme is different. I scope each engagement to your specific needs and agree a commercial model that reflects the value delivered — not simply the time spent. All engagements begin with a confidential conversation at no obligation.</p>
-      </div>
-
-      <div class="engagement-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;">
-
-        <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:2rem;border-radius:4px;transition:all 0.25s;">
-          <div style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">Type 01</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:1rem;line-height:1.2;">Design Review</div>
-          <div style="font-size:0.85rem;color:var(--text-muted);line-height:1.75;font-weight:300;margin-bottom:1.5rem;">A fixed-scope, fixed-price review of your HLD or LLD with a written assurance report. Clear deliverable, defined timescale, no ongoing commitment.</div>
-          <div style="border-top:1px solid var(--silver-pale);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.4rem;">Commercial Model</div>
-            <div style="font-size:0.88rem;color:var(--navy);font-weight:500;">Fixed price per engagement</div>
-          </div>
-          <div style="margin-top:1.25rem;border-top:1px solid var(--silver-pale);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.5rem;">Typically Includes</div>
-            <ul style="list-style:none;padding:0;font-size:0.82rem;color:var(--text-muted);line-height:1.8;font-weight:300;">
-              <li>— Document review and analysis</li>
-              <li>— Written assurance report</li>
-              <li>— Risk and gap register</li>
-              <li>— Recommendations summary</li>
-              <li>— Briefing call with stakeholders</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="background:var(--navy);border:1px solid var(--navy);padding:2rem;border-radius:4px;position:relative;">
-          <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--silver-light);color:var(--navy);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:0 0 4px 4px;font-weight:500;">Most Common</div>
-          <div style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">Type 02</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:var(--white);margin-bottom:1rem;line-height:1.2;">Programme Assurance</div>
-          <div style="font-size:0.85rem;color:var(--silver-light);line-height:1.75;font-weight:300;margin-bottom:1.5rem;">Ongoing independent design assurance across the full programme lifecycle — from initial HLD through to successful delivery. Day rate or monthly retainer.</div>
-          <div style="border-top:1px solid rgba(168,180,192,0.15);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.4rem;">Commercial Model</div>
-            <div style="font-size:0.88rem;color:var(--silver-light);font-weight:500;">Day rate or monthly retainer</div>
-          </div>
-          <div style="margin-top:1.25rem;border-top:1px solid rgba(168,180,192,0.15);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.5rem;">Typically Includes</div>
-            <ul style="list-style:none;padding:0;font-size:0.82rem;color:var(--silver-light);line-height:1.8;font-weight:300;">
-              <li>— HLD and LLD review at each stage</li>
-              <li>— Design drift monitoring</li>
-              <li>— Pre-deployment sign-off</li>
-              <li>— Ongoing stakeholder reporting</li>
-              <li>— Flexible scope as programme evolves</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:2rem;border-radius:4px;">
-          <div style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">Type 03</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:var(--navy);margin-bottom:1rem;line-height:1.2;">Programme Recovery</div>
-          <div style="font-size:0.85rem;color:var(--text-muted);line-height:1.75;font-weight:300;margin-bottom:1.5rem;">Engaged when a programme is off-track, delayed or failing. Scope agreed after an initial diagnostic conversation. Day rate for the duration of the recovery engagement.</div>
-          <div style="border-top:1px solid var(--silver-pale);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.4rem;">Commercial Model</div>
-            <div style="font-size:0.88rem;color:var(--navy);font-weight:500;">Day rate — typically 4–12 weeks</div>
-          </div>
-          <div style="margin-top:1.25rem;border-top:1px solid var(--silver-pale);padding-top:1.25rem;">
-            <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);margin-bottom:0.5rem;">Typically Includes</div>
-            <ul style="list-style:none;padding:0;font-size:0.82rem;color:var(--text-muted);line-height:1.8;font-weight:300;">
-              <li>— Rapid programme diagnostic</li>
-              <li>— Stakeholder assessment</li>
-              <li>— Recovery plan and critical path</li>
-              <li>— Hands-on delivery leadership</li>
-              <li>— Board-level reporting</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- FAQ STRIP -->
-      <div style="margin-bottom:3rem;">
-        <div class="section-label" style="margin-bottom:1.5rem;">Common Questions</div>
-        <div class="engagement-faq" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-          <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:1.5rem;border-radius:4px;">
-            <div style="font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem;">Do you work on-site or remotely?</div>
-            <div style="font-size:0.83rem;color:var(--text-muted);line-height:1.7;font-weight:300;">Both. Design reviews are conducted remotely — accessible to clients across the UK, US, EU, APAC and Middle East. Programme recovery and ongoing assurance engagements may involve on-site presence depending on the programme's needs and location.</div>
-          </div>
-          <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:1.5rem;border-radius:4px;">
-            <div style="font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem;">How quickly can you start?</div>
-            <div style="font-size:0.83rem;color:var(--text-muted);line-height:1.7;font-weight:300;">For design reviews, typically within one to two weeks of engagement. For programme recovery, sooner where possible. Get in touch and I will discuss availability.</div>
-          </div>
-          <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:1.5rem;border-radius:4px;">
-            <div style="font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem;">Do you sign NDAs?</div>
-            <div style="font-size:0.83rem;color:var(--text-muted);line-height:1.7;font-weight:300;">Yes. All engagements are conducted under appropriate confidentiality agreements. I understand that programme information is commercially sensitive.</div>
-          </div>
-          <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:1.5rem;border-radius:4px;">
-            <div style="font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:0.5rem;">Can you work alongside our existing team or SI?</div>
-            <div style="font-size:0.83rem;color:var(--text-muted);line-height:1.7;font-weight:300;">Yes. Independent design assurance works alongside — not instead of — your delivery team or system integrator. I provide the independent scrutiny they cannot provide of their own work.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div style="background:var(--navy);padding:2.5rem;border-radius:4px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
-        <div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--white);margin-bottom:0.35rem;">Ready to discuss your programme?</div>
-          <div style="font-size:0.85rem;color:var(--silver);font-weight:300;">All initial conversations are confidential. No obligation to proceed.</div>
-        </div>
-        <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.85rem 2rem;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand">Design <span>Assurance</span></div>
-        <p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigation</div>
-        <ul class="footer-links">
-          <li><a onclick="showSection('home')">Home</a></li>
-          <li><a onclick="showSection('about')">About</a></li>
-          <li><a onclick="showSection('services')">Services</a></li>
-          <li><a onclick="showSection('engagement')">Engagement</a></li>
-          <li><a onclick="showSection('blog')">Insights</a></li>
-          <li><a onclick="showSection('contact')">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links footer-links-contact">
-          <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.
-      </div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section>
-
-<!-- BLOG -->
-<section id="blog">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Insights</div>
-      <h1 class="page-title">Technical perspectives from the field</h1>
-    </div>
-  </div>
-  <div style="background:var(--white);padding:1.5rem 5%;">
-    <div style="max-width:1100px;margin:0 auto;">
-
-      <div id="blogList" class="blog-list">
-
-      <!-- CATEGORY TABS -->
-      <div class="blog-tabs" id="blogTabs">
-        <button class="blog-tab active" data-filter="all" onclick="filterBlog('all')">All</button>
-        <button class="blog-tab" data-filter="design" onclick="filterBlog('design')">Design &amp; Architecture</button>
-        <button class="blog-tab" data-filter="programme" onclick="filterBlog('programme')">Programme &amp; Leadership</button>
-        <button class="blog-tab" data-filter="engineering" onclick="filterBlog('engineering')">Network Engineering</button>
-        <button class="blog-tab" data-filter="advisory" onclick="filterBlog('advisory')">Advisory &amp; Commercial</button>
-      </div>
-
-      <!-- FEATURED POST -->
-      <div class="blog-featured" id="featuredPost">
-        <div class="blog-featured-left">
-          <div>
-            <div class="featured-label">Latest Post</div>
-            <div class="featured-title">Why Are Your Top Engineers So Demotivated?</div>
-            <div class="featured-excerpt">You spend millions on technology and almost nothing on the people who run it. After 21 years working inside technology programmes, I have seen this pattern more times than I can count — organisations that invest heavily in technology and almost nothing in the people who run it.</div>
-          </div>
-          <div>
-            <div class="featured-meta">11 April 2026 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Leadership &amp; Engineering Culture</div>
-            <br>
-            <a href="top-engineers.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
-          </div>
-        </div>
-        <div class="blog-featured-right">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">10%</div>
-          <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">10% of engineers carry the team. The training budget gets cut before the vendor contract does. The external consultant confirms what your engineers already told you — at ten times the cost and six months later.</div>
-        </div>
-      </div>
-
-      <!-- ARTICLE GRID -->
-      <div class="blog-grid" id="blogGrid">
-
-        <!-- DESIGN & ARCHITECTURE -->
-        <div class="blog-card" data-category="design" onclick="window.location.href='hld-review.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Design Assurance</span>
-            <div class="blog-card-title">Five things wrong with every HLD I have ever reviewed</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">After 21 years of reviewing High-Level Designs — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <div class="blog-card" data-category="design" onclick="window.location.href='ten-design-failures.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Design Assurance</span>
-            <div class="blog-card-title">Ten design failures that appear in almost every infrastructure programme</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">After 21 years of independent design review, the same ten failures appear with remarkable consistency. None of them are exotic. All of them are avoidable.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <div class="blog-card" data-category="design" onclick="window.location.href='design-assurance.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Design Assurance</span>
-            <div class="blog-card-title">Why independent design assurance saves more than it costs</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">The cost of finding a design flaw before implementation is a fraction of finding it after. Independent review is not an overhead — it is a risk management decision.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <div class="blog-card" data-category="design" onclick="window.location.href='cloud-architecture.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Cloud Architecture</span>
-            <div class="blog-card-title">Why cloud network design is still network design</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">Cloud architecture is treated as if the network layer designs itself. After reviewing programmes across regulated industries, this is one of the most consistent sources of post-migration failure.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <div class="blog-card" data-category="design" onclick="window.location.href='ccde-vs-ccie.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Design Thinking</span>
-            <span class="blog-card-tag">Coming Soon</span>
-            <div class="blog-card-title">What CCDE teaches you that CCIE never could</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">After holding both certifications and using both daily, the distinction between implementation thinking and design thinking changes how you read every architecture document.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Preview →</span></div>
-          </div>
-        </div>
-
-        <!-- PROGRAMME & LEADERSHIP -->
-        <div class="blog-card" data-category="programme" onclick="window.location.href='programme-recovery.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Programme Recovery</span>
-            <div class="blog-card-title">Programme recovery — what the first 48 hours actually looks like</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">Most programme failures trace back to a network or security design problem, not a project management one. What the first 48 hours of technical recovery actually involves.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <div class="blog-card" data-category="programme" onclick="window.location.href='top-engineers.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Leadership &amp; Engineering Culture</span>
-            <div class="blog-card-title">Why Are Your Top Engineers So Demotivated?</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">You spend millions on technology and almost nothing on the people who run it. A message to CTOs and IT Directors — from someone who has seen this from both sides.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 7 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <!-- NETWORK ENGINEERING -->
-        <div class="blog-card" data-category="engineering" onclick="window.location.href='mtu-network-design.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Network Design</span>
-            <div class="blog-card-title">MTU: The Network Problem That Hides Until Go-Live</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">Ping, traceroute, SSH, telnet, HTTPS — standard testing almost never catches MTU mismatches. Three real examples from production environments and why the problem only shows up after go-live.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-        <!-- ADVISORY & COMMERCIAL -->
-        <div class="blog-card" data-category="advisory" onclick="window.location.href='vendor-assessment.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Vendor Assessment</span>
-            <span class="blog-card-tag">Coming Soon</span>
-            <div class="blog-card-title">How to evaluate a vendor proposal without being sold to</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">The vendor who wins the evaluation is not always the vendor who delivers the best outcome. An independent framework for assessing proposals on technical merit rather than presentation quality.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 5 min</span><span class="blog-card-read">Preview →</span></div>
-          </div>
-        </div>
-
-
-        <div class="blog-card" data-category="advisory" onclick="window.location.href='structural-vendor-bias.html'">
-          <div class="blog-card-header">
-            <span class="blog-card-cat">Vendor Assessment</span>
-            <div class="blog-card-title">Your Integrator Didn't Design Your Network. They Found and Replaced the Last Client's Name.</div>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-card-excerpt">Most HLDs are not bespoke designs built around your requirements. They are find and replace operations. After 21 years of independent design review, I have started asking why this keeps happening.</div>
-            <div class="blog-card-meta"><span>Apr 2026 &nbsp;·&nbsp; 6 min</span><span class="blog-card-read">Read →</span></div>
-          </div>
-        </div>
-
-      </div><!-- end blogGrid -->
-
-      <div id="blogNoResults" style="display:none;text-align:center;padding:3rem 0;color:var(--silver);font-size:0.9rem;font-weight:300;">No published articles in this category yet — check back soon.</div>
-
-    </div><!-- end blogList -->
-
-
-      <!-- INLINE BLOG POSTS -->
-      <div class="blog-post-full" id="hld-review">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Design Assurance</span>
-        <h1 class="post-title">Five things wrong with every HLD I have ever reviewed</h1>
-        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
-        <div class="post-body">
-          <p>After 21 years of reviewing High-Level Designs across financial services, pharmaceutical, healthcare and automotive programmes — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors. Here is what I find almost every time.</p>
-          <h2>1. The design is written to justify a decision already made</h2>
-          <p>The most common HLD failure is not technical — it is political. By the time a formal HLD is produced, the vendor has usually been selected, the commercial agreement is in place, and the architecture is effectively locked. The HLD is then written to document that decision, not to evaluate it.</p>
-          <p>A genuine HLD should explore options. It should compare approaches, document the rationale for choices made, and acknowledge trade-offs. When every section says "the proposed solution is X" without any consideration of why X was chosen over Y or Z, you are not reading a design document — you are reading a sales proposal with an HLD cover sheet.</p>
-          <h2>2. Scalability is assumed, not designed</h2>
-          <p>Almost every HLD I review states that the solution is "scalable." Very few of them define what scalable means in the context of that specific organisation, or demonstrate how scalability will be achieved.</p>
-          <blockquote><p>Scalability is not a feature of a vendor platform. It is a property of a specific design, in a specific environment, against specific growth assumptions.</p></blockquote>
-          <p>A credible HLD should define current state traffic volumes, projected growth over the programme lifecycle, and demonstrate through architectural choices — not vendor marketing claims — how the design accommodates that growth without fundamental re-architecture.</p>
-          <h2>3. Resilience is described at component level, not system level</h2>
-          <p>HLDs routinely describe component redundancy — dual uplinks, HA pairs, RAID arrays. What they rarely describe is system-level resilience: what happens when multiple components fail simultaneously, how failover behaves under real traffic conditions, and whether recovery time objectives are actually achievable with the proposed design.</p>
-          <p>Component redundancy and system resilience are different things. A design with fully redundant components can still produce a single point of failure at the system level if those components share a common dependency.</p>
-          <h2>4. Security is an afterthought bolted on at the end</h2>
-          <p>Security sections in HLDs are frequently one page long, written last, and describe controls at a generic level that could apply to any organisation. Firewall policy: "traffic will be controlled by firewall rules." Encryption: "data in transit will be encrypted." These statements are not design — they are intentions.</p>
-          <p>Security architecture should be woven through every section of the HLD, not confined to a single section at the end. Segmentation, access control, inspection points, logging and monitoring should all be visible in the network diagrams and architecture choices — not described generically in a separate section.</p>
-          <h2>5. There is no HLD-to-LLD validation plan</h2>
-          <p>The HLD is approved. The LLD is written. Nobody checks whether the LLD actually delivers what the HLD promised. In my experience, this is where programmes most commonly go wrong — the gap between what was agreed at HLD stage and what is actually specified in the LLD.</p>
-          <p>Every HLD should define how its requirements will be traced into the LLD, and who is responsible for validating that trace. Without this, the HLD becomes a contractual document that no one is responsible for delivering.</p>
-          <h2>What good looks like</h2>
-          <p>A well-written HLD makes reviewers' jobs boring. Every architectural choice is explained. Trade-offs are acknowledged. Scalability and resilience are demonstrated, not claimed. Security is integrated, not appended. And there is a clear path from HLD to LLD to implementation.</p>
-          <p>If your HLD makes for interesting reading — if reviewers are discovering things — it is not ready for approval.</p>
-
-          <div class="findings-box">
-            <div class="findings-title">What I consistently find in HLD review</div>
-            <ul class="findings-list">
-              <li><strong>The design has only been reviewed by the team that wrote it.</strong> Internal review is not independent review. The same assumptions, the same blind spots, the same vendor relationships.</li>
-              <li><strong>Scalability is based on current load, not projected growth.</strong> Most HLDs are designed for today. Few account for the traffic, user or data growth that will arrive within 18 months of go-live.</li>
-              <li><strong>Security is a layer, not a design principle.</strong> Firewall rules and access control added at the end of the design process rather than built into the architecture from the start.</li>
-              <li><strong>Vendor recommendations favour the integrator's margin.</strong> The design almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on.</li>
-              <li><strong>The LLD diverges significantly from the approved HLD.</strong> By the time implementation begins, the HLD is often a historical document — evolved without a formal record of what changed and why.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="post-cta">
-      <div>
-        <div class="post-cta-text">Want an independent review of your HLD?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
-      </div>
-      <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a>
-    </div>
-  </div>
-      </div>
-
-      <div class="blog-post-full" id="programme-recovery">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Programme Recovery</span>
-        <h1 class="post-title">Programme recovery — what the first 48 hours actually looks like</h1>
-        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
-        <div class="post-body">
-          <p>When a programme is declared off-track, the instinct is to escalate, reorganise and replan. In my experience, the first 48 hours should be spent doing something different entirely.</p>
-
-          <p>Programmes get into trouble for many reasons, but they all share a common symptom: the picture becomes clearer the closer you are to the delivery. The people at the top see red RAG statuses and missed milestones. The engineers at the bottom know exactly what is wrong and why.</p>
-
-          <h2>What the first 48 hours should actually look like</h2>
-          <p>The first 48 hours should be spent reading everything: the original HLD, the current LLD, the change log (if one exists), the programme risk register, and any previous review or assurance reports. Not to form conclusions — to understand the gap between what was designed and what is being built.</p>
-
-          <p>Programme managers will tell you about milestones. Engineers will tell you about reality. In those first 48 hours, I spend as much time as possible with the engineers. Not in workshops. Not in status meetings. In direct, informal conversations about what is actually happening.</p>
-
-          <h2>The three questions that matter</h2>
-          <p>After 21 years of infrastructure programme delivery and recovery, I have learned that almost every programme failure can be traced to the same three questions not being answered honestly:</p>
-
-          <p>Is the design actually fit for purpose? Not whether it was approved — whether it will work in production, at scale, under the conditions the business actually operates in.</p>
-
-          <p>Does the delivery team have what they need? Not whether the project plan says they should — whether they actually have the skills, the access, the environments and the clarity of requirement to deliver what is expected of them.</p>
-
-          <p>Does anyone have an accurate picture of where things really are? Not the RAG status in the programme report — the actual technical state of the implementation and the real gap between current state and go-live readiness.</p>
-
-          <h2>What recovery actually requires</h2>
-          <p>Programme recovery is not primarily a project management exercise. It is a technical exercise. The root cause of most infrastructure programme failures is a design problem — either the original design was flawed, or the implementation has diverged from the design, or both.</p>
-
-          <p>Identifying and fixing that technical root cause is what makes recovery possible. Reorganising the governance structure, re-baselining the plan and running more frequent status meetings does not fix a design problem. It just makes the failure more visible and better documented.</p>
-
-          <p>What recovery actually requires is an honest assessment of the technical state, a clear understanding of the gap between current state and a viable go-live position, and a realistic plan for closing that gap. Not an optimistic plan. Not a plan that tells the board what they want to hear. A plan that reflects what is actually achievable.</p>
-
-          <h2>The role of independent assessment</h2>
-          <p>One of the reasons programme recovery is difficult is that the people closest to the delivery are often the least well-placed to assess it objectively. They are under pressure, they are invested in the decisions that have already been made, and they may have been telling the programme board that things are better than they are.</p>
-
-          <p>Independent assessment removes that constraint. I have no stake in the decisions that led to the current position. I have no relationship with the vendors whose products are causing problems. I have no interest in any particular outcome other than whether the programme can recover to a viable go-live position.</p>
-
-          <p>That independence is not just useful — it is often the only way to get an honest picture of where a programme actually is. And without an honest picture, recovery is not possible.</p>
-
-          <p>Slow down. Establish the facts. Only then build the plan.</p>
-
-          <div class="findings-box">
-            <div class="findings-title">What I consistently find in programme recovery</div>
-            <ul class="findings-list">
-              <li><strong>The root cause is almost always in design, not delivery.</strong> Delivery teams get blamed for programme failures that were baked in at architecture stage. The implementation was fine — what it was implementing was not.</li>
-              <li><strong>The first 48 hours are wasted on escalation rather than assessment.</strong> Senior stakeholders want action plans before anyone has established the facts. Visible activity substitutes for diagnosis.</li>
-              <li><strong>Recovery plans are built around activity, not outcomes.</strong> Lists of workstreams and RAG statuses that tell you what people are doing — but not whether any of it moves the programme toward recovery.</li>
-              <li><strong>The programme team already knows what is wrong.</strong> In almost every recovery engagement, the people closest to the delivery have identified the core problems. They have not been asked — or have not felt safe to say.</li>
-              <li><strong>Scope has drifted without formal change control.</strong> What is being delivered bears little resemblance to what was signed off. The gap is rarely documented, rarely costed and rarely acknowledged.</li>
-            </ul>
-          </div>
-    </div>
-        <div class="post-cta">
-      <div>
-        <div class="post-cta-text">Is your programme off-track?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
-      </div>
-      <a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Discuss Your Programme</a>
-    </div>
-  </div>
-      </div>
-
-      <div class="blog-post-full" id="ten-design-failures">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Design Assurance</span>
-        <h1 class="post-title">Ten design failures that appear in almost every infrastructure programme</h1>
-        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
-        <div class="post-body">
-          <p>After 21 years of independent design review, the same ten failures appear with remarkable consistency across every sector, every vendor and every programme size. None of them are exotic. All of them are avoidable.</p>
-          <h2>1. The design is reviewed only by the team that wrote it</h2>
-          <p>This is the most common and most costly failure. Internal review is not independent review. The same assumptions that shaped the design shape its review. A design review conducted by the delivery team is not a review — it is a confirmation.</p>
-          <h2>2. Scalability is designed for today, not tomorrow</h2>
-          <p>Most HLDs are sized for current load. Few seriously model the traffic, user growth or data volumes that will arrive 12 to 18 months after go-live. When those loads arrive, the architecture cannot accommodate them without significant rework.</p>
-          <p><a href="ten-design-failures.html" style="color:var(--navy);font-weight:500;">Read the full article — Ten design failures →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want to know if your programme has any of these?</div><div class="post-cta-sub">All conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a></div>
-      </div>
-
-      <div class="blog-post-full" id="design-assurance-value">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Design Assurance</span>
-        <h1 class="post-title">Why independent design assurance saves more than it costs</h1>
-        <div class="post-meta">4 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
-        <div class="post-body">
-          <p>There is a conversation I have regularly with programme sponsors and IT directors. The question is not whether you can afford independent design assurance. The question is whether you can afford not to have it.</p>
-          <div style="margin:1.5rem 0 0.5rem 0;"><div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>The cost of a design flaw discovered late</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>What independent actually means</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>Before committing to a vendor solution</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>Before significant capital expenditure</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>The commercial case in simple terms</li>
-          </ul></div>
-          <blockquote><p>The cost of independent design review is fixed and known upfront. The cost of the problems it prevents is open-ended and frequently enormous.</p></blockquote>
-          <div style="background:var(--navy);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-            <div><div style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);margin-bottom:0.25rem;">Publishing</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);">Tuesday 21 Apr 2026</div></div>
-            <a href="mailto:hello@designassurance.co.uk" style="background:transparent;border:1px solid rgba(168,180,192,0.35);color:var(--silver-light);padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">✉ Notify me</a>
-          </div>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want independent design assurance on your programme?</div><div class="post-cta-sub">All initial conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a></div>
-      </div>
-
-            <div class="blog-post-full" id="cloud-architecture">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Cloud Architecture</span>
-        <h1 class="post-title">Why cloud network design is still network design</h1>
-        <div class="post-meta">April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
-        <div class="post-body">
-          <p>Cloud architecture is regularly discussed as if the network layer designs itself. After reviewing cloud migration and transformation programmes across financial services, biopharmaceutical, healthcare and automotive environments, this assumption is one of the most consistent sources of post-migration failure.</p>
-          <p>The network is not a commodity. In complex enterprise environments, it is the architecture. Everything else — application performance, security posture, compliance, resilience — depends on the network design being correct.</p>
-          <p><a href="cloud-architecture.html" style="color:var(--navy);font-weight:500;">Read the full article — Why cloud network design is still network design →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want independent review of your cloud network architecture?</div><div class="post-cta-sub">All conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Cloud Review</a></div>
-      </div>
-
-      <div class="blog-post-full" id="ccde-vs-ccie">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Design Practice</span>
-        <h1 class="post-title">What CCDE teaches you that CCIE never could</h1>
-        <div class="post-meta">14 Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
-        <div class="post-body">
-          <p>CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.</p>
-          <div style="margin:1.5rem 0 0.5rem 0;"><div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>What CCIE tests</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>What CCDE tests</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>The gap between implementation knowledge and design expertise</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>Why this matters for independent design assurance</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>What design thinking finds that implementation thinking misses</li>
-          </ul></div>
-          <blockquote><p>An excellent CCIE-certified engineer can implement almost any network architecture you put in front of them. That is not the same as being able to determine which architecture should be in front of them in the first place.</p></blockquote>
-          <div style="background:var(--navy);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-            <div><div style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);margin-bottom:0.25rem;">Publishing</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);">Tuesday 14 Apr 2026</div></div>
-            <a href="mailto:hello@designassurance.co.uk" style="background:transparent;border:1px solid rgba(168,180,192,0.35);color:var(--silver-light);padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">✉ Notify me</a>
-          </div>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want to understand what independent design thinking delivers?</div><div class="post-cta-sub">All initial conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Start a Conversation</a></div>
-      </div>
-
-
-      <div class="blog-post-full" id="top-engineers">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Leadership &amp; Engineering Culture</span>
-        <h1 class="post-title">Why Are Your Top Engineers So Demotivated?</h1>
-        <div class="post-meta">11 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
-        <div class="post-body">
-          <p>You have spent millions. The new data centre is built. The SD-WAN is deployed. The Wi-Fi refresh is done. And your best engineers are quietly updating their CVs.</p>
-          <p>After 21 years working inside technology programmes — as an engineer, as an architect, and as an independent consultant — I have seen this pattern more times than I can count.</p>
-          <p><a href="top-engineers.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">If you are an engineer who recognises this — tag your manager.</div><div class="post-cta-sub">If you are a director who wants an honest view of the technical health of your team — get in touch.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Get in Touch</a></div>
-      </div>
-
-      <div class="blog-post-full" id="mtu-network-design">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Network Design</span>
-        <h1 class="post-title">MTU: The Network Problem That Hides Until Go-Live</h1>
-        <div class="post-meta">Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
-        <div class="post-body">
-          <p>MTU mismatches are one of the most consistently underestimated risks in network migrations. Standard testing almost never catches them. Three real examples from production environments.</p>
-          <p><a href="mtu-network-design.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want an independent review of your migration design before go-live?</div><div class="post-cta-sub">MTU, latency and overlay design reviewed as part of every HLD and LLD assessment.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Design Review</a></div>
-      </div>
-
-            <div class="blog-post-full" id="vendor-assessment">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Vendor Assessment</span>
-        <h1 class="post-title">How to evaluate a vendor proposal without being sold to</h1>
-        <div class="post-meta">21 Apr 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 5 min read</div>
-        <div class="post-body">
-          <p>Vendor proposals are built to sell, not to inform. After reviewing hundreds of them across financial services, biopharmaceutical, healthcare, media and automotive programmes, I have developed a structured approach to cutting through the marketing language and assessing what is actually being proposed.</p>
-          <div style="margin:1.5rem 0 0.5rem 0;"><div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>Why vendor proposals are structurally biased</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>The questions every proposal should answer — and rarely does</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>How to assess a technical architecture section honestly</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>Commercial terms that favour the vendor, not the client</li>
-            <li style="font-size:0.92rem;color:var(--text-muted);font-weight:300;padding-left:1.25rem;position:relative;"><span style="position:absolute;left:0;color:var(--silver-pale);">—</span>When to walk away</li>
-          </ul></div>
-          <blockquote><p>The vendor who wins the proposal evaluation is not always the vendor who delivers the best outcome. They are the vendor who wrote the best proposal.</p></blockquote>
-          <div style="background:var(--navy);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-            <div><div style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);margin-bottom:0.25rem;">Publishing</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--white);">Thursday 23 Apr 2026</div></div>
-            <a href="mailto:hello@designassurance.co.uk" style="background:transparent;border:1px solid rgba(168,180,192,0.35);color:var(--silver-light);padding:0.5rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">✉ Notify me</a>
-          </div>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Need independent vendor assessment now?</div><div class="post-cta-sub">All conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request an Assessment</a></div>
-      </div>
-
-      <div class="blog-post-full" id="structural-vendor-bias">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Vendor Assessment &amp; Procurement</span>
-        <h1 class="post-title">Your Integrator Didn't Design Your Network. They Found and Replaced the Last Client's Name.</h1>
-        <div class="post-meta">12 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
-        <div class="post-body">
-          <p>Most High-Level Designs are not born from a blank sheet of paper. They are the product of a templated design — an architecture refined through repeated delivery, adapted for a new client. Done well, this is efficient and effective. Done without scrutiny, the template becomes a substitute for thinking.</p>
-          <p>After 21 years of independent design review, I have started asking why this keeps happening.</p>
-          <p><a href="structural-vendor-bias.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want an independent review of a vendor recommendation?</div><div class="post-cta-sub">All conversations are confidential. No obligation.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Review</a></div>
-      </div>
-
-      <div class="blog-post-full" id="as-built-lie">
-        <button class="post-back" onclick="showBlogList()">← Back to Insights</button>
-        <span class="post-cat">Design Assurance</span>
-        <h1 class="post-title">The As-Built Gap: Why Your Network Documentation and Your Network Have Diverged</h1>
-        <div class="post-meta">13 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
-        <div class="post-body">
-          <p>The High-Level Design is a statement of intent. The Low-Level Design is a set of instructions. But the as-built environment? That is often an act of improvisation — and the document that claims to describe it is, in most organisations, a work of fiction.</p>
-          <p>Design drift is the gap between what the board signed off on and what is actually running in your data centre. In most organisations, that gap is wider — and more dangerous — than anyone wants to admit.</p>
-          <p><a href="as-built-lie.html" style="color:var(--navy);font-weight:500;">Read the full article →</a></p>
-        </div>
-        <div class="post-cta"><div><div class="post-cta-text">Want to know where your documentation and your network have diverged?</div><div class="post-cta-sub">Independent as-built review — closing the gap between what the board approved and what is actually running.</div></div><a href="#" onclick="showSection('contact')" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Review</a></div>
-      </div>
-
-    </div><!-- end blog content inner -->
-            <!-- COMING SOON NOTICE -->
-        <div style="background:var(--off-white);border:1px solid var(--silver-pale);padding:2rem;border-radius:4px;text-align:center;">
-          <div style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--silver);margin-bottom:0.5rem;">Weekly Insights</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--navy);margin-bottom:0.4rem;">New articles published weekly</div>
-          <div style="font-size:0.83rem;color:var(--text-muted);font-weight:300;">Technical perspectives on network, security and cloud design — from 21 years of programme delivery.</div>
-        </div>
-  </div><!-- end blog content -->
-  <footer>
-    <div class="footer-inner">
-      <div><div class="footer-brand">Design <span>Assurance</span></div><p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p></div>
-      <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('about')">About</a></li><li><a onclick="showSection('services')">Services</a></li><li><a onclick="showSection('engagement')">Engagement</a></li><li><a onclick="showSection('blog')">Insights</a></li><li><a onclick="showSection('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-col-title">Contact</div><ul class="footer-links footer-links-contact"><li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li><li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section><!-- end blog -->
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Contact</div>
-      <h1 class="page-title">Start a confidential conversation</h1>
-    </div>
-  </div>
-  <div class="contact-content">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="contact-inner">
-        <div class="contact-left">
-          <h2>Get in touch</h2>
-          <p>Whether you need a design review, have concerns about a programme in flight, or want an independent view, get in touch. Confidential, no obligation — just clear, expert insight.</p>
-          <div class="contact-detail">
-            <div class="contact-item">
-              <div class="contact-icon">✉</div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Email</div>
-                <a href="mailto:hello@designassurance.co.uk" class="contact-item-value">hello@designassurance.co.uk</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">✉</div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Direct</div>
-                <a href="mailto:hameed.nazim@designassurance.co.uk" class="contact-item-value">hameed.nazim@designassurance.co.uk</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">in</div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">LinkedIn</div>
-                <a href="https://www.linkedin.com/in/hameed-nazim/" target="_blank" class="contact-item-value">Hameed Nazim, CCDE | CCIE</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">◎</div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Geography</div>
-                <span class="contact-item-value" style="color:var(--navy);">UK · US · EU · APAC · Middle East — Remote &amp; On-site</span>
-              </div>
-            </div>
-          </div>
-          <div class="contact-note">
-            <p>Design Assurance is a trading name of Network Fabric Limited. All engagements are conducted under NDA. Contracting arrangements are flexible — direct, via your preferred system integrator, or through an existing framework.</p>
-          </div>
-        </div>
-        <div class="contact-form">
-          <div class="form-title">Send a message</div>
-          <form name="contact" method="POST" data-netlify="true" action="/thank-you">
-            <input type="hidden" name="form-name" value="contact">
-            <div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" placeholder="Your name" required></div>
-            <div class="form-group"><label class="form-label">Organisation</label><input type="text" name="organisation" class="form-input" placeholder="Your organisation"></div>
-            <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="your@email.com" required></div>
-            <div class="form-group">
-              <label class="form-label">What are you working on?</label>
-              <select name="service" class="form-select">
-                <option value="">Select a service area</option>
-                <option>HLD Review &amp; Validation</option>
-                <option>LLD Review &amp; Validation</option>
-                <option>HLD &amp; LLD Gap Analysis</option>
-                <option>Pre-Deployment Sign-Off</option>
-                <option>HLD &amp; LLD Creation</option>
-                <option>As-Built Architecture Review</option>
-                <option>Programme Recovery</option>
-                <option>Design Assurance Retainer</option>
-                <option>Network Engineering &amp; Implementation</option>
-                <option>Cloud Network Implementation</option>
-                <option>SD-WAN / SR-MPLS Deployment &amp; Commissioning</option>
-                <option>Technical Due Diligence</option>
-                <option>Vendor &amp; Solution Assessment</option>
-                <option>Architecture Advisory</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-textarea" placeholder="Brief description of what you need..." required></textarea></div>
-            <button type="submit" class="form-submit">Send Message</button>
-          </form>
-          <div style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(168,180,192,0.08);border-radius:4px;border-left:3px solid rgba(168,180,192,0.3);">
-            <div style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--silver);margin-bottom:0.5rem;">What happens next</div>
-            <p style="font-size:0.85rem;color:var(--silver-light);line-height:1.7;font-weight:300;margin:0;">I'll respond within one business day. Initial conversations are typically 20–30 minutes by call or video. No commitment required — if I can help, I'll say so. If I can't, I'll say that too.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <footer>
-    <div class="footer-inner">
-      <div><div class="footer-brand">Design <span>Assurance</span></div><p class="footer-desc">Independent network, security and cloud design assurance. Vendor-neutral. CCDE and CCIE certified.</p></div>
-      <div><div class="footer-col-title">Navigation</div><ul class="footer-links"><li><a onclick="showSection('home')">Home</a></li><li><a onclick="showSection('about')">About</a></li><li><a onclick="showSection('services')">Services</a></li><li><a onclick="showSection('engagement')">Engagement</a></li><li><a onclick="showSection('blog')">Insights</a></li><li><a onclick="showSection('contact')">Contact</a></li></ul></div>
-      <div><div class="footer-col-title">Contact</div><ul class="footer-links footer-links-contact"><li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li><li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
-      <div class="footer-certs">
-        <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
-        <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
-        <a href="https://www.credly.com/badges/dfa02c65-9681-4c51-8292-18ee2d31f2c8" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">Cloud SA</a>
-      </div>
-    </div>
-  </footer>
-</section>
+</footer>
 
 <script>
-function toggleMenu() {
-  var menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('open');
-}
-function mobileNav(id) {
-  document.getElementById('mobileMenu').classList.remove('open');
-  showSection(id);
-}
-function showSection(id) {
-  document.querySelectorAll('section').forEach(function(s) {
-    s.classList.remove('active');
-    s.style.display = 'none';
-  });
-  var target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-    target.style.display = 'block';
-  }
-  window.location.hash = id;
+function showTab(id) {
+  document.querySelectorAll('.page-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.querySelectorAll('.fade-up').forEach(function(el) {
-    el.style.animationPlayState = 'running';
-  });
+  history.replaceState(null, '', id === 'home' ? '#' : '#' + id);
 }
-function showPost(postId) {
-  document.getElementById('blogList').classList.add('hidden');
-  document.getElementById('blogList').style.display = 'none';
-  document.querySelectorAll('.blog-post-full').forEach(function(p) {
-    p.classList.remove('visible');
-    p.style.display = 'none';
-  });
-  var post = document.getElementById(postId);
-  if (post) {
-    post.classList.add('visible');
-    post.style.display = 'block';
-  }
-  window.location.hash = postId;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function setLang(lang, btn) {
+  document.body.className = document.body.className.replace(/lang-\w+/, '') + ' lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.documentElement.lang = lang;
 }
-function showBlogList() {
-  document.querySelectorAll('.blog-post-full').forEach(function(p) {
-    p.classList.remove('visible');
-    p.style.display = 'none';
-  });
-  var list = document.getElementById('blogList');
-  if (list) {
-    list.classList.remove('hidden');
-    list.style.display = 'block';
-  }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('section').forEach(function(s) {
-    s.style.display = 'none';
-  });
-  var postIds = ['hld-review','programme-recovery','ten-design-failures','design-assurance-value','cloud-architecture','ccde-vs-ccie','vendor-assessment','top-engineers','mtu-network-design','structural-vendor-bias','as-built-lie'];
-  var sectionIds = ['home','about','services','engagement','blog','contact'];
-  var hash = window.location.hash.replace('#','');
-  if (postIds.indexOf(hash) !== -1) {
-    showSection('blog');
-    showPost(hash);
-  } else if (hash === 'insights' || hash === 'blog') {
-    showSection('blog');
-    showBlogList();
-  } else if (sectionIds.indexOf(hash) !== -1) {
-    showSection(hash);
-  } else {
-    var home = document.getElementById('home');
-    if (home) {
-      home.style.display = 'block';
-      home.classList.add('active');
-    }
-  }
-});
-
-  // ── BLOG CATEGORY FILTER ──────────────────────────────────────────────
-  function filterBlog(category) {
-    document.querySelectorAll('.blog-tab').forEach(function(tab) {
-      tab.classList.toggle('active', tab.dataset.filter === category);
-    });
-
-    var cards = document.querySelectorAll('#blogGrid .blog-card');
-    var featured = document.getElementById('featuredPost');
-    var noResults = document.getElementById('blogNoResults');
-    var visibleCount = 0;
-
-    cards.forEach(function(card) {
-      var match = category === 'all' || card.dataset.category === category;
-      card.classList.toggle('hidden', !match);
-      if (match) visibleCount++;
-    });
-
-    // Featured post: show only on 'all' and its own category ('programme')
-    if (featured) {
-      var featuredCategory = 'programme';
-      var showFeatured = category === 'all' || category === featuredCategory;
-      featured.classList.toggle('hidden', !showFeatured);
-    }
-
-    if (noResults) {
-      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-  }
-
-  </script>
+(function() {
+  const hash = location.hash.replace('#','');
+  if (['services','about','blog','contact'].includes(hash)) showTab(hash);
+})();
+</script>
 </body>
 </html>
