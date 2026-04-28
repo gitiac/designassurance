@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The High-Level Design is a statement of intent. The Low-Level Design is a set of instructions. The as-built environment is often an act of improvisation. A CCDE perspective on design drift — the gap between what the board approved and what is actually running.">
+<meta name="description" content="The High-Level Design is a statement of intent. The Low-Level Design is a set of instructions. The as-built environment is often an act of improvisation. A CCDE perspective on design drift  -  the gap between what the board approved and what is actually running.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/as-built-lie">
+<link rel="canonical" href="https://designassurance.co.uk/as-built-lie">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/as-built-lie">
+<meta property="og:url" content="https://designassurance.co.uk/as-built-lie">
 <meta property="og:title" content="The As-Built Gap: Why Your Network Documentation and Your Network Have Diverged | Design Assurance">
 <meta property="og:description" content="Design drift is the gap between what the board signed off on and what is actually running in your data centre. In most organisations, that gap is wider than anyone wants to admit.">
 <meta property="og:site_name" content="Design Assurance">
@@ -1377,7 +1377,7 @@
   .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
   .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
   .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li::before { content: " - "; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
   .findings-list li strong { color: var(--navy); font-weight: 500; }
   .footer-links { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
   .footer-links-contact { grid-template-columns: 1fr; }
@@ -1409,33 +1409,33 @@
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
-      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
+      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">&larr; Back to Insights</a>
       <span class="post-cat">Design Assurance</span>
       <h1 class="post-title">The As-Built Gap: Why Your Network Documentation and Your Network Have Diverged</h1>
-      <div class="post-meta">13 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 7 min read</div>
+      <div class="post-meta">13 April 2026 &nbsp;&middot;&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;&middot;&nbsp; 7 min read</div>
     </div>
   </div>
   <div class="article-content">
     <div class="post-body">
           <p>In 21 years of reviewing infrastructure, I have noticed a quiet, pervasive truth.</p>
 
-          <p>The High-Level Design is a statement of intent. The Low-Level Design is a set of instructions. But the as-built environment? That is often an act of improvisation — and the document that claims to describe it is, in most organisations, a work of fiction.</p>
+          <p>The High-Level Design is a statement of intent. The Low-Level Design is a set of instructions. But the as-built environment? That is often an act of improvisation  -  and the document that claims to describe it is, in most organisations, a work of fiction.</p>
 
-          <p>We call it design drift. It is the gap between what the board signed off on and what is actually running in your data centre. And in most organisations, that gap is wider — and more dangerous — than anyone wants to admit.</p>
+          <p>We call it design drift. It is the gap between what the board signed off on and what is actually running in your data centre. And in most organisations, that gap is wider  -  and more dangerous  -  than anyone wants to admit.</p>
 
           <h2>The Ivory Tower vs. The Trenches</h2>
           <p>Design drift rarely starts with malice. It starts with a document.</p>
-          <p>An LLD is written by an architect — sometimes a good one — who has not been close to a rack or a CLI in years. The document is thorough, 200 pages long, through governance, board-approved. The senior engineer handed that document on day one makes a quiet assessment: parts of it are technically unworkable, others ignore the reality of the existing environment entirely.</p>
+          <p>An LLD is written by an architect  -  sometimes a good one  -  who has not been close to a rack or a CLI in years. The document is thorough, 200 pages long, through governance, board-approved. The senior engineer handed that document on day one makes a quiet assessment: parts of it are technically unworkable, others ignore the reality of the existing environment entirely.</p>
 
-          <blockquote><p>The engineer faces a choice: follow a flawed map and fail, or ignore the map and make it work. And raising concerns is not always straightforward — not all architects respond well when engineers point out flaws in their designs.</p></blockquote>
+          <blockquote><p>The engineer faces a choice: follow a flawed map and fail, or ignore the map and make it work. And raising concerns is not always straightforward  -  not all architects respond well when engineers point out flaws in their designs.</p></blockquote>
 
           <p>The governance is done. The design has been approved. Questioning it can feel like a career risk rather than a professional obligation.</p>
-          <p>Most good engineers make it work. They implement clever, bespoke workarounds that solve the immediate problem — not being rogue, but being professional in the only way available to them. But those workarounds are never captured on paper. The LLD remains frozen at the point of approval — a historical document describing an environment that never quite existed.</p>
+          <p>Most good engineers make it work. They implement clever, bespoke workarounds that solve the immediate problem  -  not being rogue, but being professional in the only way available to them. But those workarounds are never captured on paper. The LLD remains frozen at the point of approval  -  a historical document describing an environment that never quite existed.</p>
 
           <h2>The Hero Paradox</h2>
           <p>We have all seen it. The engineer who stays up until 3am during a failed migration to get the packets moving. They get the shout-out in the all-hands. The CTO sends a thank you email.</p>
           <p>What nobody discusses is what that engineer actually did to get the packets moving.</p>
-          <p>They bypassed a security zone because the firewall policy was unworkable in the actual environment. They patched both uplinks into the same line card because the correct hardware had not arrived and the cutover could not slip. They disabled a redundancy mechanism — temporarily, then permanently, because Phase 2 never happened.</p>
+          <p>They bypassed a security zone because the firewall policy was unworkable in the actual environment. They patched both uplinks into the same line card because the correct hardware had not arrived and the cutover could not slip. They disabled a redundancy mechanism  -  temporarily, then permanently, because Phase 2 never happened.</p>
 
           <blockquote><p>Because we reward the firefighter, we accidentally incentivise the behaviour that destroys our documentation. The engineer says they will document it in Phase 2. Leadership, relieved the crisis is over, believes them.</p></blockquote>
 
@@ -1443,21 +1443,21 @@
 
           <h2>What This Costs</h2>
           <p>The as-built lie is not a documentation problem. It is an operational and financial risk sitting invisibly on your balance sheet.</p>
-          <p>When a major outage occurs against fiction documentation, the first two hours of incident response are not spent fixing the problem. They are spent on digital archaeology — engineers trying to determine what is actually there, because the document describes something different. Two hours of your most experienced people doing detective work, with the business down, at whatever your cost per hour of downtime happens to be.</p>
+          <p>When a major outage occurs against fiction documentation, the first two hours of incident response are not spent fixing the problem. They are spent on digital archaeology  -  engineers trying to determine what is actually there, because the document describes something different. Two hours of your most experienced people doing detective work, with the business down, at whatever your cost per hour of downtime happens to be.</p>
 
           <blockquote><p>Your HLD says you have path diversity. Your DR plan assumes it. In reality, an engineer patched both uplinks into the same line card at 3am because the correct hardware had not arrived. You are one hardware failure from a total outage. Nobody knows. The documentation says otherwise.</p></blockquote>
 
           <p>And every future programme designed against that fiction inherits its assumptions. The drift compounds with every programme that builds on it.</p>
 
           <h2>What Fixes It</h2>
-          <p>A design assurance review in the as-built context is not about reading a PDF. It is about verification — closing the gap between what the document claims and what is actually configured. That means reviewing the LLD against the running configuration, not the approved HLD. It means talking to the engineers who built it. It means asking specifically what changed during the build and why.</p>
+          <p>A design assurance review in the as-built context is not about reading a PDF. It is about verification  -  closing the gap between what the document claims and what is actually configured. That means reviewing the LLD against the running configuration, not the approved HLD. It means talking to the engineers who built it. It means asking specifically what changed during the build and why.</p>
           <p>Stop rewarding the firefighter if they are not also updating the fire map.</p>
           <p>If the as-built environment does not reflect what is actually running, you are not looking at documentation. You are looking at fiction. And you are making business-critical decisions based on it.</p>
 
           <div class="findings-box">
             <div class="findings-title">What I consistently find in as-built reviews</div>
             <ul class="findings-list">
-              <li><strong>The as-built document was never updated after the cutover.</strong> The approved LLD remains the most recent version. Everything that happened during implementation — the workarounds, the hardware substitutions, the design deviations — exists only in the memory of the engineers who were there.</li>
+              <li><strong>The as-built document was never updated after the cutover.</strong> The approved LLD remains the most recent version. Everything that happened during implementation  -  the workarounds, the hardware substitutions, the design deviations  -  exists only in the memory of the engineers who were there.</li>
               <li><strong>Redundancy that exists on paper does not exist in the network.</strong> Path diversity, failover mechanisms and resilience designs signed off at board level were quietly bypassed during implementation and never reinstated.</li>
               <li><strong>Security controls were relaxed during implementation and never restored.</strong> Temporary exceptions opened to resolve cutover issues became permanent configurations. The security posture the board believes exists is not the security posture that is running.</li>
               <li><strong>Future programmes are being designed against the fiction.</strong> The next refresh, the next migration, the next audit is being planned against a documented environment that does not exist. The drift compounds with every programme that builds on it.</li>
@@ -1467,7 +1467,7 @@
     <div class="post-cta">
       <div>
         <div class="post-cta-text">Want to know where your documentation and your network have diverged?</div>
-        <div class="post-cta-sub">Independent as-built review — closing the gap between documentation and reality. All conversations are confidential.</div>
+        <div class="post-cta-sub">Independent as-built review  -  closing the gap between documentation and reality. All conversations are confidential.</div>
       </div>
       <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Review</a>
     </div>
@@ -1493,7 +1493,7 @@
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links footer-links-contact">
           <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
+          <li><a style="white-space:nowrap;">UK &middot; US &middot; EU &middot; APAC &middot; Middle East</a></li>
         </ul>
       </div>
     </div>

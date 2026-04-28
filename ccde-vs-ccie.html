@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read eve">
+<meta name="description" content="After holding CCDE and CCIE for years and using both daily, the real difference is not difficulty or seniority. It is about how you think when you sit down with a blank sheet of paper.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/ccde-vs-ccie">
+<link rel="canonical" href="https://designassurance.co.uk/ccde-vs-ccie">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/ccde-vs-ccie">
-<meta property="og:title" content="What CCDE teaches you that CCIE never could | Design Assurance">
-<meta property="og:description" content="CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.">
+<meta property="og:url" content="https://designassurance.co.uk/ccde-vs-ccie">
+<meta property="og:title" content="What CCDE Teaches You That CCIE Never Could | Design Assurance">
+<meta property="og:description" content="After holding both certifications and using both daily, the distinction between implementation thinking and design thinking changes how you read every architecture document you encounter.">
 <meta property="og:site_name" content="Design Assurance">
+<meta property="og:locale" content="en_GB">
 <meta property="article:published_time" content="2026-04-14T08:00:00+00:00">
 <meta property="article:author" content="Hameed Nazim">
 <meta property="article:section" content="Network Design">
-<meta name="keywords" content="CCDE vs CCIE, CCDE certification, network design certification, Cisco CCDE, network architect certification, design thinking network">
-<title>What CCDE teaches you that CCIE never could | Design Assurance</title>
+<meta name="keywords" content="CCDE vs CCIE, CCDE certification, CCIE certification, network design thinking, Cisco CCDE, network architect certification, design assurance, implementable network design">
+<title>What CCDE Teaches You That CCIE Never Could | Design Assurance</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -47,8 +47,6 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-    max-width: 100vw;
     color: var(--text-body);
     background: var(--white);
     overflow-x: hidden;
@@ -130,20 +128,13 @@
   #home {
     background: var(--navy);
     position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: hidden;
     padding-top: 72px;
-    max-width: 100vw;
   }
 
-  .hero-content-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
   .hero-grid {
     position: absolute;
     inset: 0;
-    pointer-events: none;
     background-image:
       linear-gradient(rgba(168,180,192,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(168,180,192,0.04) 1px, transparent 1px);
@@ -162,7 +153,7 @@
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 1100px;
     margin: 0 auto;
     padding: 5rem 5% 5vh;
@@ -739,8 +730,7 @@
   .contact-icon {
     width: 36px;
     height: 36px;
-    background: rgba(168,180,192,0.15);
-    border: 1px solid rgba(168,180,192,0.4);
+    background: var(--navy);
     border-radius: 2px;
     display: flex;
     align-items: center;
@@ -757,14 +747,14 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--silver);
+    color: var(--text-muted);
     margin-bottom: 0.2rem;
   }
 
   .contact-item-value {
     font-size: 0.9rem;
     color: var(--navy);
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
   }
 
@@ -870,8 +860,6 @@
     background: var(--navy);
     padding: 3rem 5%;
     border-top: 1px solid rgba(168,180,192,0.1);
-    position: relative;
-    z-index: 10;
   }
 
   .footer-inner {
@@ -1137,17 +1125,6 @@
     border-radius: 2px;
     margin-bottom: 0.5rem;
   }
-  .sneak-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #b8960c;
-    border: 1px solid rgba(200,180,50,0.4);
-    padding: 0.2rem 0.5rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-  }
   .blog-card.coming-soon .blog-card-header {
     background: #2a3a4a;
   }
@@ -1367,36 +1344,112 @@
     text-decoration: none;
     opacity: 0.75;
   }
+
+  .findings-box {
+    background: var(--off-white);
+    border-left: 3px solid var(--navy);
+    padding: 2rem 2.5rem;
+    margin: 3rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .findings-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+  }
+  .findings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .findings-list li {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    font-weight: 300;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .findings-list li::before {
+    content: ' - ';
+    position: absolute;
+    left: 0;
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .findings-list li strong {
+    color: var(--navy);
+    font-weight: 500;
+  }
 </style>
 <style>
-  .article-page { padding-top: 72px; background: var(--white); min-height: 100vh; }
-  .article-hero { background: var(--navy); padding: 2.5rem 5% 2rem; position: relative; overflow: hidden; }
-  .article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-  .article-hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
-  .article-hero .post-cat { color: var(--silver) !important; display: block; margin-bottom: 0.5rem; }
-  .article-hero .post-title { color: var(--white) !important; font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.75rem; }
-  .article-hero .post-meta { color: var(--silver-light) !important; margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-  .article-content { max-width: 720px; margin: 0 auto; padding: 2rem 5%; }
-  .cert-badge-link { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-  .cert-badge-link:hover { opacity: 0.75; }
-  a.cert-badge { text-decoration: none; color: var(--silver); }
-  a.cert-badge:hover { opacity: 0.75; }
-  .preview-headings { list-style: none; padding: 0; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.6rem; }
-  .preview-headings li { font-size: 0.92rem; color: var(--text-muted); font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .preview-headings li::before { content: "—"; position: absolute; left: 0; color: var(--silver-pale); }
-  .preview-pull-quote { border-left: 3px solid var(--navy); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--off-white); border-radius: 0 4px 4px 0; }
-  .preview-pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--navy); line-height: 1.6; font-style: italic; margin: 0; font-weight: 400; }
-  .preview-publishing { background: var(--navy); border-radius: 4px; padding: 1.5rem 2rem; margin: 2.5rem 0 0 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .preview-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver); margin-bottom: 0.3rem; }
-  .preview-date-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); font-weight: 400; }
-  .notify-btn { background: transparent; border: 1px solid rgba(168,180,192,0.35); color: var(--silver-light); padding: 0.5rem 1.1rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; white-space: nowrap; transition: all 0.2s; }
-  .notify-btn:hover { border-color: var(--silver-light); color: var(--white); }
-  .findings-box { background: var(--off-white); border-left: 3px solid var(--navy); padding: 2rem 2.5rem; margin: 3rem 0; border-radius: 0 4px 4px 0; }
-  .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
-  .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
-  .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
-  .findings-list li strong { color: var(--navy); font-weight: 500; }
+  .article-page {
+    padding-top: 72px;
+    background: var(--white);
+    min-height: 100vh;
+  }
+  .article-hero {
+    background: var(--navy);
+    padding: 2.5rem 5% 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(168,180,192,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,180,192,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .article-hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .article-hero .post-cat {
+    color: var(--silver) !important;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .article-hero .post-title {
+    color: var(--white) !important;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-bottom: 0.75rem;
+  }
+  .article-hero .post-meta {
+    color: var(--silver-light) !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .article-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+  }
+  .article-hero .post-cat {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .article-hero .post-title {
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  }
+  .article-hero .post-meta {
+    margin-bottom: 0;
+  }
+  .article-hero-inner a {
+    margin-bottom: 1rem !important;
+  }
 </style>
 </head>
 <body>
@@ -1408,7 +1461,7 @@
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#engagement">Engagement</a></li>
     <li><a href="index.html#blog">Insights</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Request a Design Review</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -1420,49 +1473,78 @@
   <a href="index.html#services">Services</a>
   <a href="index.html#engagement">Engagement</a>
   <a href="index.html#blog">Insights</a>
-  <a href="index.html#contact">Get in Touch</a>
+  <a href="index.html#contact">Request a Design Review</a>
 </div>
 
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
-      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
-      <span class="post-cat">Design Practice</span>
-      <h1 class="post-title">What CCDE teaches you that CCIE never could</h1>
-      <div class="post-meta">14 14 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">&larr; Back to Insights</a>
+      <span class="post-cat">Design Thinking</span>
+      <h1 class="post-title">What CCDE Teaches You That CCIE Never Could</h1>
+      <div class="post-meta">14 April 2026 &nbsp;&middot;&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;&middot;&nbsp; 8 min read</div>
     </div>
   </div>
 
   <div class="article-content">
     <div class="post-body">
-      <p>CCIE tests whether you can implement. CCDE tests whether you should. After holding both for years and using both daily, the distinction changes how you read every design document you review.</p>
-      <div style="margin:2rem 0 0.5rem 0;">
-        <div style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--silver);margin-bottom:0.75rem;">In this article</div>
-        <ul class="preview-headings">
-              <li>What CCIE tests</li>
-              <li>What CCDE tests</li>
-              <li>The gap between implementation knowledge and design expertise</li>
-              <li>Why this matters for independent design assurance</li>
-              <li>What design thinking finds that implementation thinking misses</li>
-        </ul>
-      </div>
-      <div class="preview-pull-quote">
-        <p>An excellent CCIE-certified engineer can implement almost any network architecture you put in front of them. That is not the same as being able to determine which architecture should be in front of them in the first place.</p>
-      </div>
-      <div class="preview-publishing">
-        <div>
-          <div class="preview-date">Publishing</div>
-          <div class="preview-date-value">Tuesday 14 Apr 2026</div>
-        </div>
-        <a href="mailto:hello@designassurance.co.uk" class="notify-btn">✉ Notify me</a>
-      </div>
+          <p>I have held both certifications for years and I use both regularly. The question I get asked most often is: what is the actual difference? The standard answer is that CCIE tests whether you can implement a technology, and CCDE tests whether you should. That is accurate as far as it goes. It does not go far enough.</p>
+
+          <p>The real difference is not about difficulty or seniority. It is about how you think when you sit down with a blank sheet of paper and a set of requirements. CCIE trains you to ask: how do I configure this? CCDE trains you to ask: should this be configured at all, and if so, why this approach rather than another?</p>
+
+          <p>That sounds like a subtle distinction. In practice, it changes everything about how you read a design document.</p>
+
+          <h2>What CCIE actually teaches you</h2>
+          <p>CCIE is one of the hardest technical certifications in the industry. Passing it requires genuine depth - not just knowing that OSPF exists, but understanding exactly how it behaves under failure conditions, why it makes the routing decisions it makes, and how to configure it correctly under time pressure in a lab.</p>
+
+          <p>What it trains you to do is implement. You are given a topology and a set of requirements and you configure the network to meet them. The topology is fixed. The requirements are fixed. Your job is execution.</p>
+
+          <blockquote><p>A CCIE who has worked across enough environments develops a pattern recognition that is hard to acquire any other way. They have seen what happens when a route map is applied in the wrong direction. They know what a 3am spanning tree misconfiguration looks like. That experiential knowledge is real and it matters.</p></blockquote>
+
+          <p>But CCIE does not train you to question the topology. It does not ask you whether the design you are implementing is the right one. The requirements are given. Your job is to meet them.</p>
+
+          <h2>What CCDE teaches you that CCIE never could</h2>
+          <p>CCDE starts one step earlier. Before you think about how to configure anything, you are asked to think about what the network needs to do, why it needs to do it, and what the best architectural approach is given the full set of constraints.</p>
+
+          <p>Those constraints are not just technical. They include budget, existing infrastructure, operational capability of the team that will run the network, vendor relationships, regulatory requirements, and the business direction of the organisation. A design that is technically optimal but that the operations team cannot maintain is not a good design. A design that solves today's problem but creates a migration cliff in three years is not a good design.</p>
+
+          <blockquote><p>CCDE teaches you that the right answer depends entirely on context, and that understanding the context is the majority of the work.</p></blockquote>
+
+          <p>This is what changes how you read every design document you encounter. When I review an HLD now, the first questions I ask are not about the technology choices. They are about whether the requirements are correctly stated, whether the constraints are fully understood, and whether the design actually addresses the business problem or just the technical problem as narrowly defined. Those are CCDE questions. CCIE does not train you to ask them.</p>
+
+          <h2>The implementability gap</h2>
+          <p>There is something that does not get discussed enough. There are architects with CCDE who cannot implement what they design, and there are engineers with CCIE who design things that cannot be implemented as specified. Both of these are real and common problems.</p>
+
+          <p>The architect who has not been close to a CLI in years will sometimes produce designs that are architecturally coherent but operationally unworkable. The routing policy looks right on paper. The segmentation model is sound. But the specific combination of features required to implement it is not supported on the hardware in the environment, or the failover behaviour under real traffic conditions is not what the diagram suggests, or the configuration complexity is beyond what the operations team can manage day to day.</p>
+
+          <p>The engineer who designs from implementation experience rather than architectural thinking will sometimes produce designs that work today but do not scale, do not survive failure gracefully, or lock the organisation into a vendor dependency that becomes expensive to unwind.</p>
+
+          <p>The combination - CCDE-level architectural thinking and CCIE-level implementation knowledge - is what makes a design genuinely implementable. Not just theoretically sound on paper. Actually buildable, by real engineers, in a real environment, against real constraints.</p>
+
+          <h2>Why this matters for design review</h2>
+          <p>When I am reviewing a design, I am applying both lenses simultaneously. The CCDE lens asks: does this architecture actually solve the problem, is it appropriately scaled to the requirement, are the trade-offs correctly understood, does it survive the failure scenarios the business depends on? The CCIE lens asks: can this actually be built, are these feature combinations supported on this hardware, will this routing policy behave as the diagram assumes, what happens to this failover mechanism under real traffic conditions?</p>
+
+          <p>Most design reviews only apply one lens. An architect reviews it architecturally and finds no problems. An engineer reviews it for buildability and finds no problems. Nobody applies both simultaneously. The gaps live in the space between the two perspectives - and that is exactly where design failures originate.</p>
+
+          <blockquote><p>The value of holding both certifications is not the credentials. It is the ability to occupy both perspectives at the same time and see what neither can see alone.</p></blockquote>
+
+          <div class="findings-box">
+            <div class="findings-title">What the combination of CCDE and CCIE changes about design review</div>
+            <ul class="findings-list">
+              <li><strong>Requirements are questioned, not just implemented.</strong> CCDE trains you to ask whether the stated requirements are the right requirements - whether the business problem and the technical problem are actually the same problem before you start solving it.</li>
+              <li><strong>Architectural decisions are tested against implementation reality.</strong> A design that is architecturally coherent but operationally unworkable is not a good design. The CCIE lens catches the gap between what looks right on paper and what works in production.</li>
+              <li><strong>Constraints are treated as design inputs, not obstacles.</strong> Budget, operational capability, existing infrastructure, vendor relationships - these are parameters that define what a good design looks like in that specific context, not problems to work around.</li>
+              <li><strong>Failure scenarios are taken seriously.</strong> CCIE experience teaches you what actually happens under failure conditions - not what the diagram suggests should happen, but what happens in production when multiple things go wrong at the same time.</li>
+              <li><strong>The gap between design intent and implementation reality is visible.</strong> Most design failures live in this gap. Seeing it requires both perspectives simultaneously - the architectural view of what was intended and the implementation view of what will actually be configured.</li>
+            </ul>
+          </div>
     </div>
     <div class="post-cta">
       <div>
-        <div class="post-cta-text">Want to understand what independent design thinking delivers?</div>
-        <div class="post-cta-sub">All initial conversations are confidential. No obligation.</div>
+        <div class="post-cta-text">Want independent design review from someone who holds both?</div>
+        <div class="post-cta-sub">CCDE architectural thinking and CCIE implementation knowledge applied together. All conversations are confidential.</div>
       </div>
-      <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Start a Conversation</a>
+      <a href="index.html#contact" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.5rem;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:2px;white-space:nowrap;">Request a Review</a>
     </div>
   </div>
   <footer>
@@ -1486,12 +1568,14 @@
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links footer-links-contact">
           <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
+          <li><a style="white-space:nowrap;">UK &middot; US &middot; EU &middot; APAC &middot; Middle East</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-legal">Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.</div>
+      <div class="footer-legal">
+        Design Assurance is a trading name of Network Fabric Limited. Registered in England &amp; Wales. &copy; 2026 Design Assurance.
+      </div>
       <div class="footer-certs">
         <a href="https://www.credly.com/badges/77f18e40-f47f-4633-a382-e8223a4d22bb" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCDE</a>
         <a href="https://www.credly.com/badges/6b70ab37-35e3-4086-ae22-cf54eca63357" target="_blank" rel="noopener noreferrer" class="cert-badge" style="text-decoration:none;">CCIE</a>
@@ -1501,4 +1585,15 @@
   </footer>
 </div>
 <script>
-document.addEventListener('DOMContentLoad
+document.addEventListener('DOMContentLoaded', function() {
+  var menu = document.getElementById('mobileMenu');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  });
+});
+</script>
+</body>
+</html>

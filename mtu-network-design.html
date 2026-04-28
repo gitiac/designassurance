@@ -6,11 +6,11 @@
 <meta name="description" content="MTU mismatches are one of the most consistently underestimated risks in network migrations. Standard testing almost never catches them. Three real-world examples from production environments.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/mtu-network-design">
+<link rel="canonical" href="https://designassurance.co.uk/mtu-network-design">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/mtu-network-design">
+<meta property="og:url" content="https://designassurance.co.uk/mtu-network-design">
 <meta property="og:title" content="MTU: The Network Problem That Hides Until Go-Live | Design Assurance">
-<meta property="og:description" content="Ping passes. Traceroute looks clean. Production traffic fails. Three real MTU problems from network migrations — and why standard testing never catches them.">
+<meta property="og:description" content="Ping passes. Traceroute looks clean. Production traffic fails. Three real MTU problems from network migrations  -  and why standard testing never catches them.">
 <meta property="og:site_name" content="Design Assurance">
 <meta property="article:published_time" content="2026-04-12T08:00:00+00:00">
 <meta property="article:author" content="Hameed Nazim">
@@ -1377,7 +1377,7 @@
   .findings-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--navy); margin-bottom: 1.25rem; }
   .findings-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
   .findings-list li { font-size: 0.92rem; color: var(--text-body); line-height: 1.7; font-weight: 300; padding-left: 1.25rem; position: relative; }
-  .findings-list li::before { content: "—"; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
+  .findings-list li::before { content: " - "; position: absolute; left: 0; color: var(--navy); font-weight: 500; }
   .findings-list li strong { color: var(--navy); font-weight: 500; }
   .footer-links { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
   .footer-links-contact { grid-template-columns: 1fr; }
@@ -1410,47 +1410,47 @@
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
-      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
+      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">&larr; Back to Insights</a>
       <span class="post-cat">Network Design</span>
       <h1 class="post-title">MTU: The Network Problem That Hides Until Go-Live</h1>
-      <div class="post-meta">12 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <div class="post-meta">12 April 2026 &nbsp;&middot;&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;&middot;&nbsp; 6 min read</div>
     </div>
   </div>
   <div class="article-content">
     <div class="post-body">
-          <p>MTU mismatches are one of the most consistently underestimated risks in network migrations. Not because engineers do not know about MTU — they do. But because standard testing almost never catches it. And in the pressure of a migration window, nobody is specifically looking for it.</p>
+          <p>MTU mismatches are one of the most consistently underestimated risks in network migrations. Not because engineers do not know about MTU  -  they do. But because standard testing almost never catches it. And in the pressure of a migration window, nobody is specifically looking for it.</p>
 
           <blockquote><p>MTU problems are infrastructure-layer failures that present as application-layer symptoms. Slow applications. Intermittent timeouts. Selective failures that follow a pattern nobody initially connects to the network.</p></blockquote>
-          <p>Ping, traceroute, telnet, SSH, HTTPS — none of these will reveal an MTU problem unless you are specifically testing for it. Small packets pass cleanly. The mismatch only becomes visible when production traffic — larger packets, higher volumes, real application behaviour — hits the path. By then, the migration is live and the pressure to diagnose and fix is intense.</p>
+          <p>Ping, traceroute, telnet, SSH, HTTPS  -  none of these will reveal an MTU problem unless you are specifically testing for it. Small packets pass cleanly. The mismatch only becomes visible when production traffic  -  larger packets, higher volumes, real application behaviour  -  hits the path. By then, the migration is live and the pressure to diagnose and fix is intense.</p>
 
           <p>Here is what it looks like in production. Three real examples.</p>
 
           <h2>GRE tunnel used for internet failover between data centres</h2>
           <p>Some clients were fine. Others were timing out intermittently. The pattern that eventually gave it away: clients on IPv4-only ISPs were unaffected. Clients on dual-stack ISPs were not.</p>
-          <p>The additional encapsulation overhead from IPv6 headers was pushing packets over the GRE tunnel's effective MTU. Standard connectivity tests — all passing. Real traffic from dual-stack clients — failing selectively, in a pattern that looked like an application problem, a routing problem, a firewall problem — before anyone looked at MTU. The fix was straightforward once identified. Getting to the identification took significantly longer than it should have.</p>
+          <p>The additional encapsulation overhead from IPv6 headers was pushing packets over the GRE tunnel's effective MTU. Standard connectivity tests  -  all passing. Real traffic from dual-stack clients  -  failing selectively, in a pattern that looked like an application problem, a routing problem, a firewall problem  -  before anyone looked at MTU. The fix was straightforward once identified. Getting to the identification took significantly longer than it should have.</p>
 
           <h2>VXLAN to ACI fabric migration over DCI</h2>
-          <p>Applications running within the VXLAN fabric — fine. The same applications, once their VLANs were extended over the DCI into the ACI fabric — severely degraded throughput. Not down. Just slow enough to be noticed by users and painful enough to generate escalations.</p>
+          <p>Applications running within the VXLAN fabric  -  fine. The same applications, once their VLANs were extended over the DCI into the ACI fabric  -  severely degraded throughput. Not down. Just slow enough to be noticed by users and painful enough to generate escalations.</p>
           <p>The VXLAN encapsulation overhead combined with the DCI path MTU created fragmentation that only became visible at production traffic volumes. In a test window with low traffic and small payloads, everything looked healthy. The issue was invisible until the application was under real load with real packet sizes.</p>
 
-          <h2>Remote Site moved to SD-WAN — Cisco ISE RADIUS proxy broke</h2>
-          <p>Not the SD-WAN configuration. Not the ISE policy. Not the authentication logic. The ISE interface MTU — not adjusted to account for the overhead introduced by the SD-WAN overlay. RADIUS packets that had always been fine on the legacy WAN were now being fragmented. Authentication appeared to work intermittently, which made diagnosis harder — intermittent failures are always harder to pin down than consistent ones. Adjusting the ISE interface MTU fixed it immediately.</p>
+          <h2>Remote Site moved to SD-WAN  -  Cisco ISE RADIUS proxy broke</h2>
+          <p>Not the SD-WAN configuration. Not the ISE policy. Not the authentication logic. The ISE interface MTU  -  not adjusted to account for the overhead introduced by the SD-WAN overlay. RADIUS packets that had always been fine on the legacy WAN were now being fragmented. Authentication appeared to work intermittently, which made diagnosis harder  -  intermittent failures are always harder to pin down than consistent ones. Adjusting the ISE interface MTU fixed it immediately.</p>
 
           <h2>Why standard testing does not catch this</h2>
-          <p>The underlying issue is that most pre-migration testing uses small packets, low volumes and controlled conditions. MTU problems are load-sensitive and packet-size-sensitive. A ping test with default packet sizes passes. A file transfer, a database synchronisation, an application with large payload sizes — these expose the problem that the ping test missed.</p>
+          <p>The underlying issue is that most pre-migration testing uses small packets, low volumes and controlled conditions. MTU problems are load-sensitive and packet-size-sensitive. A ping test with default packet sizes passes. A file transfer, a database synchronisation, an application with large payload sizes  -  these expose the problem that the ping test missed.</p>
           <p>Every overlay technology reduces the effective MTU of the path beneath it. GRE adds 24 bytes. VXLAN adds 50 bytes. IPsec adds variable overhead depending on the cipher and authentication. SD-WAN overlays add encapsulation that varies by vendor and configuration. These overheads compound. A path that passes through multiple overlay technologies can lose 100 bytes or more from the effective MTU before a single byte of application data is sent.</p>
 
           <h2>What to design for</h2>
-          <p>MTU needs to be treated as a first-class design consideration — not an implementation detail left for the engineers to sort out during build. At design stage, every overlay in the path should be identified, its overhead documented, and the effective MTU calculated end-to-end. That calculated MTU should be validated against the application requirements.</p>
-          <p>Jumbo frames help but do not eliminate the problem — they raise the ceiling, but overlay overhead still reduces it, and not every device in the path may support jumbo frames. Path MTU Discovery helps but is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages. Do not rely on PMTUD as your safety net.</p>
-          <blockquote><p>Do not rely on Path MTU Discovery as your safety net. PMTUD is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages — silently, without any indication that fragmentation is occurring.</p></blockquote>
-          <p>Test explicitly for MTU before go-live. Not with ping defaults — with ping extended to maximum packet size, with iPerf or equivalent under load, with the actual application where possible. Document the expected MTU at every significant point in the design. Include it in the LLD with specific values, not as a generic note that MTU should be considered.</p>
+          <p>MTU needs to be treated as a first-class design consideration  -  not an implementation detail left for the engineers to sort out during build. At design stage, every overlay in the path should be identified, its overhead documented, and the effective MTU calculated end-to-end. That calculated MTU should be validated against the application requirements.</p>
+          <p>Jumbo frames help but do not eliminate the problem  -  they raise the ceiling, but overlay overhead still reduces it, and not every device in the path may support jumbo frames. Path MTU Discovery helps but is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages. Do not rely on PMTUD as your safety net.</p>
+          <blockquote><p>Do not rely on Path MTU Discovery as your safety net. PMTUD is frequently blocked by firewalls that drop ICMP Type 3 Code 4 messages  -  silently, without any indication that fragmentation is occurring.</p></blockquote>
+          <p>Test explicitly for MTU before go-live. Not with ping defaults  -  with ping extended to maximum packet size, with iPerf or equivalent under load, with the actual application where possible. Document the expected MTU at every significant point in the design. Include it in the LLD with specific values, not as a generic note that MTU should be considered.</p>
 
           <div class="findings-box">
-            <div class="findings-title">MTU — what I check in every network design review</div>
+            <div class="findings-title">MTU  -  what I check in every network design review</div>
             <ul class="findings-list">
-              <li><strong>Every overlay in the path is identified and its overhead documented.</strong> GRE, VXLAN, IPsec, SD-WAN — each one reduces the effective MTU. The LLD should show the calculation, not just a note that MTU is to be confirmed.</li>
-              <li><strong>The effective MTU is validated against application requirements.</strong> Particularly for applications with large payloads — databases, file transfer, backup, VoIP with large RTP packets.</li>
+              <li><strong>Every overlay in the path is identified and its overhead documented.</strong> GRE, VXLAN, IPsec, SD-WAN  -  each one reduces the effective MTU. The LLD should show the calculation, not just a note that MTU is to be confirmed.</li>
+              <li><strong>The effective MTU is validated against application requirements.</strong> Particularly for applications with large payloads  -  databases, file transfer, backup, VoIP with large RTP packets.</li>
               <li><strong>ICMP is permitted appropriately for PMTUD.</strong> Firewalls that silently drop ICMP Type 3 Code 4 messages disable Path MTU Discovery and make MTU problems significantly harder to diagnose.</li>
               <li><strong>ISE, RADIUS and authentication infrastructure MTU is specifically checked.</strong> Authentication protocols are frequently overlooked in MTU analysis and consistently cause post-migration issues.</li>
               <li><strong>Explicit MTU testing is included in the pre-go-live checklist.</strong> Not ping with defaults. Specific tests at maximum packet size, under load, across the actual production path.</li>
@@ -1486,7 +1486,7 @@
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links footer-links-contact">
           <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
+          <li><a style="white-space:nowrap;">UK &middot; US &middot; EU &middot; APAC &middot; Middle East</a></li>
         </ul>
       </div>
     </div>

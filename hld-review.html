@@ -6,9 +6,9 @@
 <meta name="description" content="After 21 years of reviewing High-Level Designs, the same five mistakes appear almost every time. CCDE and CCIE certified independent design assurance.">
 <meta name="author" content="Hameed Nazim, Design Assurance">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.designassurance.co.uk/hld-review">
+<link rel="canonical" href="https://designassurance.co.uk/hld-review">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://www.designassurance.co.uk/hld-review">
+<meta property="og:url" content="https://designassurance.co.uk/hld-review">
 <meta property="og:title" content="Five things wrong with every HLD I have ever reviewed | Design Assurance">
 <meta property="og:description" content="After 21 years of reviewing High-Level Designs, the same five mistakes appear almost every time. CCDE and CCIE certified independent design assurance.">
 <meta property="og:site_name" content="Design Assurance">
@@ -1376,7 +1376,7 @@
     position: relative;
   }
   .findings-list li::before {
-    content: '—';
+    content: ' - ';
     position: absolute;
     left: 0;
     color: var(--navy);
@@ -1480,36 +1480,36 @@
 <div class="article-page">
   <div class="article-hero">
     <div class="article-hero-inner">
-      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">← Back to Insights</a>
+      <a href="index.html#blog" style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--silver);text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem;font-weight:500;">&larr; Back to Insights</a>
       <span class="post-cat">Design Assurance</span>
       <h1 class="post-title">Five things wrong with every HLD I have ever reviewed</h1>
-      <div class="post-meta">1 April 2026 &nbsp;·&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;·&nbsp; 6 min read</div>
+      <div class="post-meta">1 April 2026 &nbsp;&middot;&nbsp; Hameed Nazim, CCDE | CCIE &nbsp;&middot;&nbsp; 6 min read</div>
     </div>
   </div>
 
   <div class="article-content">
     <div class="post-body">
-          <p>After 21 years of reviewing High-Level Designs across financial services, pharmaceutical, healthcare and automotive programmes — a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors. Here is what I find almost every time.</p>
+          <p>After 21 years of reviewing High-Level Designs across financial services, pharmaceutical, healthcare and automotive programmes  -  a pattern emerges. The same mistakes appear, in different organisations, on different programmes, with different vendors. Here is what I find almost every time.</p>
           <h2>1. The design is written to justify a decision already made</h2>
-          <p>The most common HLD failure is not technical — it is political. By the time a formal HLD is produced, the vendor has usually been selected, the commercial agreement is in place, and the architecture is effectively locked. The HLD is then written to document that decision, not to evaluate it.</p>
-          <p>A genuine HLD should explore options. It should compare approaches, document the rationale for choices made, and acknowledge trade-offs. When every section says "the proposed solution is X" without any consideration of why X was chosen over Y or Z, you are not reading a design document — you are reading a sales proposal with an HLD cover sheet.</p>
+          <p>The most common HLD failure is not technical  -  it is political. By the time a formal HLD is produced, the vendor has usually been selected, the commercial agreement is in place, and the architecture is effectively locked. The HLD is then written to document that decision, not to evaluate it.</p>
+          <p>A genuine HLD should explore options. It should compare approaches, document the rationale for choices made, and acknowledge trade-offs. When every section says "the proposed solution is X" without any consideration of why X was chosen over Y or Z, you are not reading a design document  -  you are reading a sales proposal with an HLD cover sheet.</p>
           <h2>2. Scalability is assumed, not designed</h2>
           <p>Almost every HLD I review states that the solution is "scalable." Very few of them define what scalable means in the context of that specific organisation, or demonstrate how scalability will be achieved.</p>
           <blockquote><p>Scalability is not a feature of a vendor platform. It is a property of a specific design, in a specific environment, against specific growth assumptions.</p></blockquote>
-          <p>A credible HLD should define current state traffic volumes, projected growth over the programme lifecycle, and demonstrate through architectural choices — not vendor marketing claims — how the design accommodates that growth without fundamental re-architecture.</p>
+          <p>A credible HLD should define current state traffic volumes, projected growth over the programme lifecycle, and demonstrate through architectural choices  -  not vendor marketing claims  -  how the design accommodates that growth without fundamental re-architecture.</p>
           <h2>3. Resilience is described at component level, not system level</h2>
-          <p>HLDs routinely describe component redundancy — dual uplinks, HA pairs, RAID arrays. What they rarely describe is system-level resilience: what happens when multiple components fail simultaneously, how failover behaves under real traffic conditions, and whether recovery time objectives are actually achievable with the proposed design.</p>
+          <p>HLDs routinely describe component redundancy  -  dual uplinks, HA pairs, RAID arrays. What they rarely describe is system-level resilience: what happens when multiple components fail simultaneously, how failover behaves under real traffic conditions, and whether recovery time objectives are actually achievable with the proposed design.</p>
           <p>Component redundancy and system resilience are different things. A design with fully redundant components can still produce a single point of failure at the system level if those components share a common dependency.</p>
           <blockquote><p>Every HLD should define how its requirements will be traced into the LLD, and who is responsible for validating that trace. Without this, the HLD becomes a contractual document that no one is responsible for delivering.</p></blockquote>
           <h2>4. Security is an afterthought bolted on at the end</h2>
-          <p>Security sections in HLDs are frequently one page long, written last, and describe controls at a generic level that could apply to any organisation. Firewall policy: "traffic will be controlled by firewall rules." Encryption: "data in transit will be encrypted." These statements are not design — they are intentions.</p>
-          <p>Security architecture should be woven through every section of the HLD, not confined to a single section at the end. Segmentation, access control, inspection points, logging and monitoring should all be visible in the network diagrams and architecture choices — not described generically in a separate section.</p>
+          <p>Security sections in HLDs are frequently one page long, written last, and describe controls at a generic level that could apply to any organisation. Firewall policy: "traffic will be controlled by firewall rules." Encryption: "data in transit will be encrypted." These statements are not design  -  they are intentions.</p>
+          <p>Security architecture should be woven through every section of the HLD, not confined to a single section at the end. Segmentation, access control, inspection points, logging and monitoring should all be visible in the network diagrams and architecture choices  -  not described generically in a separate section.</p>
           <h2>5. There is no HLD-to-LLD validation plan</h2>
-          <p>The HLD is approved. The LLD is written. Nobody checks whether the LLD actually delivers what the HLD promised. In my experience, this is where programmes most commonly go wrong — the gap between what was agreed at HLD stage and what is actually specified in the LLD.</p>
+          <p>The HLD is approved. The LLD is written. Nobody checks whether the LLD actually delivers what the HLD promised. In my experience, this is where programmes most commonly go wrong  -  the gap between what was agreed at HLD stage and what is actually specified in the LLD.</p>
           <p>Every HLD should define how its requirements will be traced into the LLD, and who is responsible for validating that trace. Without this, the HLD becomes a contractual document that no one is responsible for delivering.</p>
           <h2>What good looks like</h2>
           <p>A well-written HLD makes reviewers' jobs boring. Every architectural choice is explained. Trade-offs are acknowledged. Scalability and resilience are demonstrated, not claimed. Security is integrated, not appended. And there is a clear path from HLD to LLD to implementation.</p>
-          <p>If your HLD makes for interesting reading — if reviewers are discovering things — it is not ready for approval.</p>
+          <p>If your HLD makes for interesting reading  -  if reviewers are discovering things  -  it is not ready for approval.</p>
 
           <div class="findings-box">
             <div class="findings-title">What we consistently find in HLD review</div>
@@ -1518,7 +1518,7 @@
               <li><strong>Scalability is based on current load, not projected growth.</strong> Most HLDs are designed for today. Few account for the traffic, user or data growth that will arrive within 18 months of go-live.</li>
               <li><strong>Security is a layer, not a design principle.</strong> Firewall rules and access control added at the end of the design process rather than built into the architecture from the start.</li>
               <li><strong>Vendor recommendations favour the integrator's margin.</strong> The design almost always leads to the product the delivery partner already knows, already has stock of, and already makes the most margin on.</li>
-              <li><strong>The LLD diverges significantly from the approved HLD.</strong> By the time implementation begins, the HLD is often a historical document — evolved without a formal record of what changed and why.</li>
+              <li><strong>The LLD diverges significantly from the approved HLD.</strong> By the time implementation begins, the HLD is often a historical document  -  evolved without a formal record of what changed and why.</li>
             </ul>
           </div>
         </div>
@@ -1552,7 +1552,7 @@
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links footer-links-contact">
           <li><a href="mailto:hello@designassurance.co.uk">hello@designassurance.co.uk</a></li>
-          <li><a style="white-space:nowrap;">UK · US · EU · APAC · Middle East</a></li>
+          <li><a style="white-space:nowrap;">UK &middot; US &middot; EU &middot; APAC &middot; Middle East</a></li>
         </ul>
       </div>
     </div>
@@ -1572,4 +1572,13 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var menu = document.getElementById('mobileMenu');
-  document.querySelector('.hamburger').addEventListen
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() { menu.classList.remove('open'); });
+  });
+});
+</script>
+</body>
+</html>
