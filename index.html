@@ -2064,23 +2064,23 @@
 
       <!-- FEATURED POST -->
       <div class="blog-featured" id="featuredPost">
-        <div class="blog-featured-left">
-          <div>
-            <div class="featured-label">Latest Post</div>
-            <div class="featured-title">Why Cloud Network Design Is Still Network Design</div>
-            <div class="featured-excerpt">Cloud architecture is regularly treated as if the network layer designs itself. After reviewing programmes across regulated industries, this assumption is one of the most consistent sources of post-migration failure. The network is not a commodity -- it is the architecture.</div>
+          <div class="blog-featured-left">
+            <div>
+              <div class="featured-label">Latest Post</div>
+              <div class="featured-title">MTU: The Network Problem That Hides Until Go-Live</div>
+              <div class="featured-excerpt">Ping passes. Traceroute looks clean. SSH connects. And then production traffic fails. MTU mismatches are one of the most consistently underestimated risks in network migrations -- because standard testing almost never catches them.</div>
+            </div>
+            <div>
+              <div class="featured-meta">12 April 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; Network Design</div>
+              <br>
+              <a href="mtu-network-design.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
+            </div>
           </div>
-          <div>
-            <div class="featured-meta">9 April 2026 &nbsp;&middot;&nbsp; 7 min read &nbsp;&middot;&nbsp; Cloud Architecture</div>
-            <br>
-            <a href="cloud-architecture.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
+          <div class="blog-featured-right">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">MTU</div>
+            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">Three real production failures -- a GRE tunnel, a VXLAN to ACI migration, and an SD-WAN deployment that broke Cisco ISE authentication. All found post go-live. All preventable at design stage.</div>
           </div>
         </div>
-        <div class="blog-featured-right">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">AWS</div>
-          <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">A Landing Zone tells you how to organise your accounts. It does not tell you how to design your network. Those are not the same thing -- and the gap between them is where most cloud migrations fail.</div>
-        </div>
-      </div>
 
       <!-- ARTICLE GRID -->
       <div class="blog-grid" id="blogGrid">
@@ -2682,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Featured post: show only on 'all' and its own category ('programme')
     if (featured) {
-      var featuredCategory = 'design';
+      var featuredCategory = 'engineering';
       var showFeatured = category === 'all' || category === featuredCategory;
       featured.classList.toggle('hidden', !showFeatured);
     }
