@@ -1446,6 +1446,8 @@
           <blockquote><p>MTU problems are infrastructure-layer failures that present as application-layer symptoms. Slow applications. Intermittent timeouts. Selective failures that follow a pattern nobody initially connects to the network.</p></blockquote>
           <p>Ping, traceroute, telnet, SSH, HTTPS  -  none of these will reveal an MTU problem unless you are specifically testing for it. Small packets pass cleanly. The mismatch only becomes visible when production traffic  -  larger packets, higher volumes, real application behaviour  -  hits the path. By then, the migration is live and the pressure to diagnose and fix is intense.</p>
 
+          <blockquote><p>The following examples are drawn from different programmes, sectors and geographies. Technical details have been generalised where necessary.</p></blockquote>
+
           <p>Here is what it looks like in production. Three real examples.</p>
 
           <h2>GRE tunnel used for internet failover between data centres</h2>
