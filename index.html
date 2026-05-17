@@ -2067,18 +2067,18 @@
           <div class="blog-featured-left">
             <div>
               <div class="featured-label">Latest Post</div>
-              <div class="featured-title">MTU: The Network Problem That Hides Until Go-Live</div>
-              <div class="featured-excerpt">Ping passes. Traceroute looks clean. SSH connects. And then production traffic fails. MTU mismatches are one of the most consistently underestimated risks in network migrations -- because standard testing almost never catches them.</div>
+              <div class="featured-title">What CCDE Teaches You That CCIE Never Could</div>
+              <div class="featured-excerpt">The standard answer is that CCIE tests how you implement a technology, and CCDE tests whether you should. That is accurate as far as it goes. After holding both certifications and using both in practice, it does not go far enough.</div>
             </div>
             <div>
-              <div class="featured-meta">12 April 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; Network Design</div>
+              <div class="featured-meta">14 April 2026 &nbsp;&middot;&nbsp; 8 min read &nbsp;&middot;&nbsp; Design Thinking</div>
               <br>
-              <a href="mtu-network-design.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
+              <a href="ccde-vs-ccie.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
             </div>
           </div>
           <div class="blog-featured-right">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">MTU</div>
-            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">Three real production failures -- a GRE tunnel, a VXLAN to ACI migration, and an SD-WAN deployment that broke Cisco ISE authentication. All found post go-live. All preventable at design stage.</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1;margin-bottom:1rem;">CCDE</div>
+            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">When you have seen enough sub-standard designs and decide you would rather eliminate the gaps than paper over them -- that is the right time to pursue CCDE.</div>
           </div>
         </div>
 
@@ -2682,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Featured post: show only on 'all' and its own category ('programme')
     if (featured) {
-      var featuredCategory = 'engineering';
+      var featuredCategory = 'design';
       var showFeatured = category === 'all' || category === featuredCategory;
       featured.classList.toggle('hidden', !showFeatured);
     }
