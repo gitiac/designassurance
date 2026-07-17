@@ -2067,18 +2067,18 @@
           <div class="blog-featured-left">
             <div>
               <div class="featured-label">Featured Post</div>
-              <div class="featured-title">How to Evaluate a Vendor Proposal Without Being Sold To</div>
-              <div class="featured-excerpt">The vendor who wins the evaluation is not always the vendor who delivers the best outcome. A practical framework for assessing proposals on technical merit rather than presentation quality &mdash; and the questions every proposal should answer but rarely does.</div>
+              <div class="featured-title">The As-Built Gap: Why Your Network Documentation and Your Network Have Diverged</div>
+              <div class="featured-excerpt">Design drift is the gap between what the board signed off on and what is actually running in your data centre. In most organisations, that gap is wider &mdash; and more dangerous &mdash; than anyone wants to admit.</div>
             </div>
             <div>
-              <div class="featured-meta">21 April 2026 &nbsp;&middot;&nbsp; 7 min read &nbsp;&middot;&nbsp; Vendor Assessment</div>
+              <div class="featured-meta">13 April 2026 &nbsp;&middot;&nbsp; 7 min read &nbsp;&middot;&nbsp; Design Assurance</div>
               <br>
-              <a href="vendor-assessment.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
+              <a href="as-built-lie.html" style="background:var(--silver-light);color:var(--navy);padding:0.75rem 1.75rem;font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-block;">Read Article</a>
             </div>
           </div>
           <div class="blog-featured-right">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1.1;margin-bottom:1rem;">Sold<br>To</div>
-            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">If the proposal would make equal sense with a different client's name on the cover page, it was not written for you. It was written for the evaluation process.</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(168,180,192,0.15);line-height:1.1;margin-bottom:1rem;">The<br>Lie</div>
+            <div style="font-size:0.82rem;color:var(--silver);line-height:1.7;font-weight:300;">The as-built document that claims to describe your network is, in most organisations, a work of fiction. The question is how much that fiction is costing you.</div>
           </div>
         </div>
 
@@ -2682,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Featured post: show only on 'all' and its own category ('programme')
     if (featured) {
-      var featuredCategory = 'advisory';
+      var featuredCategory = 'design';
       var showFeatured = category === 'all' || category === featuredCategory;
       featured.classList.toggle('hidden', !showFeatured);
     }
